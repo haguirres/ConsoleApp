@@ -8,8 +8,8 @@ namespace ConsoleApp.Entities
 {
     class Aula
     {
-        public int NumeroAula { get; set; }
-        public int Capacidad { get; set; }
-        public string Nombre { get; set; }
+        public int ClassRomNumber { get; set; }
+        public int MAxCapacity { get; set; }
+        public string Name { get; set; }
     }
 }
