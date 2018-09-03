@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="Entities\Direccion.cs" />
     <Compile Include="Entities\Materia.cs" />
+    <Compile Include="Entities\Aula.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\School.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Program.cs" />
