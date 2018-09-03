@@ -8,5 +8,9 @@ namespace ConsoleApp.Entities
 {
     public class Teacher : Person
     {
+        public int TeacherId { get; set; }
+        public int TeacherLevel { get; set; }
+        public string Area { get; set; }
+        public string Signature { get; set; }
     }
 }

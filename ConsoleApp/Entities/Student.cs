@@ -8,5 +8,9 @@ namespace ConsoleApp.Entities
 {
     class Student:Person
     {
+        public int StudentId { get; set; }
+        public int Grade { get; set; }
+        public string Group { get; set; }
+        public string Score { get; set; }
     }
 }
