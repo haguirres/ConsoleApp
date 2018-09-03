@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace ConsoleApp.Entities
 {
-    class Program
+    public class Person
     {
-        static void Main(string[] args)
-        {
-        }
+        public string Name { get; set; }
     }
 }
