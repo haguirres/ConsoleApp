@@ -10,6 +10,6 @@ namespace ConsoleApp.Entities
     {
         public int StudentId { get; set; }
         public int Grade { get; set; }
-        public string Average { get; set; }
+        public string Score { get; set; }
     }
 }
