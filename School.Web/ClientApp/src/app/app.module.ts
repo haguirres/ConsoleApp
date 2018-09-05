@@ -10,9 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolComponent } from './school/school.component';
-import { StudentComponent } from './student/student.component';
-import { PersonComponent } from './person/person.component';
-import { GradeComponent } from './grade/grade.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +18,7 @@ import { GradeComponent } from './grade/grade.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SchoolComponent,
-    StudentComponent,
-    PersonComponent,
-    GradeComponent
+    SchoolComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
