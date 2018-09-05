@@ -29,7 +29,7 @@ import { GradeComponent } from './grade/grade.component';
     SchoolTypeComponent,
     StudentComponent,
     PersonComponent,
-    GradeComponent
+    GradeComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
