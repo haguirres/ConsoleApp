@@ -2,23 +2,32 @@
   <title>Datos de la Escuela</title>
 </head>
 <header>
-  <h1>Datos de la Escuela</h1>
+  <h1 class="first-column">Datos de la Escuela</h1>
 </header>
 <body>
   <section>
-    <div>
-      <label for="schoolName">Nombre de su Escuela:</label>
-      <input class="border-radius" id="schoolName" type="text" [(ngModel)]="school.SchoolName" />
+    <div class="column-div">
+      <label for="schoolName">Nombre de la Escuela:</label>
+      <input id="schoolName" type="text" [(ngModel)]="school.SchoolName" />
     </div>
-    <div>
+    <div class="column-div">
       <label for="schoolTypeName">Tipo de escuela:</label>
-      <input id="schoolTypeName" type="text" [(ngModel)]="school.SchoolTypeName" />
+      <select>
+        <option value="1" selected>Matutino</option>
+        <option value="1">Vespertino</option>
+        <option value="1">Mixto</option>
+      </select>
     </div>
-    <div>
+    <div class="column-div">
       <label for="minToPass">Promedio mínimo para aprobar:</label>
       <input id="minToPass" type="text" [(ngModel)]="school.MinToPass" />
     </div>
-    <button id="btnGuardar" (click)="GuardarDatos()">Guardar</button>
+    <app-address></app-address>
 
+    <div class="column-div">
+      <button id="btnGuardar" (click)="GuardarDatos()">Guardar</button>
+
+    </div>
+   
   </section>
 </body>

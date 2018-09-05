@@ -6,25 +6,26 @@
 </header>
 <body>
   <section>
+    <table>
+      <tr>
+        <td>  <label for="PersonId">Person ID: </label></td>
+        <td>  <input class="border-radius" type="text" id="PersonId" [(ngModel)]="student.PersonId" /></td>
+      </tr>
 
-    <div>
-      <label for="PersonId">Person ID: </label>
-      <input type="text" id="PersonId" [(ngModel)]="student.PersonId" />
-    </div>
+      <tr>
+        <td>  <label for="StudenId">Studen ID: </label></td>
+        <td>  <input class="border-radius" type="text" id="StudentId" [(ngModel)]="student.StudentId" /></td>
+      </tr>
 
-    <div>
-      <label for="StudenId">Studen ID: </label>
-      <input type="text" id="StudentId" [(ngModel)]="student.StudentId" />
-    </div>
+      <tr>
+        <td>  <label for="Account">Account: </label></td>
+        <td>  <input class="border-radius" type="text" id="Account" [(ngModel)]="student.Account" /></td>
+      </tr>
 
-    <div>
-      <label for="Account">Account: </label>
-      <input type="text" id="Account" [(ngModel)]="student.Account" />
-    </div>
-
-    <div>
-      <label for="IsActive">Is Active?: </label>
-      <input type="checkbox" id="IsActive" [(ngModel)]="student.IsActive" />
-    </div>
+      <!--<tr>
+        <td>  <label for="IsActive">Is Active?: </label></td>
+        <td>  <input type="checkbox" id="IsActive" [(ngModel)]="student.IsActive" /></td>
+      </tr>-->
+    </table>
   </section>
 </body>
