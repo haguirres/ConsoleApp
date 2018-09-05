@@ -70,11 +70,12 @@
     <Build Include="dbo\Tables\Signatures.sql" />
     <Build Include="dbo\Tables\School.sql" />
     <Build Include="dbo\Tables\Roles.sql" />
-    <Build Include="dbo\Tables\Person.sql" />
+    <Build Include="dbo\Tables\SchoolUser.sql" />
     <Build Include="dbo\Tables\Inscription.sql" />
     <Build Include="dbo\Tables\Grade.sql" />
     <Build Include="dbo\Tables\Course.sql" />
     <Build Include="dbo\Tables\City.sql" />
     <Build Include="dbo\Tables\Address.sql" />
+    <Build Include="dbo\Tables\Person.sql" />
   </ItemGroup>
 </Project>
