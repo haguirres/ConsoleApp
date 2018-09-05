@@ -1,8 +1,24 @@
-<div>
-    <label>La fecha de hoy es:</label>
-    <label>{{date | date:'dd/MMMM/yyyy'}}</label>
-    <br />
-    <label for="schoolName">Nombre de su Escuela:</label>
-    <input id="schoolName" type="text" [(ngModel)]="school.SchoolName"/>
+<head>
+  <title>Datos de la Escuela</title>
+</head>
+<header>
+  <h1>Datos de la Escuela</h1>
+</header>
+<body>
+  <section>
+    <div>
+      <label for="schoolName">Nombre de su Escuela:</label>
+      <input class="border-radius" id="schoolName" type="text" [(ngModel)]="school.SchoolName" />
+    </div>
+    <div>
+      <label for="schoolTypeName">Tipo de escuela:</label>
+      <input id="schoolTypeName" type="text" [(ngModel)]="school.SchoolTypeName" />
+    </div>
+    <div>
+      <label for="minToPass">Promedio mínimo para aprobar:</label>
+      <input id="minToPass" type="text" [(ngModel)]="school.MinToPass" />
+    </div>
     <button id="btnGuardar" (click)="GuardarDatos()">Guardar</button>
-</div>
+
+  </section>
+</body>

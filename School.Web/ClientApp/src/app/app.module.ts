@@ -30,6 +30,8 @@ import { GradeComponent } from './grade/grade.component';
     StudentComponent,
     PersonComponent,
     GradeComponent,
+    SchoolComponent,
+    AddressComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +39,10 @@ import { GradeComponent } from './grade/grade.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'school', component: SchoolComponent }
+      { path: 'school', component: SchoolComponent },
+      { path: 'address', component: AddressComponent },
+      { path: 'school', component: SchoolComponent },
+      { path: 'school-type', component: SchoolTypeComponent }
 
     ])
   ],
