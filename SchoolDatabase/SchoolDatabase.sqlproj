@@ -77,6 +77,8 @@
     <Build Include="dbo\Tables\City.sql" />
     <Build Include="dbo\Tables\Address.sql" />
     <Build Include="dbo\Tables\SchoolType_1.sql" />
+    <Build Include="dbo\Tables\Person.sql" />
+    <Build Include="dbo\Tables\SchoolType.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SchoolDatabase.refactorlog" />
