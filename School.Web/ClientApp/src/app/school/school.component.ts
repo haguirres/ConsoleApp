@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { IAddress, ISchool } from './model/index';
+import { ISchool } from './model/ISchool';
 
 @Component({
   selector: 'app-school',
@@ -10,7 +10,6 @@ export class SchoolComponent implements OnInit, AfterContentInit
 {
   date: Date = new Date();
   school = <ISchool>{};
-  address = <IAddress>{};
 
   constructor() { }
 
