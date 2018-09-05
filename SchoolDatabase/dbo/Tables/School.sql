@@ -6,7 +6,7 @@
     [MinToPass]  INT           NULL,
     [IsActive] BIT NOT NULL DEFAULT 1, 
     PRIMARY KEY CLUSTERED ([SchoolId] ASC),
-	CONSTRAINT [FK_SCHOOL_SCHOOLTYPE] FOREIGN KEY (SchoolType) REFERENCES [dbo].SchoolType (SchoolType),
+	CONSTRAINT [FK_SCHOOL_SCHOOLTYPE] FOREIGN KEY (SchoolType) REFERENCES [dbo].SchoolType (SchoolTypeId),
     CONSTRAINT [FK_SCHOOL_ADDRESS] FOREIGN KEY ([AddressId]) REFERENCES [dbo].[Address] ([AddressId])
 );
 
