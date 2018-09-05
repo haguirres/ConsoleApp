@@ -29,6 +29,7 @@
     <Folder Include="ClientApp\src\app\school-type\model\" />
     <Folder Include="ClientApp\src\app\signature\model\" />
     <Folder Include="ClientApp\src\app\student\model\" />
+    <Folder Include="ClientApp\src\app\week-day\model\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
