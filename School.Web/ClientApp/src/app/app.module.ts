@@ -16,6 +16,7 @@ import { AddressComponent } from './address/address.component';
 import { StudentComponent } from './student/student.component';
 import { PersonComponent } from './person/person.component';
 import { GradeComponent } from './grade/grade.component';
+import { SignatureComponent } from './signature/signature.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GradeComponent } from './grade/grade.component';
     PersonComponent,
     GradeComponent,
     SchoolComponent,
-    AddressComponent 
+    AddressComponent,
+    SignatureComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,6 +48,10 @@ import { GradeComponent } from './grade/grade.component';
       { path: 'student', component: StudentComponent },
       { path: 'person', component: PersonComponent },
       { path: 'grade', component: GradeComponent },
+      { path: 'school-type', component: SchoolTypeComponent },
+      { path: 'signature', component: SignatureComponent },
+      { path: 'teacher', component: TeacherComponent }
+
     ])
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[SchoolType]
 (
-	[SchoolTypeId] INT NOT NULL PRIMARY KEY, 
-    [Type] VARCHAR(20) NULL
+	[SchoolTypeId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Type] VARCHAR(20) NOT NULL
 )
