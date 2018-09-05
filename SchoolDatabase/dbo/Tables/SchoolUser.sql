@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Person] (
+﻿CREATE TABLE [dbo].[SchoolUser] (
     [PersonId] INT          NOT NULL,
     [RolId]    INT          NOT NULL,
     [UserName] VARCHAR (50) NOT NULL,
