@@ -20,6 +20,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { CourseComponent } from './course/course.component';
 import { WeekDayComponent } from './week-day/week-day.component';
 import { WeekDay } from '@angular/common';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { WeekDay } from '@angular/common';
     AddressComponent,
     CourseComponent,
     SignatureComponent,
-    WeekDayComponent 
+    WeekDayComponent,
+    ScheduleComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
