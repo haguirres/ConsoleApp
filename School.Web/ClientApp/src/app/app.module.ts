@@ -48,7 +48,6 @@ import { SignatureComponent } from './signature/signature.component';
       { path: 'student', component: StudentComponent },
       { path: 'person', component: PersonComponent },
       { path: 'grade', component: GradeComponent },
-      { path: 'school-type', component: SchoolTypeComponent },
       { path: 'signature', component: SignatureComponent },
       { path: 'teacher', component: TeacherComponent }
 
