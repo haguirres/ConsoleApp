@@ -6,7 +6,7 @@
     [PersonId]   INT          NOT NULL,
     PRIMARY KEY CLUSTERED ([CURP] ASC),
     CONSTRAINT [FK_STUDENT_ADDRESS] FOREIGN KEY ([AddressId]) REFERENCES [dbo].[Address] ([AddressId]),
-    CONSTRAINT [FK_STUDENT_PERSON] FOREIGN KEY ([PersonId]) REFERENCES [dbo].[Person] ([Id]),
+    CONSTRAINT [FK_STUDENT_PERSON] FOREIGN KEY ([PersonId]) REFERENCES [dbo].[Person] ([PersonId]),
     UNIQUE NONCLUSTERED ([PersonId] ASC)
 );
 
