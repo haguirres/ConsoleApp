@@ -19,7 +19,7 @@ import { GradeComponent } from './grade/grade.component';
 import { SignatureComponent } from './signature/signature.component';
 import { CourseComponent } from './course/course.component';
 import { WeekDayComponent } from './week-day/week-day.component';
-import { WeekDay } from '@angular/common';
+//import { WeekDay } from '@angular/common';
 import { ScheduleComponent } from './schedule/schedule.component';
 
 
@@ -60,7 +60,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
       { path: 'teacher', component: TeacherComponent },
       { path: 'week-day', component: WeekDayComponent },
       { path: 'signature', component: SignatureComponent },
-      {path: 'course', component: CourseComponent}
+      { path: 'course', component: CourseComponent },
+      { path: 'schedule', component: ScheduleComponent }
 
     ])
   ],
