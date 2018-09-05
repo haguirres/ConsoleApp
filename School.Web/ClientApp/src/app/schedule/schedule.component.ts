@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Ischedule } from './model/ischedule';
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleComponent implements OnInit {
 
+  schedule = <Ischedule>{};
   constructor() { }
-
+  
   ngOnInit() {
+    
   }
 
 }

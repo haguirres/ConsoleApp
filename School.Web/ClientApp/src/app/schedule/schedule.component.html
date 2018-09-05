@@ -1,3 +1,25 @@
-<p>
-  schedule works!
-</p>
+<div>
+  <h1>Agregar nuevo Horario</h1>
+  <hr />
+  <label>WeekDayId</label>
+  <select>
+    <option>Option</option>
+    <option>Option</option>
+  </select>
+  <br />
+  <br />
+  <label for="Type">StartTime: </label>
+  <br />
+  <input id="scheduleStartTime" type="text" [(ngModel)]="schedule.StartTime" />
+  <br />
+  <br />
+  <label for="Type">EndTime: </label>
+  <br />
+  <input id="scheduleEndTime" type="text" [(ngModel)]="schedule.EndTime" />
+  <br />
+  <br />
+  <br />
+  <br />
+  <button id="btnGuardar" (click)="SaveSchedule()">Guardar</button>
+
+</div>
