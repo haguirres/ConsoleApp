@@ -1,3 +1,46 @@
-<p>
-  person works!
-</p>
+<head>
+  <title>Person Data Register</title>
+</head>
+<header>
+  <h1>Person Data Register</h1>
+</header>
+<body>
+  <section>
+
+    <div>
+      <label for="PersonId">Person ID: </label>
+      <input type="text" id="PersonId" [(ngModel)]="person.PersonId" />
+    </div>
+
+    <div>
+      <label for="PersonName">Person Name: </label>
+      <input type="text" id="PersonName" [(ngModel)]="person.PersonName" />
+    </div>
+
+    <div>
+      <label for="PersonAge">Age: </label>
+      <input type="text" id="PersonAge" [(ngModel)]="person.PersonAge" />
+    </div>
+
+    <div>
+      <label for="AddressId">Address ID: </label>
+      <input type="text" id="AddressId" [(ngModel)]="person.AddressId" />
+    </div>
+
+    <div>
+      <label for="CURP">CURP: </label>
+      <input type="text" id="CURP" [(ngModel)]="person.CURP" />
+    </div>
+
+    <div>
+      <label for="Phone">Phone: </label>
+      <input type="text" id="Phone" [(ngModel)]="person.Phone" />
+    </div>
+
+    <div>
+      <label for="Email">Email: </label>
+      <input type="text" id="Email" [(ngModel)]="person.Email" />
+    </div>
+
+  </section>
+</body>
