@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[SchoolUser] (
-    [PersonId] INT          NOT NULL,
+    [PersonId] INT          NOT NULL IDENTITY,
     [RolId]    INT          NOT NULL,
     [UserName] VARCHAR (50) NOT NULL,
     [Password] VARCHAR (15) NOT NULL,
