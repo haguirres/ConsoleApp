@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolComponent } from './school/school.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { SchoolTypeComponent } from './school-type/school-type.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
