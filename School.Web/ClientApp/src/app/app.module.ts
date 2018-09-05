@@ -20,7 +20,8 @@ import { AddressComponent } from './address/address.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    SchoolComponent
+    SchoolComponent,
+    AddressComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +30,7 @@ import { AddressComponent } from './address/address.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'school', component: SchoolComponent }
+      { path: 'address', component: AddressComponent }
 
     ])
   ],

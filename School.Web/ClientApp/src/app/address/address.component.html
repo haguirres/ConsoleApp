@@ -1,3 +1,17 @@
-<p>
-  address works!
-</p>
+<div>
+  <h1>Dirección</h1>
+  <br />
+  <label for="addressName">Calle:</label>
+  <input id="addressName" type="text" [(ngModel)]="address.Address" />
+  <br />
+  <label for="zipCode">Codigo Postal:</label>
+  <input id="zipCode" type="number" [(ngModel)]="address.ZipCode" />
+  <br />
+  <label for="extNum">Numero Exterior:</label>
+  <input id="extNum" type="number" [(ngModel)]="address.ExtNumber" />
+  <br />
+  <label for="intNum">Numero Interior:</label>
+  <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
+
+
+</div>
