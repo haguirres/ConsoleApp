@@ -18,6 +18,9 @@ import { PersonComponent } from './person/person.component';
 import { GradeComponent } from './grade/grade.component';
 import { SignatureComponent } from './signature/signature.component';
 import { CourseComponent } from './course/course.component';
+import { WeekDayComponent } from './week-day/week-day.component';
+import { WeekDay } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +37,9 @@ import { CourseComponent } from './course/course.component';
     GradeComponent,
     SchoolComponent,
     AddressComponent,
-    SignatureComponent,
     CourseComponent 
+    SignatureComponent,
+    WeekDayComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -47,6 +51,12 @@ import { CourseComponent } from './course/course.component';
       { path: 'address', component: AddressComponent },
       { path: 'school', component: SchoolComponent },
       { path: 'school-type', component: SchoolTypeComponent },
+      { path: 'student', component: StudentComponent },
+      { path: 'person', component: PersonComponent },
+      { path: 'grade', component: GradeComponent },
+      { path: 'signature', component: SignatureComponent },
+      { path: 'teacher', component: TeacherComponent },
+      { path: 'week-day', component: WeekDayComponent }
       { path: 'signature', component: SignatureComponent },
       {path: 'course', component: CourseComponent}
 
