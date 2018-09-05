@@ -13,6 +13,9 @@ import { SchoolComponent } from './school/school.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { SchoolTypeComponent } from './school-type/school-type.component';
 import { AddressComponent } from './address/address.component';
+import { StudentComponent } from './student/student.component';
+import { PersonComponent } from './person/person.component';
+import { GradeComponent } from './grade/grade.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AddressComponent } from './address/address.component';
     FetchDataComponent,
     SchoolComponent,
     TeacherComponent,
-    SchoolTypeComponent
+    SchoolTypeComponent,
+    StudentComponent,
+    PersonComponent,
+    GradeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
