@@ -1,2 +1,37 @@
-<label id="Grade:">Grade</label>
-<datalist></datalist>
+<head>
+  <title>Grade Data Register</title>
+</head>
+<header>
+  <h1>Grade Data Register</h1>
+</header>
+<body>
+  <section>
+    <hr />
+    <table>
+      <tr>
+        <td><label for="CourseId">Course ID: </label></td>
+        <td>
+          <select id="CourseId" class="border-radius" [(ngModel)]="grade.CourseId">
+            <option>opcion1</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="StudentId">Student ID: </label></td>
+        <td>
+          <select id="StudentId" class="border-radius" [(ngModel)]="grade.StudentId">
+            <option>opcion1</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="Grade">Grade: </label></td>
+        <td><input type="text" id="Grade" class="border-radius" [(ngModel)]="grade.Grade" /></td>
+      </tr>
+
+    </table>
+  </section>
+</body>
+
