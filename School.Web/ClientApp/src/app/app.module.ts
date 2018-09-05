@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolComponent } from './school/school.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { SchoolTypeComponent } from './school-type/school-type.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TeacherComponent } from './teacher/teacher.component';
     CounterComponent,
     FetchDataComponent,
     SchoolComponent,
-    TeacherComponent
+    TeacherComponent,
+    SchoolTypeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
