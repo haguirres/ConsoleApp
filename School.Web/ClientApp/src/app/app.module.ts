@@ -18,6 +18,7 @@ import { PersonComponent } from './person/person.component';
 import { GradeComponent } from './grade/grade.component';
 import { SignatureComponent } from './signature/signature.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { SignatureComponent } from './signature/signature.component';
     GradeComponent,
     SchoolComponent,
     AddressComponent,
-    SignatureComponent 
+    SignatureComponent,
+ 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,7 +47,8 @@ import { SignatureComponent } from './signature/signature.component';
       { path: 'address', component: AddressComponent },
       { path: 'school', component: SchoolComponent },
       { path: 'school-type', component: SchoolTypeComponent },
-      { path: 'signature', component: SignatureComponent }
+      { path: 'signature', component: SignatureComponent },
+    
 
     ])
   ],
