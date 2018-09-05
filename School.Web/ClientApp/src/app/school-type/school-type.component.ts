@@ -17,7 +17,7 @@ export class SchoolTypeComponent implements OnInit {
   }
 
   SaveSchoolType() {
-    this.SchoolType.SchoolTypeId=
+    alert("Tipo de escuela: " + this.SchoolType.Type);
   }
 
 }

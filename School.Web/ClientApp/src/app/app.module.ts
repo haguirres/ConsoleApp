@@ -31,7 +31,8 @@ import { AddressComponent } from './address/address.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'school', component: SchoolComponent }
+      { path: 'school', component: SchoolComponent },
+      { path: 'school-type', component: SchoolTypeComponent }
 
     ])
   ],
