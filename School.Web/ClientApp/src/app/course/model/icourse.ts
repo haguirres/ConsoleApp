@@ -1,4 +1,4 @@
-export interface ICourse {
+export interface Icourse {
   CourseId: string;
   SignaturesId: number;
   SchoolId: string;
