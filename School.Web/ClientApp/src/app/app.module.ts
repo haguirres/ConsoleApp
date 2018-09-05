@@ -11,7 +11,11 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolComponent } from './school/school.component';
 import { TeacherComponent } from './teacher/teacher.component';
+import { SchoolTypeComponent } from './school-type/school-type.component';
 import { AddressComponent } from './address/address.component';
+import { StudentComponent } from './student/student.component';
+import { PersonComponent } from './person/person.component';
+import { GradeComponent } from './grade/grade.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,12 @@ import { AddressComponent } from './address/address.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    SchoolComponent,
+    TeacherComponent,
+    SchoolTypeComponent,
+    StudentComponent,
+    PersonComponent,
+    GradeComponent
     SchoolComponent,
     AddressComponent 
   ],
@@ -31,6 +41,8 @@ import { AddressComponent } from './address/address.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'school', component: SchoolComponent }
       { path: 'address', component: AddressComponent }
+      { path: 'school', component: SchoolComponent },
+      { path: 'school-type', component: SchoolTypeComponent }
 
     ])
   ],
