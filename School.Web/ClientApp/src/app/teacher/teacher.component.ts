@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeacher } from './model/iteacher';
 import { Iperson } from '../person/model/iperson';
-import { } from '../address/model/IAddress';
-import { IAddress } from '../school/model';
+import { IAddress} from '../address/model/IAddress';
+
 @Component({
   selector: 'app-teacher',
   templateUrl: './teacher.component.html',

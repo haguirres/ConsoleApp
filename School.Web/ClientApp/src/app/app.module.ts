@@ -37,7 +37,7 @@ import { WeekDay } from '@angular/common';
     GradeComponent,
     SchoolComponent,
     AddressComponent,
-    CourseComponent 
+    CourseComponent,
     SignatureComponent,
     WeekDayComponent 
   ],
@@ -56,7 +56,7 @@ import { WeekDay } from '@angular/common';
       { path: 'grade', component: GradeComponent },
       { path: 'signature', component: SignatureComponent },
       { path: 'teacher', component: TeacherComponent },
-      { path: 'week-day', component: WeekDayComponent }
+      { path: 'week-day', component: WeekDayComponent },
       { path: 'signature', component: SignatureComponent },
       {path: 'course', component: CourseComponent}
 
