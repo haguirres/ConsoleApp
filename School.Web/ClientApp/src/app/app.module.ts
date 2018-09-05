@@ -20,6 +20,7 @@ import { SignatureComponent } from './signature/signature.component';
 import { WeekDayComponent } from './week-day/week-day.component';
 import { WeekDay } from '@angular/common';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,10 @@ import { WeekDay } from '@angular/common';
       { path: 'school', component: SchoolComponent },
       { path: 'address', component: AddressComponent },
       { path: 'school', component: SchoolComponent },
+      { path: 'school-type', component: SchoolTypeComponent },
+      { path: 'student', component: StudentComponent },
+      { path: 'person', component: PersonComponent },
+      { path: 'grade', component: GradeComponent },
       { path: 'school-type', component: SchoolTypeComponent },
       { path: 'signature', component: SignatureComponent },
       { path: 'teacher', component: TeacherComponent },
