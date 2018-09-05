@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Iperson } from './model/iperson'
 
 @Component({
   selector: 'app-person',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
+
+  person = <Iperson>{};
 
   constructor() { }
 
