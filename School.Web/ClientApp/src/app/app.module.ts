@@ -19,7 +19,6 @@ import { GradeComponent } from './grade/grade.component';
 import { SignatureComponent } from './signature/signature.component';
 import { CourseComponent } from './course/course.component';
 import { WeekDayComponent } from './week-day/week-day.component';
-import { WeekDay } from '@angular/common';
 
 
 @NgModule({
@@ -37,7 +36,7 @@ import { WeekDay } from '@angular/common';
     GradeComponent,
     SchoolComponent,
     AddressComponent,
-    CourseComponent 
+    CourseComponent,
     SignatureComponent,
     WeekDayComponent 
   ],
@@ -56,7 +55,7 @@ import { WeekDay } from '@angular/common';
       { path: 'grade', component: GradeComponent },
       { path: 'signature', component: SignatureComponent },
       { path: 'teacher', component: TeacherComponent },
-      { path: 'week-day', component: WeekDayComponent }
+      { path: 'week-day', component: WeekDayComponent },
       { path: 'signature', component: SignatureComponent },
       {path: 'course', component: CourseComponent}
 

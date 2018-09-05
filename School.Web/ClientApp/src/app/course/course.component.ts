@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICourse } from './ICourse';
+import { Icourse } from './model/icourse';
 
 @Component({
   selector: 'app-course',
@@ -8,7 +8,7 @@ import { ICourse } from './ICourse';
 })
 export class CourseComponent implements OnInit {
 
-  Course= <ICourse>{};
+  course= <Icourse>{};
 
   constructor() { }
 
