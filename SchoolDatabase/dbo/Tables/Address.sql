@@ -3,7 +3,7 @@
     [Address]   VARCHAR (200) NOT NULL,
     [Neighborhood]   INT           NOT NULL,
     [ExtNum] INT NOT NULL, 
-    [IntNum] NCHAR(10) NULL, 
+    [IntNum] VARCHAR(10) NULL, 
     PRIMARY KEY CLUSTERED ([AddressId] ASC),
     CONSTRAINT [FK_ADDRESS_ZIPCODE] FOREIGN KEY ([Neighborhood]) REFERENCES [dbo].[ZipCode] ([Neighborhood])
 );
