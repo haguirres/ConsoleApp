@@ -19,7 +19,6 @@ import { GradeComponent } from './grade/grade.component';
 import { SignatureComponent } from './signature/signature.component';
 import { CourseComponent } from './course/course.component';
 import { WeekDayComponent } from './week-day/week-day.component';
-import { WeekDay } from '@angular/common';
 
 
 @NgModule({

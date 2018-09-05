@@ -24,19 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\course\ICourse.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Folder Include="ClientApp\src\app\course\model\" />
     <Folder Include="ClientApp\src\app\grade\model\" />
     <Folder Include="ClientApp\src\app\person\model\" />
     <Folder Include="ClientApp\src\app\school-type\model\" />
     <Folder Include="ClientApp\src\app\student\model\" />
     <Folder Include="ClientApp\src\app\week-day\model\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\course\ICourse.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
