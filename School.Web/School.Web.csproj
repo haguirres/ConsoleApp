@@ -27,6 +27,7 @@
     <Folder Include="ClientApp\src\app\course\model\" />
     <Folder Include="ClientApp\src\app\grade\model\" />
     <Folder Include="ClientApp\src\app\person\model\" />
+    <Folder Include="ClientApp\src\app\schedule\model\" />
     <Folder Include="ClientApp\src\app\school-type\model\" />
     <Folder Include="ClientApp\src\app\student\model\" />
     <Folder Include="ClientApp\src\app\week-day\model\" />
