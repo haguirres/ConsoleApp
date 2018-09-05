@@ -1,3 +1,8 @@
-<p>
-  teacher works!
-</p>
+<div>
+  <label for="Teacher.RFC">RFC: </label>
+  <br />
+  <input type="text"  id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+  <br />
+  <br />
+  <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
+</div>
