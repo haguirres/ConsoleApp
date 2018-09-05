@@ -42,8 +42,10 @@ import { GradeComponent } from './grade/grade.component';
       { path: 'school', component: SchoolComponent },
       { path: 'address', component: AddressComponent },
       { path: 'school', component: SchoolComponent },
-      { path: 'school-type', component: SchoolTypeComponent }
-
+      { path: 'school-type', component: SchoolTypeComponent },
+      { path: 'student', component: StudentComponent },
+      { path: 'person', component: PersonComponent },
+      { path: 'grade', component: GradeComponent },
     ])
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
