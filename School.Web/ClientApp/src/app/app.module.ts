@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SchoolComponent } from './school/school.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
