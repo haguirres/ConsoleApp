@@ -4,42 +4,50 @@
 
   <h2>Datos Generales</h2>
   <hr />
+  <div class="col">
+    <div class="row">
+      <label for="Teacher.Person.PersonName">Nombre: </label>
+    </div>
+    <div class="row">
+      <input type="text" id="Teacher.Person.PersonName" [(ngModel)]="Teacher.Person.PersonName" />
+    </div>
 
-  <label for="Person.PersonName">Nombre: </label>
-  <br />
-  <input type="text" id="PersonName" [(ngModel)]="Person.PersonName" />
-  <br />
-  <br />
-  <label for="Person.PersonAge">Edad: </label>
-  <br />
-  <input type="text" id="PersonAge" [(ngModel)]="Person.PersonAge" />
-  <br />
-  <br />
-  <label for="Person.CURP">CURP: </label>
-  <br />
-  <input type="text" id="PersonCURP" [(ngModel)]="Person.CURP" />
-  <br />
-  <br />
-  <label for="Teacher.RFC">RFC: </label>
-  <br />
-  <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
-  <br />
-  <br />
-  <h2>Datos de Contacto</h2>
-  <hr />
-  <label for="Person.Phone">Teléfono: </label>
-  <br />
-  <input type="tel" id="PersonPhone" [(ngModel)]="Person.Phone" />
-  <br />
-  <br />
-  <label for="Person.Email">e-mail: </label>
-  <br />
-  <input type="email" id="PersonEmail" [(ngModel)]="Person.Email" />
-  <br />
-  <br />
-  <div>
-    <app-address></app-address>
+    <div class="row">
+      <label for="Teacher.Person.PersonAge">Edad: </label>
+    </div>
+    <div class="row">
+      <input type="text" id="Teacher.PersonAge" [(ngModel)]="Teacher.Person.PersonAge" />
+    </div>
+    <div class="row">
+      <label for="Teacher.Person.CURP">CURP: </label>
+    </div>
+    <div class="row">
+      <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
+    </div>
+    <div class="row">
+      <label for="Teacher.RFC">RFC: </label>
+    </div>
+    <div class="row">
+      <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+    </div>
+
+    <h2>Datos de Contacto</h2>
+    <hr />
+    <div class="row">
+      <label for="Teacher.Person.Phone">Teléfono: </label>
+    </div>
+    <div class="row">
+      <input type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
+    </div>
+    <div class="row">
+      <label for="Teacher.Person.Email">e-mail: </label>
+    </div>
+    <div class="row">
+      <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
+    </div>
+    
+    <app-address [address]="Teacher.Person.address"></app-address>
+
   </div>
-  
   <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
 </div>

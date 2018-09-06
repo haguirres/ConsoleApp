@@ -1,3 +1,5 @@
+import { IAddress } from "../../address/model";
+
 export interface Iperson {
   PersonId: number;
   PersonName: string;
@@ -6,4 +8,5 @@ export interface Iperson {
   CURP: string;
   Phone: number;
   Email: string;
+  address: IAddress;
 }

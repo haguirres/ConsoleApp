@@ -1,57 +1,108 @@
 <div>
-  <h1>Course</h1>
-  <hr />
-  <label>Course Identifier</label>
-  <input type="text" [(ngModel)]="course.CourseId"/>
 
-  
-  <br /><br />
+  <div>
+    <h1>Course</h1>
+    <hr />
+  </div>
 
-  <label>Signature</label>
-  <select>
-    <option>Option</option>
-    <option>Option</option>
-  </select>
-  <br /><br />
+  <div class="">
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Course Identifier: </label>
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="course.CourseId" class="form-group" />
+      </div>
+    </div>
 
-  <label>School</label>
-  <select>
-    <option>Option</option>
-    <option>Option</option>
-  </select>
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Signature</label>
+      </div>
+      <div class="col">
+        <select class="form-group">
+          <option>Option</option>
+          <option>Option</option>
+        </select>
+      </div>
+    </div>
 
-  <label>Teacher</label>
-  <select>
-    <option>Option</option>
-    <option>Option</option>
-  </select>
-  <br /><br />
+    <div class="row">
+    <div class="col-sm-2">
+      <label>School</label>
+    </div>
+      <div class="col">
+        <select class="form-group">
+          <option>Option</option>
+          <option>Option</option>
+        </select>
+      </div>
+    </div>
 
-  <label>Course Identifier</label>
-  <input type="text" />
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Teacher</label>
+      </div>
+      <div class="col">
+        <select class="form-group">
+          <option>Option</option>
+          <option>Option</option>
+        </select>
+      </div>
+    </div>
 
-  <label>Year</label>
-  <select>
-    <option>Option</option>
-    <option>Option</option>
-  </select>
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+      <label>Course Identifier</label>
+      </div>
+      <div class="col">
+        <input type="text" class="form-group" />
+      </div>
+    </div>
 
-  <label>Credits</label>
-  <input type="text" />
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Year</label>
+      </div>
+      <div class="col">
+        <select class="form-group">
+          <option>Option</option>
+          <option>Option</option>
+        </select>
+      </div>
+    </div>
 
-  <label>Duration</label>
-  <input type="date" />
-  <input type="date" />
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Credits</label>
+      </div>
+      <div class="col">
+        <input type="text" class="form-group"/>
+      </div>
+    </div>
 
-  <label>Schedule</label>
-  Llamar la vista :)
-  <br /><br />
+    <div class="row">
+      <div class="col-sm-2">
+        <label>Duration</label>
+      </div>
+      <div class="col">
+        <input type="date" class="form-group"/>
+        <input type="date" class="form-group"/>
+    </div>
+    </div>
 
-  <button id="btnGuardar" (click)="SaveCourse()">Guardar</button>
+    <div>
+      <div class="row">
+        <label>Schedule</label>
+      </div>
+      <div class="col">
+        Llamar la vista :)
+      </div>
+    </div>
 
+      <div class="row">
+        <button id="btnGuardar" (click)="SaveCourse()" class="form-group">Guardar</button>
+      </div>
+
+</div>
 </div>
