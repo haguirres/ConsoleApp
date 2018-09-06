@@ -8,13 +8,14 @@ import { IweekDay } from './model/iweek-day'
 })
 export class WeekDayComponent implements OnInit {
 
-  WeekDay = <IweekDay>{};
+  weekdays: IweekDay[] = [
+    { WdId: 1, Day: 'All Week Days' }
+  ];
+
+  //WeekDay = <IweekDay>{ Day:'All week days' };
   constructor() { }
 
   ngOnInit() {
   }
 
-  SaveWeekDay() {
-    alert("El día es: " + this.WeekDay.Day);
-  }
 }

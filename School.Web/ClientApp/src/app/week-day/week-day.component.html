@@ -1,11 +1,15 @@
 <div>
+
   <h1>Días de la semana</h1>
   <hr />
   <label for="WeekDay.Day">Días de la semana: </label>
   <br />
-  <input type="text" id="Day" [(ngModel)]="WeekDay.Day" />
+  <select>
+    <option *ngFor ="let item of weekdays" [ngValue]="item">{{item.Day}} </option>
+  </select>
   <br />
   <br />
   
-  <button id="btnGuardar" (click)="SaveWeekDay()">Guardar</button>
+  
 </div>
+
