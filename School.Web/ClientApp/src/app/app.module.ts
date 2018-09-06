@@ -21,6 +21,8 @@ import { CourseComponent } from './course/course.component';
 import { WeekDayComponent } from './week-day/week-day.component';
 //import { WeekDay } from '@angular/common';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { RolesComponent } from './roles/roles.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
     CourseComponent,
     SignatureComponent,
     WeekDayComponent,
-    ScheduleComponent 
+    ScheduleComponent,
+    RolesComponent,
+    InscriptionComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -61,7 +65,9 @@ import { ScheduleComponent } from './schedule/schedule.component';
       { path: 'week-day', component: WeekDayComponent },
       { path: 'signature', component: SignatureComponent },
       { path: 'course', component: CourseComponent },
-      { path: 'schedule', component: ScheduleComponent }
+      { path: 'schedule', component: ScheduleComponent },
+      { path: 'roles', component: RolesComponent },
+      { path: 'inscription', component: InscriptionComponent }
 
     ])
   ],
