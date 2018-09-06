@@ -10,10 +10,16 @@ import { Iperson } from '../person/model/iperson';
 export class StudentComponent implements OnInit {
 
   student = <Istudent>{};
-  person_student = <Iperson>{}
+  personFt = <Iperson>{};
+
   constructor() { }
 
   ngOnInit() {
+    this.student.student_person = <Iperson>{};
+  }
+
+  SaveStudentData() {
+    alert("Sirve " + this.student.Account + " " + this.student.student_person.PersonAge);
   }
 
 }

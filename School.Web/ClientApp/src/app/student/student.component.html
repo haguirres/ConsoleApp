@@ -8,26 +8,6 @@
   <div class="container">
     <hr />
 
-    <div class="row">
-      <div class="column-div">
-        <label for="PersonId">Person ID: </label>
-      </div>
-      <div class="column-div">
-        <select class="border-radius" type="text" id="PersonId" [(ngModel)]="student.PersonId">
-          <option>Opc_1</option>
-        </select>
-      </div>
-    </div>
-
-      <div class="row">
-        <div class="column-div">
-          <label for="StudenId">Studen ID: </label>
-        </div>
-        <div class="column-div">
-          <input class="border-radius" type="text" id="StudentId" [(ngModel)]="student.StudentId" />
-        </div>
-      </div>
-
       <div class="row">
         <div class="column-div">
           <label for="Account">Account: </label>
@@ -37,10 +17,13 @@
         </div>
       </div>
 
-      <!--<tr>
-        <td>  <label for="IsActive">Is Active?: </label></td>
-        <td>  <input type="checkbox" id="IsActive" [(ngModel)]="student.IsActive" /></td>
-      </tr>-->
-
   </div>
+
+  <app-person></app-person>
+  <br />
+  
+  <div class="row">
+    <button id="btnGuardarStudent" (click)="SaveStudentData()">Student Button</button>
+  </div>
+
 </body>

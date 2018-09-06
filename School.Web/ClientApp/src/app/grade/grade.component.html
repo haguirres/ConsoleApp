@@ -9,25 +9,11 @@
     <hr />
     <div class="row">
       <div class="column-div">
-        <label for="CourseId">Course ID: </label>
+        <label for="Grade">Grade: </label>
       </div>
       <div class="column-div">
-        <select id="CourseId" class="border-radius" [(ngModel)]="grade.CourseId">
-          <option>opcion1</option>
-        </select>
+        <input type="text" id="Grade" class="border-radius" [(ngModel)]="grade.Grade" />
       </div>
-    </div>
-    <div class="row">
-      <div class="column-div"><label for="StudentId">Student ID: </label></div>
-      <div class="column-div">
-        <select id="StudentId" class="border-radius" [(ngModel)]="grade.StudentId">
-          <option>opcion1</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-div"><label for="Grade">Grade: </label></div>
-      <div class="column-div"><input type="text" id="Grade" class="border-radius" [(ngModel)]="grade.Grade" /></div>
     </div>
   </div>
 </body>

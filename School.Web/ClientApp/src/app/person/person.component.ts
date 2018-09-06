@@ -1,5 +1,6 @@
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
-import { Iperson } from './model/iperson'
+import { Iperson } from './model/iperson';
+import { IAddress } from '../address/model/IAddress';
 
 @Component({
   selector: 'app-person',
@@ -7,8 +8,8 @@ import { Iperson } from './model/iperson'
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-  //person = <Iperson>{};
-  @Input() person: Iperson;
+
+  @Input() personCh: Iperson;
   @Output() ShowAlert = new EventEmitter<boolean>();
 
   constructor() { }

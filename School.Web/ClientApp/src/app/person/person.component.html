@@ -1,21 +1,7 @@
-<head>
-  <title>Person Data Register</title>
-</head>
-<header>
-  <h1>Person Data Register</h1>
-</header>
+
 <body>
   <div class="container">
 
-      <div class="row">
-        <div class="column-div">
-          <label for="PersonId">Person ID: </label>
-        </div>
-        <div class="column-div">
-          <input class="border-radius" type="text" id="PersonId" [(ngModel)]="person.PersonId" />
-        </div>
-      </div>
- 
       <div class="row">
         <div class="column-div">
           <label for="PersonName">Person Name: </label>
@@ -31,20 +17,10 @@
           <label for="PersonAge">Age: </label>
         </div>
         <div class="column-div">
-          <input class="border-radius" type="text" id="PersonAge" [(ngModel)]="person.PersonAge" />
+          <input class="border-radius" type="text" id="PersonAge" [ngModel]="personCh.PersonAge" />
         </div>
       </div>
 
-      
-      <div class="row">
-        <div class="column-div">
-          <label for="AddressId">Address ID: </label>
-        </div>
-        <div class="column-div">
-          <input class="border-radius" type="text" id="AddressId" [(ngModel)]="person.AddressId" />
-        </div>
-      </div>
-      
       <div class="row">
         <div class="column-div">
           <label for="CURP">CURP: </label>
@@ -73,4 +49,6 @@
       </div>
 
   </div>
+
+  <app-address></app-address>
 </body>
