@@ -5,44 +5,72 @@
   <h1>Person Data Register</h1>
 </header>
 <body>
-  <section>
-    <table>
-      <tr>
+  <div class="container">
 
-        <td> <label for="PersonId">Person ID: </label></td>
-        <td> <input class="border-radius" type="text" id="PersonId" [(ngModel)]="person.PersonId" /></td>
+      <div class="row">
+        <div class="column-div">
+          <label for="PersonId">Person ID: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="PersonId" [(ngModel)]="person.PersonId" />
+        </div>
+      </div>
+ 
+      <div class="row">
+        <div class="column-div">
+          <label for="PersonName">Person Name: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="PersonName" [(ngModel)]="person.PersonName" />
+        </div>
+      </div>
 
-      </tr>
-      <tr></tr>
-      <tr>
-        <td> <label for="PersonName">Person Name: </label></td>
-        <td> <input class="border-radius" type="text" id="PersonName" [(ngModel)]="person.PersonName" /></td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td>   <label for="PersonAge">Age: </label></td>
-        <td>   <input class="border-radius" type="text" id="PersonAge" [(ngModel)]="person.PersonAge" /></td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td>   <label for="AddressId">Address ID: </label></td>
-        <td>   <input class="border-radius" type="text" id="AddressId" [(ngModel)]="person.AddressId" /></td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td>   <label for="CURP">CURP: </label></td>
-        <td>   <input class="border-radius" type="text" id="CURP" [(ngModel)]="person.CURP" /></td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td>   <label for="Phone">Phone: </label></td>
-        <td>   <input class="border-radius" type="text" id="Phone" [(ngModel)]="person.Phone" /></td>
-      </tr>
-      <tr></tr>
-      <tr>
-        <td>   <label for="Email">Email: </label></td>
-        <td>   <input class="border-radius" type="text" id="Email" [(ngModel)]="person.Email" /></td>
-      </tr>
-    </table>
-  </section>
+      
+      <div class="row">
+        <div class="column-div">
+          <label for="PersonAge">Age: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="PersonAge" [(ngModel)]="person.PersonAge" />
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="column-div">
+          <label for="AddressId">Address ID: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="AddressId" [(ngModel)]="person.AddressId" />
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="column-div">
+          <label for="CURP">CURP: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="CURP" [(ngModel)]="person.CURP" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column-div">
+          <label for="Phone">Phone: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="Phone" [(ngModel)]="person.Phone" />
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="column-div">
+          <label for="Email">Email: </label>
+        </div>
+        <div class="column-div">
+          <input class="border-radius" type="text" id="Email" [(ngModel)]="person.Email" />
+        </div>
+      </div>
+
+  </div>
 </body>

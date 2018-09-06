@@ -5,18 +5,18 @@
   <h1 class="first-column">Datos de la Escuela</h1>
 </header>
 <body>
-  <section>
-    <div class="column-div">
+  <div class="container">
+    <div class="col-6">
       <label for="schoolName">Nombre de la Escuela:</label>
       <input id="schoolName" type="text" [(ngModel)]="school.SchoolName" required />
     </div>
-    <div class="column-div">
+    <div class="col-6">
       <label for="schoolTypeName">Tipo de escuela:</label>
       <select [(ngModel)]="schoolTypeSelected">
         <option *ngFor="let item of schoolTypes" [ngValue]="item">{{item.Type}}</option>
       </select>
     </div>
-    <br />
+    <!--<br />
     <div *ngFor="let item of schoolTypes">
       {{item.Type}}
     </div>
@@ -66,6 +66,6 @@
 
     <app-address [address]="school.SchoolAddress" (ShowAlert)="AlertaPadre($event)"></app-address>
 
-    <button *ngIf="mostrarBoton" (click)="ImprimirDireccion()">Imprimir Dirección</button>
-  </section>
+    <button *ngIf="mostrarBoton" (click)="ImprimirDireccion()">Imprimir Dirección</button>-->
+  </div>
 </body>
