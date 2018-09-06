@@ -6,5 +6,6 @@
     [AddressId] INT NOT NULL, 
     [CURP] VARBINARY(18) NOT NULL, 
     [Phone] VARCHAR(12) NULL, 
-    [Email] VARCHAR(50) NULL 
+    [Email] VARCHAR(50) NULL, 
+    CONSTRAINT [FK_PERSON_ADDRESS] FOREIGN KEY ([AddressId]) REFERENCES Address([AddressId]) 
 )
