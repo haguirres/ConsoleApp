@@ -65,9 +65,12 @@ export class SchoolComponent implements OnInit, AfterContentInit {
 
   AlertaPadre(propiedad:boolean)
   {
-    this.mostrarBoton = propiedad;
-    console.log(propiedad);
-    alert('Alerta del componente padre');
-    this.eventoDireccion.emit();
+    //this.mostrarBoton = propiedad;
+    //console.log(propiedad);
+    //alert('Alerta del componente padre');
+    //this.eventoDireccion.emit();
+
+    console.log(this.school);
+    alert('Datos Guardados');
   }
 }
