@@ -8,26 +8,64 @@
   <section>
     <div class="column-div">
       <label for="schoolName">Nombre de la Escuela:</label>
-      <input id="schoolName" type="text" [(ngModel)]="school.SchoolName" />
+      <input id="schoolName" type="text" [(ngModel)]="school.SchoolName" required />
     </div>
     <div class="column-div">
       <label for="schoolTypeName">Tipo de escuela:</label>
-      <select>
-        <option value="1" selected>Matutino</option>
-        <option value="1">Vespertino</option>
-        <option value="1">Mixto</option>
+      <select [(ngModel)]="schoolTypeSelected">
+        <option *ngFor="let item of schoolTypes" [ngValue]="item">{{item.Type}}</option>
       </select>
     </div>
+    <br />
+    <div *ngFor="let item of schoolTypes">
+      {{item.Type}}
+    </div>
+
+    <label *ngIf="isVisible; else loading">Soy visible</label>
+    <ng-template #loading>Contenido oculto....</ng-template>
+
     <div class="column-div">
       <label for="minToPass">Promedio mínimo para aprobar:</label>
       <input id="minToPass" type="text" [(ngModel)]="school.MinToPass" />
     </div>
-    <app-address></app-address>
+
+    <div class="=column-div" [ngSwitch]="schoolTypeSelected">
+      <p *ngSwitchCase="1"> Opcion 1</p>
+      <p *ngSwitchCase="2"> Opcion 2</p>
+      <p *ngSwitchCase="3"> Opcion 3</p>
+      <p *ngSwitchDefault> Sin selección</p>
+
+
+    </div>
 
     <div class="column-div">
       <button id="btnGuardar" (click)="GuardarDatos()">Guardar</button>
-
     </div>
-   
+    <br />
+    <button *ngIf="idRol >= 2 && isVisible">Editar</button>
+    <br />
+    <div>
+      <table>
+        <thead>
+        <th>Id</th>
+        <th>Nombre de la escuela</th>
+        <th>Tipo de escuela</th>
+        <th>Promedio de Permanencia</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let school of schools">
+            <td>{{school.SchoolId}}</td>
+            <td>{{school.SchoolName}}</td>
+            <td>{{school.SchoolTypeName}}</td>
+            <td>{{school.MinToPass}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="FiltrarEscuelas()">Filtrar Activas</button>
+    </div>
+
+    <app-address [address]="school.SchoolAddress" (ShowAlert)="AlertaPadre($event)"></app-address>
+
+    <button *ngIf="mostrarBoton" (click)="ImprimirDireccion()">Imprimir Dirección</button>
   </section>
 </body>
