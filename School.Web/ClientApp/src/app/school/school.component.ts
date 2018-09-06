@@ -1,10 +1,10 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ISchool } from './model/ISchool';
-
+ 
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
-  styleUrls: ['./school.component.css']
+  styleUrls: ['./school.component.css'] 
 })
 export class SchoolComponent implements OnInit, AfterContentInit
 {
@@ -23,4 +23,5 @@ export class SchoolComponent implements OnInit, AfterContentInit
   GuardarDatos() {
     alert("Nombre de la escuela: " + this.school.SchoolName);    
   }
+   
 }

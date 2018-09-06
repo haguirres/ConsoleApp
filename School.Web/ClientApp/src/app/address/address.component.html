@@ -8,11 +8,13 @@
     <label for="zipCode">Codigo Postal:</label>
     <input id="zipCode" type="number" [(ngModel)]="address.ZipCode" />
   </div>
-  <label for="extNum">Numero Exterior:</label>
-  <input id="extNum" type="number" [(ngModel)]="address.ExtNumber" />
-  <br />
-  <label for="intNum">Numero Interior:</label>
-  <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
-
+  <div class="column-div">
+    <label for="extNum">Numero Exterior:</label>
+    <input id="extNum" type="number" [(ngModel)]="address.ExtNumber" />
+  </div>
+  <div class="column-div">
+    <label for="intNum">Numero Interior:</label>
+    <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
+  </div>
 
 </div>
