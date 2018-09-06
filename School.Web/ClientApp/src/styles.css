@@ -3,9 +3,9 @@
   padding: 10px;
 }
 .border-radius {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 20px;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 1px;
 }
 
 td {
@@ -4314,7 +4314,7 @@ input[type="button"].btn-block {
   }
 }
 
-.nav {
+/*.nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4399,7 +4399,7 @@ input[type="button"].btn-block {
   -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: center;
-}
+}*/
 
 .tab-content > .tab-pane {
   display: none;
@@ -4409,7 +4409,7 @@ input[type="button"].btn-block {
   display: block;
 }
 
-.navbar {
+/*.navbar {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4881,7 +4881,7 @@ input[type="button"].btn-block {
 
     .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
       color: #fff;
-    }
+    }*/
 
 .card {
   position: relative;
