@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 import { Iperson } from './model/iperson'
 
 @Component({
@@ -7,8 +7,9 @@ import { Iperson } from './model/iperson'
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-
-  person = <Iperson>{};
+  //person = <Iperson>{};
+  @Input() person: Iperson;
+  @Output() ShowAlert = new EventEmitter<boolean>();
 
   constructor() { }
 

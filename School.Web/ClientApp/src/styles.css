@@ -3,9 +3,9 @@
   padding: 10px;
 }
 .border-radius {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 20px;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 1px;
 }
 
 td {
