@@ -10,6 +10,7 @@ export class StudentComponent implements OnInit {
 
   student = <Istudent>{};
 
+
   constructor() { }
 
   ngOnInit() {
