@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Istudent } from './model/istudent';
 import { Iperson } from '../person/model/iperson';
 import { IAddress } from '../address/model/IAddress';
+
 
 @Component({
   selector: 'app-student',

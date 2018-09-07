@@ -17,7 +17,7 @@ namespace School.NetFramework.Bussiness
                 .ForMember(dto => dto.Name, opt => opt.MapFrom(src => src.RolName))
                 .ForMember(dto => dto.IdName, opt=> opt.MapFrom(src => string.Join(" ", src.RolId,src.RolName)));
 
-
+                config.CreateMap<Entities.EF6.School, SchoolDto>();
 
             });
 

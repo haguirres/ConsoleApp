@@ -15,6 +15,7 @@ export class PersonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.person.PersonAddress = <IAddress>{};
   }
 
 }

@@ -1,14 +1,14 @@
 <div>
 
   <div>
-    <h1>Course</h1>
+    <h1>Agregar Curso</h1>
     <hr />
   </div>
 
   <div class="">
     <div class="row">
-      <div class="col-sm-2">
-        <label>Course Identifier: </label>
+      <div class="col-sm-3">
+        <label>Clave del Curso: </label>
       </div>
       <div class="col">
         <input type="text" [(ngModel)]="course.CourseId" class="form-group" />
@@ -16,8 +16,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-        <label>Signature</label>
+      <div class="col-sm-3">
+        <label>Materia</label>
       </div>
       <div class="col">
         <select class="form-group">
@@ -28,8 +28,8 @@
     </div>
 
     <div class="row">
-    <div class="col-sm-2">
-      <label>School</label>
+    <div class="col-sm-3">
+      <label>Escuela</label>
     </div>
       <div class="col">
         <select class="form-group">
@@ -40,8 +40,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-        <label>Teacher</label>
+      <div class="col-sm-3">
+        <label>Maestro</label>
       </div>
       <div class="col">
         <select class="form-group">
@@ -52,8 +52,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-      <label>Course Identifier</label>
+      <div class="col-sm-3">
+      <label>Prom. Minimo para pasar</label>
       </div>
       <div class="col">
         <input type="text" class="form-group" />
@@ -61,8 +61,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-        <label>Year</label>
+      <div class="col-sm-3">
+        <label>Grado</label>
       </div>
       <div class="col">
         <select class="form-group">
@@ -73,8 +73,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-        <label>Credits</label>
+      <div class="col-sm-3">
+        <label>Creditos</label>
       </div>
       <div class="col">
         <input type="text" class="form-group"/>
@@ -82,8 +82,8 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-2">
-        <label>Duration</label>
+      <div class="col-sm-3">
+        <label>Duracion</label>
       </div>
       <div class="col">
         <input type="date" class="form-group"/>
@@ -93,16 +93,15 @@
 
     <div>
       <div class="row">
-        <label>Schedule</label>
+        <label>Horario</label>
       </div>
       <div class="col">
-        Llamar la vista :)
+        <app-schedule></app-schedule>
       </div>
     </div>
 
       <div class="row">
         <button id="btnGuardar" (click)="SaveCourse()" class="form-group">Guardar</button>
       </div>
-
 </div>
 </div>
