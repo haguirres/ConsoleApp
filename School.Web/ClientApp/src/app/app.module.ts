@@ -23,6 +23,8 @@ import { WeekDayComponent } from './week-day/week-day.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { RolesComponent } from './roles/roles.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
+import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
     WeekDayComponent,
     ScheduleComponent,
     RolesComponent,
-    InscriptionComponent 
+    InscriptionComponent,
+    TeacherEditComponent,
+    TeacherDetailsComponent 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -67,7 +71,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
       { path: 'course', component: CourseComponent },
       { path: 'schedule', component: ScheduleComponent },
       { path: 'roles', component: RolesComponent },
-      { path: 'inscription', component: InscriptionComponent }
+      { path: 'inscription', component: InscriptionComponent },
+      { path: 'teacher-edit', component: TeacherEditComponent },
+      { path: 'teacher-details', component: TeacherDetailsComponent }
 
     ])
   ],

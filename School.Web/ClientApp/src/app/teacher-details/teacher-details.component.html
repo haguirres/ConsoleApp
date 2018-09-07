@@ -1,4 +1,4 @@
-<h1>Agregar nuevo Profesor</h1>
+<h1>Detalles de Profesor</h1>
 <hr />
 <div>
 
@@ -9,7 +9,7 @@
       <label class="form-group" for="Teacher.Person.PersonName">Nombre: </label>
     </div>
     <div class="col">
-      <input type="text" id="Teacher.Person.PersonName" [(ngModel)]="Teacher.Person.PersonName" />
+      <label id="Teacher.Person.PersonName">{{Teacher.Person.PersonName}}</label>
     </div>
   </div>
 
@@ -18,7 +18,7 @@
       <label class="form-group" for="Teacher.Person.PersonAge">Edad: </label>
     </div>
     <div class="col">
-      <input type="text" id="Teacher.PersonAge" [(ngModel)]="Teacher.Person.PersonAge" />
+      <label id="Teacher.PersonAge">{{Teacher.Person.PersonAge}}</label>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
       <label class="form-group" for="Teacher.Person.CURP">CURP: </label>
     </div>
     <div class="col">
-      <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
+      <label id="Teacher.Person.CURP">{{Teacher.Person.CURP}}</label>
     </div>
   </div>
 
@@ -36,7 +36,7 @@
       <label class="form-group" for="Teacher.RFC">RFC: </label>
     </div>
     <div class="col">
-      <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+      <label id="TeacherRFC">{{Teacher.RFC}}</label>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
       <label class="form-group" for="Teacher.Person.Phone">Teléfono: </label>
     </div>
     <div class="col">
-      <input type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
+      <label id="Teacher.PersonPhone">{{Teacher.Person.Phone}}</label>
     </div>
   </div>
 
@@ -56,10 +56,10 @@
       <label class="form-group" for="Teacher.Person.Email">e-mail: </label>
     </div>
     <div class="col">
-      <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
+      <label id="PersonEmail">{{Teacher.Person.Email}}</label>
     </div>
   </div>
-
+  <!--Aquí se incrusta el address-edit-->
   <app-address [address]="Teacher.Person.address"></app-address>
 
   <!--<a routerLink="/teacher-edit" routerLinkActive="active">edit</a>-->
