@@ -1,10 +1,9 @@
 
-<body>
-  <div class="container">
+  <div>
 
       <div class="row">
-        <div class="column-div">
-          <label for="PersonName">Person Name: </label>
+        <div class="col-sm-2">
+          <label for="PersonName">Name: </label>
         </div>
         <div class="col">
           <input class="form-group" type="text" id="PersonName" [(ngModel)]="person.PersonName" />
@@ -16,13 +15,13 @@
         <div class="col-sm-2">
           <label for="PersonAge">Age: </label>
         </div>
-        <div class="column-div">
-          <input class="border-radius" type="text" id="PersonAge" [ngModel]="personCh.PersonAge" />
+        <div class="col">
+          <input class="form-group" type="text" id="PersonAge" [ngModel]="personCh.PersonAge" />
         </div>
       </div>
 
       <div class="row">
-        <div class="column-div">
+        <div class="col-sm-2">
           <label for="CURP">CURP: </label>
         </div>
         <div class="col">
@@ -51,4 +50,3 @@
   </div>
 
   <app-address></app-address>
-</body>

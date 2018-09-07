@@ -4,50 +4,63 @@
 
   <h2>Datos Generales</h2>
   <hr />
-  <div class="col">
-    <div class="row">
-      <label for="Teacher.Person.PersonName">Nombre: </label>
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="Teacher.Person.PersonName">Nombre: </label>
     </div>
-    <div class="row">
+    <div class="col">
       <input type="text" id="Teacher.Person.PersonName" [(ngModel)]="Teacher.Person.PersonName" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="Teacher.Person.PersonAge">Edad: </label>
+    </div>
+    <div class="col">
+      <input type="text" id="Teacher.PersonAge" [(ngModel)]="Teacher.Person.PersonAge" />
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <label class="form-group" for="Teacher.Person.CURP">CURP: </label>
+      </div>
+      <div class="col">
+        <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
+      </div>
     </div>
 
     <div class="row">
-      <label for="Teacher.Person.PersonAge">Edad: </label>
-    </div>
-    <div class="row">
-      <input type="text" id="Teacher.PersonAge" [(ngModel)]="Teacher.Person.PersonAge" />
-    </div>
-    <div class="row">
-      <label for="Teacher.Person.CURP">CURP: </label>
-    </div>
-    <div class="row">
-      <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
-    </div>
-    <div class="row">
-      <label for="Teacher.RFC">RFC: </label>
-    </div>
-    <div class="row">
-      <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+      <div class="col-sm-2">
+        <label class="form-group" for="Teacher.RFC">RFC: </label>
+      </div>
+      <div class="col">
+        <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+      </div>
     </div>
 
     <h2>Datos de Contacto</h2>
     <hr />
     <div class="row">
-      <label for="Teacher.Person.Phone">Teléfono: </label>
+      <div class="col-sm-2">
+        <label class="form-group" for="Teacher.Person.Phone">Teléfono: </label>
+      </div>
+      <div class="col">
+        <input  type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
+      </div>
     </div>
+
     <div class="row">
-      <input type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
+      <div class="col-sm-2">
+        <label class="form-group" for="Teacher.Person.Email">e-mail: </label>
+      </div>
+      <div class="col">
+        <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
+      </div>
     </div>
-    <div class="row">
-      <label for="Teacher.Person.Email">e-mail: </label>
-    </div>
-    <div class="row">
-      <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
-    </div>
-    
+
     <app-address [address]="Teacher.Person.address"></app-address>
 
+    <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
   </div>
-  <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
-</div>

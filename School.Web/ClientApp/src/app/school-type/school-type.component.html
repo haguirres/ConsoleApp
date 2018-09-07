@@ -1,11 +1,13 @@
 <div>
-  <h1>Agregar nuevo tipo de Escuela</h1>
-  <hr />
-  <label for="Type">Tipo de la escuela: </label>
-  <br />
-  <input id="schoolType" type="text" [(ngModel)]="SchoolType.Type" />
-  <br />
-  <br />
-  <button id="btnGuardar" (click)="SaveSchoolType()">Guardar</button>
-
+  <h1>Agregar Nuevo Tipo de Escuela</h1>
+  
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="Type">Tipo de la escuela: </label>
+    </div>
+    <div class="col-sm-5">
+      <input id="schoolType" type="text" [(ngModel)]="SchoolType.Type" />
+    </div>
+    <button id="btnGuardar" (click)="SaveSchoolType()">Guardar</button>
+  </div>
 </div>

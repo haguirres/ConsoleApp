@@ -1,23 +1,46 @@
 <div>
-  <div class="column-div">
-    <h4>Address</h4>
-    <label for="addressName">Street:</label>
-    <input id="addressName" type="text" [(ngModel)]="address.Address" />
+  <h4>Datos de dirección</h4>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="addressName">Street:</label>
+    </div>
+    <div class="col">
+      <input id="addressName" type="text" [(ngModel)]="address.Address" />
+    </div>
   </div>
 
-  <div class="column-div">
-    <label for="zipCode">Zip Code:</label>
-    <input list="browsers" name="browser">
-    <datalist id="browsers">
-      <option *ngFor="let item of schoolTypes" [ngValue]="item">{{item.Type}}</option>
-    </datalist>
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="zipCode">Zip Code:</label>
+    </div>
+    <div class="col">
+      <input list="browsers" name="browser" />
+      <datalist id="browsers">
+        <option *ngFor="let item of schoolTypes" [ngValue]="item">{{item.Type}}</option>
+      </datalist>
+    </div>
   </div>
 
-  <label for="extNum">Number Ext:</label>
-  <input id="extNum" type="text" [(ngModel)]="address.ExtNumber" />
-  <br />
-  <label for="intNum">Number Int:</label>  <label for="intNum" class="alert-danger"> *Optional</label>
-  <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="extNum">Number Ext:</label>
+    </div>
+    <div class="col">
+      <input id="extNum" type="text" [(ngModel)]="address.ExtNumber" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label for="intNum">Number Int:</label>
+    </div>
+    <div class="col">
+      <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
+      <label for="intNum" class="alert-danger"> *Optional</label>
+    </div>
+  </div>
+  <!--
   <button (click)="MostrarAlerta()">Guardar</button>
-
+      -->
 </div>

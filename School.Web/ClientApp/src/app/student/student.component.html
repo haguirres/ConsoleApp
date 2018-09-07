@@ -5,15 +5,15 @@
   <h1>Student Data Register</h1>
 </header>
 <body>
-  <div class="container">
+  <div>
     <hr />
 
       <div class="row">
-        <div class="column-div">
-          <label for="Account">Account: </label>
+        <div class="col-sm-2">
+          <label class="form-group" for="Account">Account: </label>
         </div>
-        <div class="column-div">
-          <input class="border-radius" type="text" id="Account" [(ngModel)]="student.Account" />
+        <div class="col">
+          <input class="form-group" type="text" id="Account" [(ngModel)]="student.Account" />
         </div>
       </div>
 

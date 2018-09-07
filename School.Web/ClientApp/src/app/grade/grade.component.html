@@ -1,20 +1,22 @@
-<head>
-  <title>Grade Data Register</title>
-</head>
-<header>
-  <h1>Grade Data Register</h1>
-</header>
-<body>
-  <div class="container">
-    <hr />
-    <div class="row">
-      <div class="column-div">
-        <label for="Grade">Grade: </label>
-      </div>
-      <div class="column-div">
-        <input type="text" id="Grade" class="border-radius" [(ngModel)]="grade.Grade" />
-      </div>
+<div>
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="student">Student: </label>
     </div>
   </div>
-</body>
 
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="course">Course: </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label class="form-group" for="Grade">Grade: </label>
+    </div>
+    <div class="col">
+      <input type="text" id="Grade" class="form-group" [(ngModel)]="grade.Grade" />
+    </div>
+  </div>
+</div>
