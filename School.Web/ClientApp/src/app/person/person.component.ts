@@ -8,13 +8,18 @@ import { IAddress } from '../address/model/IAddress';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-
-  @Input() personCh: Iperson;
-  @Output() ShowAlert = new EventEmitter<boolean>();
+  //person = <Iperson>{};
+  @Input() person: Iperson;
 
   constructor() { }
 
   ngOnInit() {
+    this.person.PersonAddress = <IAddress>{};
   }
+
+  ////prueba1
+  //SaveStudentData() {
+  //  alert("Sirve " + this.person.PersonAddress.Address + " " + "direccion persona");
+  //}
 
 }

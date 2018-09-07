@@ -1,52 +1,53 @@
 
-  <div>
+<div>
 
-      <div class="row">
-        <div class="col-sm-3">
-          <label for="PersonName">Nombre: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="Name" [(ngModel)]="person.PersonName" />
-        </div>
-      </div>
-
-      
-      <div class="row">
-        <div class="col-sm-3">
-          <label for="PersonAge">Fecha de Nacimiento: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="Age" [ngModel]="personCh.PersonAge" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <label for="CURP">CURP: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="CURP" [(ngModel)]="person.CURP" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <label for="Phone">Teléfono: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="Phone" [(ngModel)]="person.Phone" />
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-sm-3">
-          <label for="Email">Correo Electrónico: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="email" [(ngModel)]="person.Email" />
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="PersonName">Nombre: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="Name" [(ngModel)]="person.PersonName" />
+    </div>
   </div>
 
-  <app-address></app-address>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="PersonAge">Fecha de Nacimiento: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="Age" [ngModel]="person.PersonAge" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="CURP">CURP: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="CURP" [(ngModel)]="person.CURP" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="Phone">Teléfono: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="Phone" [(ngModel)]="person.Phone" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="Email">Correo Electrónico: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="email" [(ngModel)]="person.Email" />
+    </div>
+  </div>
+
+</div>
+
+<app-address [address]="person.PersonAddress" [address2]="student.student_person"></app-address>
+
