@@ -2,8 +2,8 @@
   <h4>Datos de dirección</h4>
 
   <div class="row">
-    <div class="col-sm-2">
-      <label class="form-group" for="addressName">Street:</label>
+    <div class="col-sm-3">
+      <label class="form-group" for="addressName">Calle:</label>
     </div>
     <div class="col">
       <input id="addressName" type="text" [(ngModel)]="address.Address" />
@@ -11,8 +11,8 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2">
-      <label class="form-group" for="zipCode">Zip Code:</label>
+    <div class="col-sm-3">
+      <label class="form-group" for="zipCode">Codigo Postal:</label>
     </div>
     <div class="col">
       <input list="browsers" name="browser" />
@@ -23,8 +23,8 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2">
-      <label class="form-group" for="extNum">Number Ext:</label>
+    <div class="col-sm-3">
+      <label class="form-group" for="extNum">Numero Exterior:</label>
     </div>
     <div class="col">
       <input id="extNum" type="text" [(ngModel)]="address.ExtNumber" />
@@ -32,12 +32,12 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-2">
-      <label for="intNum">Number Int:</label>
+    <div class="col-sm-3">
+      <label for="intNum">Numero Interior:</label>
     </div>
     <div class="col">
       <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
-      <label for="intNum" class="alert-danger"> *Optional</label>
+      <label for="intNum" class="alert-danger"> *Opcional</label>
     </div>
   </div>
   <!--
