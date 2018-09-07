@@ -8,20 +8,20 @@
   <div>
     <hr />
 
-      <div class="row">
-        <div class="col-sm-2">
-          <label class="form-group" for="Account">Account: </label>
-        </div>
-        <div class="col">
-          <input class="form-group" type="text" id="Account" [(ngModel)]="student.Account" />
-        </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <label class="form-group" for="Account">Account: </label>
       </div>
+      <div class="col">
+        <input class="form-group" type="text" id="Account" [(ngModel)]="student.Account" />
+      </div>
+    </div>
 
   </div>
 
-  <app-person></app-person>
-  <br />
-  
+  <app-person [person]="student.StudentPerson"></app-person>
+  <app-address [address]="student.StudentAddress"></app-address>
+
   <div class="row">
     <button id="btnGuardarStudent" (click)="SaveStudentData()">Student Button</button>
   </div>
