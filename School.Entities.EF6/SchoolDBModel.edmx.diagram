@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16303c74e18c432e98f27ffeb6528b2b" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Address" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.City" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Course" Width="1.5" PointX="17.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Grade" Width="1.5" PointX="14.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Inscription" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Person" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Roles" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Schedule" Width="1.5" PointX="15" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.School" Width="1.5" PointX="12.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.SchoolType" Width="1.5" PointX="10.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.SchoolUser" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Signatures" Width="1.5" PointX="15" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.State" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Student" Width="1.5" PointX="12" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Teacher" Width="1.5" PointX="14.875" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.WeekDay" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.ZipCode" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_ADDRESS_ZIPCODE" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_SCHOOL_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_CITY_STATE" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_ZIPCODE_CITY" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_Course_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_SCHOOL" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_SIGNATURES" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_TEACHER" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_TEACHER" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_STUDENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_SCHOOL" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_STUDENT" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_STUDENT_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_TEACHER_PERSON" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_Schedule_WeekDay" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_SCHOOL_SCHOOLTYPE" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDatabaseModel.Work" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
