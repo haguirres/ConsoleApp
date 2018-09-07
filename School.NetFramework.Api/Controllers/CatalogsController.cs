@@ -26,6 +26,5 @@ namespace School.NetFramework.Api.Controllers
             var rolList = processCatalogs.GetRoles();
             return Request.CreateResponse(HttpStatusCode.OK, rolList);
         }
-
     }
 }

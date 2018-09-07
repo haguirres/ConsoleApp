@@ -9,4 +9,5 @@ export interface Iperson {
   Phone: number;
   Email: string;
   address: IAddress;
+  PersonAddress?: IAddress;
 }
