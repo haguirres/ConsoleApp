@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Istudent } from './model/istudent';
 import { Iperson } from '../person/model/iperson';
+import { IAddress } from '../address/model/IAddress';
+
 
 @Component({
   selector: 'app-student',
@@ -10,16 +12,17 @@ import { Iperson } from '../person/model/iperson';
 export class StudentComponent implements OnInit {
 
   student = <Istudent>{};
-  personFt = <Iperson>{};
+
 
   constructor() { }
 
   ngOnInit() {
-    this.student.student_person = <Iperson>{};
+    this.student.StudentPerson = <Iperson>{};
+    this.student.StudentAddress = <IAddress>{};
   }
 
   SaveStudentData() {
-    alert("Sirve " + this.student.Account + " " + this.student.student_person.PersonAge);
+    alert(this.student.Account + " " + this.student.StudentPerson.PersonAge + " " + this.student.StudentAddress.Address);
   }
 
 }

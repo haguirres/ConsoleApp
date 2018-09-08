@@ -12,8 +12,8 @@ import { IschoolType } from '../school-type/model/ischool-type';
 export class AddressComponent implements OnInit {
   //address = <IAddress>{};
   @Input() address: IAddress;
+  @Input() address2: IAddress;
   @Output() ShowAlert = new EventEmitter<boolean>();
-  
 
 
 
@@ -39,5 +39,6 @@ export class AddressComponent implements OnInit {
    //this.ShowAlert.emit(true);
     this.ShowAlert.emit(true);
   }
+
 
 }

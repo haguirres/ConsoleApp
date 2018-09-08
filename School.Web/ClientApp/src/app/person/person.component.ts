@@ -1,6 +1,7 @@
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 import { Iperson } from './model/iperson';
-import { IAddress } from '../address/model/IAddress';
+import { IAddress } from '../../app/address/model/IAddress';
+
 
 @Component({
   selector: 'app-person',
@@ -9,12 +10,13 @@ import { IAddress } from '../address/model/IAddress';
 })
 export class PersonComponent implements OnInit {
 
-  @Input() personCh: Iperson;
+  @Input() person : Iperson;
   @Output() ShowAlert = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

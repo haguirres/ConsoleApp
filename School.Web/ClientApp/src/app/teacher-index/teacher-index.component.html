@@ -1,0 +1,25 @@
+<h1>Profesores</h1>
+
+<label>Escuela:
+  <select></select>
+</label>
+
+<div>
+  <a routerLink="/teacher">Agregar Profesor</a>
+</div>
+
+
+
+
+  <ul>
+    <li *ngFor="let person of persons">
+      <a routerLink="/teacher-details">
+        <span class="badge">{{person.PersonId}}</span>{{person.PersonName}}
+      </a>
+      <a routerLink="/teacher-edit">edit</a>
+      <button class="delete" title="delete teacher"
+              (click)="delete(teacher)">x</button>
+    </li>
+  </ul>
+
+

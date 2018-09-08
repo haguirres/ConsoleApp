@@ -25,7 +25,7 @@ import { RolesComponent } from './roles/roles.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
-
+import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { TeacherDetailsComponent } from './teacher-details/teacher-details.compo
     RolesComponent,
     InscriptionComponent,
     TeacherEditComponent,
-    TeacherDetailsComponent 
+    TeacherDetailsComponent,
+    TeacherIndexComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -73,7 +74,8 @@ import { TeacherDetailsComponent } from './teacher-details/teacher-details.compo
       { path: 'roles', component: RolesComponent },
       { path: 'inscription', component: InscriptionComponent },
       { path: 'teacher-edit', component: TeacherEditComponent },
-      { path: 'teacher-details', component: TeacherDetailsComponent }
+      { path: 'teacher-details', component: TeacherDetailsComponent },
+      { path: 'teacher-index', component: TeacherIndexComponent }
 
     ])
   ],

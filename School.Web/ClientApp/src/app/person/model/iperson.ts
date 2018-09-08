@@ -8,5 +8,5 @@ export interface Iperson {
   CURP: string;
   Phone: number;
   Email: string;
-  address: IAddress;
+  address?: IAddress;
 }
