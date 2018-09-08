@@ -27,5 +27,30 @@ namespace School.NetFramework.Bussiness
             }
             return savedSchoolsDto;
         }
+
+        public SchoolDto GetSchool(string id)
+        {
+            SchoolDto savedSchoolDto = new SchoolDto();
+            using (var dataAccess = new SQLDataAccessSchool())
+            {
+                var savedSchool = dataAccess.GetSchool(id);
+
+                savedSchoolDto = this.mapper.Map<SchoolDto>(savedSchool);
+            }
+            return savedSchoolDto;
+        }
+
+        public string InsertNewSchool(SchoolDto schoolDto)
+        {
+            string newSchoolId = "0";
+            using (var dataAccess = new SQLDataAccessSchool())
+            {
+                Entities.EF6.School newSchool = this.mapper.Map<Entities.EF6.School>(schoolDto);
+                newSchoolId = dataAccess.InsertSchool(newSchool);
+            }
+            return newSchoolId;
+
+        }
+
     }
 }
