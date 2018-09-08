@@ -1,5 +1,6 @@
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 import { Iperson } from './model/iperson';
+import { IAddress } from '../../app/address/model/IAddress';
 
 
 @Component({
