@@ -29,5 +29,39 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, teacherList);
         }
 
+        [HttpGet, Route("teacher/{id}")]
+        [ResponseType(typeof(TeacherDto))]
+        public HttpResponseMessage GetTeacher(int id)
+        {
+            var teacher = teacherABC.GetTeacher(id);
+            return Request.CreateResponse(HttpStatusCode.OK, teacher);
+
+        }
+
+        [HttpPost, Route("teacher/")]
+        [ResponseType(typeof(TeacherDto))]
+        public HttpResponseMessage CreateTeacher(TeacherDto teacher)
+        {
+            var newTeacher = teacherABC.InsertNewTeacher(teacher);
+            return Request.CreateResponse(HttpStatusCode.OK, newTeacher);
+        }
+
+        [HttpPut, Route("teacher/{id}")]
+        [ResponseType(typeof(TeacherDto))]
+        public HttpResponseMessage UpdateTeacher(TeacherDto teacherDto)
+        {
+            teacherABC.UpdateTeacher(teacherDto);
+            return Request.CreateResponse(HttpStatusCode.OK);
+
+        }
+
+        [HttpDelete, Route("teacher/{id}")]
+        public HttpResponseMessage DeleteTeacher(int id)
+        {
+            var teacher = teacherABC.GetTeacher(id);
+            teacherABC.DeleteTeacher(teacher);
+            return Request.CreateResponse(HttpStatusCode.OK);
+
+        }
     }
 }

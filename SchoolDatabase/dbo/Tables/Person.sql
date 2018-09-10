@@ -1,10 +1,11 @@
 ﻿CREATE TABLE [dbo].[Person]
 (
 	[PersonId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [PersonName] VARCHAR(50) NOT NULL, 
+    [PersonFirstName] VARCHAR(50) NOT NULL,
+	[PersonLastName] VARCHAR(50) NOT NULL,	
     [PersonAge] INT NOT NULL, 
     [AddressId] INT NOT NULL, 
-    [CURP] VARBINARY(18) NOT NULL, 
+    [CURP] VARCHAR(18) NOT NULL, 
     [Phone] VARCHAR(12) NULL, 
     [Email] VARCHAR(50) NULL, 
     [RolId] INT NOT NULL, 
