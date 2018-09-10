@@ -7,5 +7,5 @@ export interface Istudent {
   Account: string;
   IsActive: boolean;
   StudentPerson?: Iperson;
-  //StudentAddress?: IAddress; 
+  StudentAddress?: IAddress; 
 }
