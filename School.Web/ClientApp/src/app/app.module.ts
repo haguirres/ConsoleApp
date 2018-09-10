@@ -26,7 +26,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
-import { ApplicationDataServiceService, SchoolHttpService } from './services/index';
+import { ApplicationDataServiceService } from './services/application-data-service.service';
+import { SchoolHttpService} from './services/school-http.service'
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { ApplicationDataServiceService, SchoolHttpService } from './services/ind
     InscriptionComponent,
     TeacherEditComponent,
     TeacherDetailsComponent,
-    TeacherIndexComponent
+    TeacherIndexComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -76,7 +79,8 @@ import { ApplicationDataServiceService, SchoolHttpService } from './services/ind
       { path: 'inscription', component: InscriptionComponent },
       { path: 'teacher-edit', component: TeacherEditComponent },
       { path: 'teacher-details', component: TeacherDetailsComponent },
-      { path: 'teacher-index', component: TeacherIndexComponent }
+      { path: 'teacher-index', component: TeacherIndexComponent },
+      { path: 'sign-in', component: SignInComponent }
 
     ])
   ],
