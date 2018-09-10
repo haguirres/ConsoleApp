@@ -26,7 +26,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
-import { ApplicationDataServiceService } from './services/application-data-service.service';
+import { ApplicationDataServiceService, SchoolHttpService } from './services/index';
 
 @NgModule({
   declarations: [
@@ -82,7 +82,7 @@ import { ApplicationDataServiceService } from './services/application-data-servi
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
 
-  providers: [ApplicationDataServiceService],
+  providers: [ApplicationDataServiceService, SchoolHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
