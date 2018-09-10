@@ -27,6 +27,7 @@ import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
 import { ApplicationDataServiceService } from './services/application-data-service.service';
+import { SchoolHttpService} from './services/school-http.service'
 import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
