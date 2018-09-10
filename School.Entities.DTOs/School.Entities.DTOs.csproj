@@ -43,7 +43,6 @@
     <Compile Include="GradeDto.cs" />
     <Compile Include="CourseDto.cs" />
     <Compile Include="AddressDto.cs" />
-    <Compile Include="Course.cs" />
     <Compile Include="InscriptionDto.cs" />
     <Compile Include="PersonDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
