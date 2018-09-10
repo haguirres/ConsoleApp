@@ -2,6 +2,7 @@
 using School.Entities.DTOs;
 using School.Entities.EF6;
 using School.NetFramework.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,19 +22,18 @@ namespace School.NetFramework.Bussiness
             int newRolId = 0;
             using (var dataAccess = new SQLDataAccess())
             {
-                //Roles newRol = this.MapDtoToEntity(rolDto);
                 Roles newRol = this.mapper.Map<Roles>(rolDto);
                 newRolId = dataAccess.InsertRol(newRol);
             }
             return newRolId;
         }
 
-        public void UpdateRol(RolDto rolDto)
+        public void UpdateRol(int rolId, RolDto rolDto)
         {
             using (var dataAccess = new SQLDataAccess())
             {
                 Roles newRol = this.MapDtoToEntity(rolDto);
-
+                newRol.RolId = rolId;
                 dataAccess.UpdateRol(newRol);
             }
         }
@@ -58,6 +58,14 @@ namespace School.NetFramework.Bussiness
                 savedRolesDto = this.mapper.Map<List<RolDto>>(savedRoles);
             }
             return savedRolesDto;
+        }
+
+        public void DeleteRol(int rolId)
+        {
+            using (var dataAccess = new SQLDataAccess())
+            {
+                dataAccess.DeleteRol(rolId);
+            }
         }
 
         private Roles MapDtoToEntity(RolDto rolDto)

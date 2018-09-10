@@ -1,8 +1,6 @@
 ﻿using School.Entities.DTOs;
 using School.NetFramework.Bussiness;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -12,10 +10,11 @@ using System.Web.Http.Description;
 namespace School.NetFramework.Api.Controllers
 {
     [RoutePrefix("api/catalogs")]
-    [EnableCors("*","*","*")]
+    [EnableCors("*", "*", "*")]
     public class CatalogsController : ApiController
     {
-        ProcessCatalogs processCatalogs;
+        private ProcessCatalogs processCatalogs;
+
         public CatalogsController()
         {
             processCatalogs = new ProcessCatalogs();
@@ -29,6 +28,27 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, rolList);
         }
 
+        [HttpPost, Route("rol")]
+        [ResponseType(typeof(int))]
+        public HttpResponseMessage PostRol([FromBody]RolDto rolDto)
+        {
+            int rolId = processCatalogs.InsertNewRole(rolDto);
+            return Request.CreateResponse(HttpStatusCode.Created, rolId);
+        }
+
+        [HttpPut, Route("rol/{rolId}")]
+        public HttpResponseMessage PutRol([FromUri] int rolId, [FromUri] RolDto rolDto)
+        {
+            processCatalogs.UpdateRol(rolId, rolDto);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpDelete, Route("rol/{rolId}")]
+        public HttpResponseMessage DeleteRol([FromUri]int rolId)
+        {
+            processCatalogs.DeleteRol(rolId);
+            return Request.CreateResponse(HttpStatusCode.NoContent);
+        }
 
     }
 }
