@@ -208,6 +208,7 @@
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="ExceptionsWebApi.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

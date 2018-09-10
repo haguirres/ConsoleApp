@@ -32,9 +32,20 @@ namespace School.NetFramework.Api.Controllers
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage GetSchools(string id)
         {
-            var school = processSchools.GetSchool(id);
-            return Request.CreateResponse(HttpStatusCode.OK, school);
-
+            try
+            {
+                var school = processSchools.GetSchool(id);
+                if (school == null)
+                {
+                    throw ExceptionsWebApi.SchoolNotFound;
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, school);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         [HttpPost, Route("schools")]
