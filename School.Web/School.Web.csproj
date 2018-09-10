@@ -39,6 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\School.Web.Api\School.Web.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\inscription\Models\Iinscription.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\roles\Models\Iroles.ts" />
   </ItemGroup>
