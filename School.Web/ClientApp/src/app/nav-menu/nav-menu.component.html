@@ -1,4 +1,4 @@
-<!--<nav class='main-nav'>
+<nav class='main-nav'>
     <div class='navbar navbar-expand-lg bg-dark'>
         <div class='navbar-header'>
             <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
@@ -13,7 +13,7 @@
           <ul class='nav navbar-nav'>
             <li>
               <a [routerLink]='["/"]'>
-                Escuelas
+                Mobiik
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
@@ -23,15 +23,36 @@
             </li>
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/school"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-education'></span> Registrar Escuela
+                <span class='glyphicon glyphicon-education'></span>Escuelas
               </a>
             </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/teacher-index"]' (click)='collapse()'>
+                Profesores
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/student"]' (click)='collapse()'>
+                Alumnos
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/course"]' (click)='collapse()'>
+                Cursos
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/sign-in"]' (click)='collapse()'>
+                Sign in
+              </a>
+            </li>
+
           </ul>
         </div>
     </div>
-</nav>-->
+</nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
   
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,4 +92,4 @@
     </form>
 
   </div>
-</nav>
+</nav>-->

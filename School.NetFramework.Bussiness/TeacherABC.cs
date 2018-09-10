@@ -24,8 +24,8 @@ namespace School.NetFramework.Bussiness
             int newTeacherId = 0;
             using (var dataAccess = new TeacherDataAccess())
             {
-                //Roles newRol = this.MapDtoToEntity(rolDto);
-                Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
+                Teacher newTeacher = this.MapDtoToEntity(teacherDto);
+                //Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
                 newTeacherId = dataAccess.InsertTeacher(newTeacher);
             }
             return newTeacherId;
@@ -35,11 +35,26 @@ namespace School.NetFramework.Bussiness
         {
             using (var dataAccess = new TeacherDataAccess())
             {
-                Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
+
+                Teacher newTeacher = this.MapDtoToEntity(teacherDto);
+                //Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
 
                 dataAccess.UpdateTeacher(newTeacher);
             }
         }
+
+        public void DeleteTeacher(TeacherDto teacherDto)
+        {
+            using (var dataAccess = new TeacherDataAccess())
+            {
+
+                Teacher newTeacher = this.MapDtoToEntity(teacherDto);
+                //Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
+
+                dataAccess.DeleteTeacher(newTeacher.TeacherId);
+            }
+        }
+
 
         public IEnumerable<TeacherDto> GetTeachers()
         {
@@ -62,6 +77,19 @@ namespace School.NetFramework.Bussiness
             }
             return savedTeachersDto;
         }
+
+        public TeacherDto GetTeacher(int id)
+        {
+            TeacherDto savedTeacherDto = new TeacherDto();
+            using (var dataAccess = new TeacherDataAccess())
+            {
+                var savedTeacher = dataAccess.GetTeachers(id);
+
+                savedTeacherDto = this.mapper.Map<TeacherDto>(savedTeacher);
+            }
+            return savedTeacherDto;
+        }
+
 
         private Teacher MapDtoToEntity(TeacherDto teacherDto)
         {
