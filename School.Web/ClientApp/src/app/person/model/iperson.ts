@@ -2,7 +2,8 @@ import { IAddress } from "../../address/model";
 
 export interface Iperson {
   PersonId: number;
-  PersonName: string;
+  PersonFirstName: string;
+  PersonLastName: string;
   PersonAge: number;
   AddressId: number;
   CURP: string;
