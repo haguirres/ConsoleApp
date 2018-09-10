@@ -14,7 +14,7 @@ namespace School.NetFramework.Api.Controllers
     [Route("api/students")]
     public class StudentController : ApiController
     {
-        ProcessStudent studenP;
+        ProcessStudent studentP;
         public StudentController() => studentP = new ProcessStudent();
 
         [HttpGet, Route("students")]
