@@ -6,11 +6,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace School.NetFramework.Api.Controllers
 {
-    [Route("api/schools")]
+    [EnableCors("*", "*", "*")]
     public class SchoolsController : ApiController
     {
         ProcessSchools processSchools;
@@ -32,9 +33,20 @@ namespace School.NetFramework.Api.Controllers
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage GetSchools(string id)
         {
-            var school = processSchools.GetSchool(id);
-            return Request.CreateResponse(HttpStatusCode.OK, school);
-
+            try
+            {
+                var school = processSchools.GetSchool(id);
+                if (school == null)
+                {
+                    throw ExceptionsWebApi.SchoolNotFound;
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, school);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         [HttpPost, Route("schools")]
