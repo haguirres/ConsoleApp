@@ -14,10 +14,7 @@ namespace School.NetFramework.DataAccess
 
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public int InsertTeacher(Teacher teacher)
         {
@@ -81,6 +78,13 @@ namespace School.NetFramework.DataAccess
             }
         }
 
+        #region IDisposable
+
+        public void Dispose()
+        {
+        }
+
+        #endregion IDisposable
 
 
     }
