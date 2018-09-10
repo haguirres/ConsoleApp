@@ -20,6 +20,10 @@ namespace School.NetFramework.Bussiness
                 config.CreateMap<Entities.EF6.School, SchoolDto>();
                 config.CreateMap<SchoolDto, Entities.EF6.School>();
 
+                config.CreateMap<Address, AddressDto>();
+                config.CreateMap<AddressDto, Address>();
+
+
             });
 
 

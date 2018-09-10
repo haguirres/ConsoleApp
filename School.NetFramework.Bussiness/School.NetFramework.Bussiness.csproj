@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="ProcessAddress.cs" />
     <Compile Include="ProcessCatalogs.cs" />
     <Compile Include="ProcessInscription.cs" />
     <Compile Include="ProcessSchools.cs" />

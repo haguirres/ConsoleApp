@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-sm-3">
-      <label class="form-group" for="addressName">Calle:</label>
+      <label class="form-group" for="addressName">Street Name:</label>
     </div>
     <div class="col">
       <input id="addressName" type="text" [(ngModel)]="address.Address" />
@@ -12,11 +12,11 @@
 
   <div class="row">
     <div class="col-sm-3">
-      <label class="form-group" for="zipCode">Codigo Postal:</label>
+      <label class="form-group" for="zipCode">ZipCode:</label>
     </div>
     <div class="col">
-      <input list="browsers" name="browser" />
-      <datalist id="browsers">
+      <input list="Zipcodes" name="ZipCode" />
+      <datalist id="Zipcodes">
         <option *ngFor="let item of schoolTypes" [ngValue]="item">{{item.Type}}</option>
       </datalist>
     </div>
@@ -24,7 +24,7 @@
 
   <div class="row">
     <div class="col-sm-3">
-      <label class="form-group" for="extNum">Numero Exterior:</label>
+      <label class="form-group" for="extNum">ExtNumber:</label>
     </div>
     <div class="col">
       <input id="extNum" type="text" [(ngModel)]="address.ExtNumber" />
@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="col-sm-3">
-      <label for="intNum">Numero Interior:</label>
+      <label for="intNum">IntNumber:</label>
     </div>
     <div class="col">
       <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
