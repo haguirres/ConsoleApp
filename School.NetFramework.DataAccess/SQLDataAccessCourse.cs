@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace School.NetFramework.DataAccess
 {
-    class SQLDataAccessCourse : IDisposable
+   public class SQLDataAccessCourse : IDisposable
     {
         public SQLDataAccessCourse()
         {
@@ -46,13 +46,14 @@ namespace School.NetFramework.DataAccess
             }
         }
 
-        public IEnumerable<Course> GetCourse()
+        public Course GetCourse(int StudentId, string SchoolId)
         {
-            List<Course> courseList = new List<Course>();
             using (var context = new SchoolDatabaseEntities())
             {
-                courseList = context.Course.ToList();
-                return courseList;
+                var savedInscription = context.Course.SingleOrDefault(
+                    s => s.SchoolId == SchoolId &&
+                    s.StudentId == StudentId);
+                return savedInscription;
             }
         }
 

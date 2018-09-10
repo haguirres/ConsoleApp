@@ -1,14 +1,14 @@
 <div>
 
   <div>
-    <h1>Agregar Curso</h1>
+    <h1>Course</h1>
     <hr />
   </div>
 
   <div class="">
     <div class="row">
-      <div class="col-sm-3">
-        <label>Clave del Curso: </label>
+      <div class="col-sm-2">
+        <label>Course: </label>
       </div>
       <div class="col">
         <input type="text" [(ngModel)]="course.CourseId" class="form-group" />
@@ -16,92 +16,97 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-3">
-        <label>Materia</label>
+      <div class="col-sm-2">
+        <label>Signature</label>
       </div>
       <div class="col">
-        <select class="form-group">
-          <option>Option</option>
-          <option>Option</option>
+        <select class="form-group" [(ngModel)]="signatureSelected" (change)="SchoolSelect()">
+          <option *ngFor="let n of signatures" [ngValue]="n">{{n.SignaturesName}}</option>
         </select>
       </div>
     </div>
 
-    <div class="row">
-    <div class="col-sm-3">
-      <label>Escuela</label>
-    </div>
-      <div class="col">
-        <select class="form-group">
-          <option>Option</option>
-          <option>Option</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">
-        <label>Maestro</label>
-      </div>
-      <div class="col">
-        <select class="form-group">
-          <option>Option</option>
-          <option>Option</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">
-      <label>Prom. Minimo para pasar</label>
-      </div>
-      <div class="col">
-        <input type="text" class="form-group" />
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">
-        <label>Grado</label>
-      </div>
-      <div class="col">
-        <select class="form-group">
-          <option>Option</option>
-          <option>Option</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">
-        <label>Creditos</label>
-      </div>
-      <div class="col">
-        <input type="text" class="form-group"/>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-3">
-        <label>Duracion</label>
-      </div>
-      <div class="col">
-        <input type="date" class="form-group"/>
-        <input type="date" class="form-group"/>
-    </div>
-    </div>
-
-    <div>
+    <div id="DivIf" *ngIf="IsVisibleSchool">
       <div class="row">
-        <label>Horario</label>
-      </div>
-      <div class="col">
-        <app-schedule></app-schedule>
+        <div class="col-sm-2">
+          <label>School</label>
+        </div>
+        <div class="col">
+          <select class="form-group" [(ngModel)]="schoolSelected" (change)="TeacherSelect()">
+            <option *ngFor="let n of schools" [ngValue]="n">{{n.SchoolName}}</option>
+          </select>
+        </div>
       </div>
     </div>
+
+    <div id="DivIf" *ngIf="IsVisibleTeacher" (change)="FormSelect()">
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Teacher</label>
+        </div>
+        <div class="col">
+          <select class="form-group" [(ngModel)]="teacherSelected">
+            <option *ngFor="let n of teachers" [ngValue]="n">{{n.RFC}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="DivIf" *ngIf="IsVisibleForm">
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Course Identifier</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-group" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Year</label>
+        </div>
+        <div class="col">
+          <select class="form-group" [(ngModel)]="yearSelected">
+            <option *ngFor="let n of year" [ngValue]="n">{{n}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Credits</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-group" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label>Duration</label>
+        </div>
+        <div class="col">
+          <input type="date" class="form-group" />
+          <input type="date" class="form-group" />
+        </div>
+      </div>
+
+      <div>
+        <div class="row">
+          <label>Schedule</label>
+        </div>
+        <div class="col">
+          <app-schedule></app-schedule>
+        </div>
+      </div>
 
       <div class="row">
         <button id="btnGuardar" (click)="SaveCourse()" class="form-group">Guardar</button>
       </div>
+
+    </div>
+  </div>
 </div>
-</div>
+
+
