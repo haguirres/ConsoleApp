@@ -1,5 +1,5 @@
 export interface Iroles {
-  RolId: number;
-  RolName: String;
+  Id: number;
+  Name: String;
   IsActive: boolean;
 }

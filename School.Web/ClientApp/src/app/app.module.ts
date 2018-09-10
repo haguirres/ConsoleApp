@@ -85,7 +85,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
 
-  providers: [ApplicationDataServiceService],
+  providers: [ApplicationDataServiceService, SchoolHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

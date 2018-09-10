@@ -15,6 +15,12 @@
     <div class="col">
       <input class="form-group" id="schoolName" type="text" [(ngModel)]="applicationDataService.userName" required />
       <button (click)="applicationDataService.ObtenerPassword()">Obtener password</button>
+      <button (click)="ObtenerRoles()">Obtener roles</button>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let rol of rolesArray">
+      {{rol.Name}}      
     </div>
   </div>
 </div>
