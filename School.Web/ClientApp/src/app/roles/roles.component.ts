@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Iroles } from './Models/Iroles';
-
+import { ApplicationDataServiceService } from '../services/application-data-service.service';
 @Component({
+
   selector: 'app-roles',
   templateUrl: './roles.component.html',
   styleUrls: ['./roles.component.css']
@@ -9,7 +10,9 @@ import {Iroles } from './Models/Iroles';
 export class RolesComponent implements OnInit {
 
   roles = <Iroles>{};
-  constructor() { }
+  constructor(private applicationDataService: ApplicationDataServiceService) {
+    console.log(applicationDataService);
+  }
 
   ngOnInit() {
   }

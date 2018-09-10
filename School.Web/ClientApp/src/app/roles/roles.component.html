@@ -8,4 +8,13 @@
       <input type="text" [(ngModel)]="roles.RolName" />
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="schoolName" class="form-group">Nombre del Usuario:</label>
+    </div>
+    <div class="col">
+      <input class="form-group" id="schoolName" type="text" [(ngModel)]="applicationDataService.userName" required />
+      <button (click)="applicationDataService.ObtenerPassword()">Obtener password</button>
+    </div>
+  </div>
 </div>
