@@ -52,6 +52,7 @@
     <Compile Include="ProcessCourse.cs" />
     <Compile Include="ProcessInscription.cs" />
     <Compile Include="ProcessSchools.cs" />
+    <Compile Include="ProcessStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeacherABC.cs" />
   </ItemGroup>
