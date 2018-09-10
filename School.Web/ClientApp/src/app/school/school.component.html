@@ -7,6 +7,19 @@
 <body>
   <div class="container">
     <div class="row">
+      <div class="col-sm-3">
+        <label for="schoolName" class="form-group">Nombre del Usuario:</label>
+      </div>
+      <div class="col">
+        <input class="form-group" id="schoolName" type="text" [(ngModel)]="applicationDataService.userName" required />
+        <button (click)="applicationDataService.ObtenerPassword()">Obtener password</button>
+        <a [routerLink]='["/roles"]'>
+          <span class='glyphicon glyphicon-education'></span> Registrar Escuela
+        </a>
+      </div>
+    </div>
+
+    <div class="row">
       <div>El día de hoy es: </div>
       <div></div>
     </div>

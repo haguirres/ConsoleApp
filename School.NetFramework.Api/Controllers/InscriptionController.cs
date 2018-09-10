@@ -43,7 +43,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, InsertInsc);
         }
 
-        [HttpPost, Route("inscription")]
+        [HttpPut, Route("inscription")]
         [ResponseType(typeof(InscriptionDto))]
         public HttpResponseMessage UpdateInscription(InscriptionDto inscription)
         {
@@ -51,7 +51,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        [HttpPost, Route("inscription")]
+        [HttpDelete, Route("inscription")]
         [ResponseType(typeof(InscriptionDto))]
         public HttpResponseMessage DeleteInscription(InscriptionDto inscription)
         {
