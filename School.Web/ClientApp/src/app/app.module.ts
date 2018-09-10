@@ -29,6 +29,7 @@ import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
 import { ApplicationDataServiceService } from './services/application-data-service.service';
 import { SchoolHttpService} from './services/school-http.service'
 import { SignInComponent } from './sign-in/sign-in.component';
+import { InscriptionHttpServiceService } from './services';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
 
-  providers: [ApplicationDataServiceService, SchoolHttpService],
+  providers: [ApplicationDataServiceService, SchoolHttpService,InscriptionHttpServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
