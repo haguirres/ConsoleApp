@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Istudent } from './model/istudent';
 import { Iperson } from '../person/model/iperson';
-import { IAddress } from '../address/model/IAddress';
+//import { IAddress } from '../address/model/IAddress';
 
 
 @Component({
@@ -18,11 +18,11 @@ export class StudentComponent implements OnInit {
 
   ngOnInit() {
     this.student.StudentPerson = <Iperson>{};
-    this.student.StudentAddress = <IAddress>{};
+    //this.student.StudentAddress = <IAddress>{};
   }
 
   SaveStudentData() {
-    alert(this.student.Account + " " + this.student.StudentPerson.PersonAge + " " + this.student.StudentAddress.Address);
+    alert(this.student.Account + " " + this.student.StudentPerson.PersonAge + " " + this.student.StudentPerson.address);
   }
 
 }
