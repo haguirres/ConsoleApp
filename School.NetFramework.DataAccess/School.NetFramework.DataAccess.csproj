@@ -53,6 +53,7 @@
     <Compile Include="SQLDataAccessCourse.cs" />
     <Compile Include="SQLDataAccessInscription.cs" />
     <Compile Include="SQLDataAccessSchool.cs" />
+    <Compile Include="TeacherDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\School.Entities.EF6\School.Entities.EF6.csproj">

@@ -50,9 +50,11 @@
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="ProcessAddress.cs" />
     <Compile Include="ProcessCatalogs.cs" />
+    <Compile Include="ProcessCourse.cs" />
     <Compile Include="ProcessInscription.cs" />
     <Compile Include="ProcessSchools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeacherABC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\School.Entities.DTOs\School.Entities.DTOs.csproj">

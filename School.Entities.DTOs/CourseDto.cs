@@ -2,7 +2,7 @@
 
 namespace School.Entities.DTOs
 {
-    class Course
+   public class CourseDto
     {
         public string CourseId { get; set; }
         public int SignaturesId { get; set; }

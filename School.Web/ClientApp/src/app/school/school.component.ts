@@ -2,6 +2,7 @@ import { Component, OnInit, AfterContentInit, Output, EventEmitter } from '@angu
 import { ISchool } from './model/ISchool';
 import { IschoolType } from '../school-type/model/ischool-type';
 import { IAddress } from '../address/model/index';
+import { ApplicationDataServiceService } from '../services/application-data-service.service';
 
 @Component({
   selector: 'app-school',
@@ -30,7 +31,10 @@ export class SchoolComponent implements OnInit, AfterContentInit {
   mostrarBoton: boolean = false;
 
   @Output() eventoDireccion = new EventEmitter();
-  constructor() { }
+
+  constructor(private applicationDataService: ApplicationDataServiceService) { }
+
+
 
   ngOnInit() {
     this.school.SchoolAddress = <IAddress>{};

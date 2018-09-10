@@ -52,5 +52,22 @@ namespace School.NetFramework.Bussiness
 
         }
 
+        public void UpdateSchool(SchoolDto schoolDto)
+        {
+            using (var dataAccess = new SQLDataAccessSchool())
+            {
+                Entities.EF6.School updateSchool = this.mapper.Map<Entities.EF6.School>(schoolDto);
+                dataAccess.UpdateSchool(updateSchool);
+            }
+        }
+
+        public void DeleteSchool(string id)
+        {
+            using (var dataAccess = new SQLDataAccessSchool())
+            {
+                dataAccess.DeleteSchool(id);
+            }
+        }
+
     }
 }

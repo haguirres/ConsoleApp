@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace School.NetFramework.Api.Controllers
 {
-    [Route("api/catalogs")]
+    [RoutePrefix("api/catalogs")]
+    [EnableCors("*","*","*")]
     public class CatalogsController : ApiController
     {
         ProcessCatalogs processCatalogs;
@@ -26,5 +28,7 @@ namespace School.NetFramework.Api.Controllers
             var rolList = processCatalogs.GetRoles();
             return Request.CreateResponse(HttpStatusCode.OK, rolList);
         }
+
+
     }
 }
