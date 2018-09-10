@@ -24,6 +24,29 @@ namespace School.NetFramework.DataAccess
 
         }
 
+        public Entities.EF6.School GetSchool(string id)
+        {
+            Entities.EF6.School school = new Entities.EF6.School();
+
+            using (var context = new SchoolDatabaseEntities())
+            {
+                var selectedSchool = context.School.Find(id);
+                school = selectedSchool;
+            }
+
+            return school;
+        }
+
+        public string InsertSchool(Entities.EF6.School school)
+        {
+            using (var context = new SchoolDatabaseEntities())
+            {
+                context.School.Add(school);
+                context.SaveChanges();
+                return school.SchoolId;
+            }
+        }
+
 
         #region IDisposable
 

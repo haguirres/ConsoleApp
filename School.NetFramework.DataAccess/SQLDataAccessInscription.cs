@@ -7,7 +7,7 @@ using School.Entities.EF6;
 
 namespace School.NetFramework.DataAccess
 {
-    class SQLDataAccessInscription:IDisposable
+    public class SQLDataAccessInscription:IDisposable
     {
         public SQLDataAccessInscription()
         {
@@ -58,13 +58,13 @@ namespace School.NetFramework.DataAccess
                 return savedInscription;
             }   
         }
-        public void DeleteInscription(int StudentId, string SchoolId)
+        public void DeleteInscription(Inscription inscription)
         {
             using(var context = new SchoolDatabaseEntities())
             {
                 var savedInscription = context.Inscription.SingleOrDefault(
-                    s => s.SchoolId == SchoolId &&
-                    s.StudentId == StudentId);
+                    s => s.SchoolId == inscription.SchoolId &&
+                    s.StudentId == inscription.StudentId);
                 if(savedInscription != null)
                 {
                     //savedInscription.IsActive = false;

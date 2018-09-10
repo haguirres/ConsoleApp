@@ -28,6 +28,26 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, schoolList);
         }
 
+        [HttpGet, Route("schools/{id}")]
+        [ResponseType(typeof(SchoolDto))]
+        public HttpResponseMessage GetSchools(string id)
+        {
+            var school = processSchools.GetSchool(id);
+            return Request.CreateResponse(HttpStatusCode.OK, school);
+
+        }
+
+        [HttpPost, Route("schools")]
+        [ResponseType(typeof(SchoolDto))]
+        public HttpResponseMessage PostSchool(SchoolDto schoolDto)
+        {
+            
+             string school = processSchools.InsertNewSchool(schoolDto);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+
 
     }
 }

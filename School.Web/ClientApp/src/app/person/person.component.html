@@ -16,7 +16,7 @@
       <label for="PersonAge">Fecha de Nacimiento: </label>
     </div>
     <div class="col">
-      <input class="form-group" type="text" id="Age" [ngModel]="person.PersonAge" />
+      <input class="form-group" type="text" id="Age" [(ngModel)]="person.PersonAge" />
     </div>
   </div>
 
@@ -48,6 +48,4 @@
   </div>
 
 </div>
-
-<app-address [address]="person.PersonAddress" [address2]="student.student_person"></app-address>
 
