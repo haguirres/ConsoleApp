@@ -27,6 +27,7 @@ import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherDetailsComponent } from './teacher-details/teacher-details.component';
 import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
 import { ApplicationDataServiceService } from './services/application-data-service.service';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ApplicationDataServiceService } from './services/application-data-servi
     InscriptionComponent,
     TeacherEditComponent,
     TeacherDetailsComponent,
-    TeacherIndexComponent
+    TeacherIndexComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -76,7 +78,8 @@ import { ApplicationDataServiceService } from './services/application-data-servi
       { path: 'inscription', component: InscriptionComponent },
       { path: 'teacher-edit', component: TeacherEditComponent },
       { path: 'teacher-details', component: TeacherDetailsComponent },
-      { path: 'teacher-index', component: TeacherIndexComponent }
+      { path: 'teacher-index', component: TeacherIndexComponent },
+      { path: 'sign-in', component: SignInComponent }
 
     ])
   ],
