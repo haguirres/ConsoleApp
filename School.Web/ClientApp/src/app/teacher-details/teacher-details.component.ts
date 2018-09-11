@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TeacherDetailsComponent implements OnInit {
 
-  person: Iperson;
+  teacher: ITeacher;
 
   Teacher = <ITeacher>{
     Person: { PersonId: 1, PersonFirstName: "Juan", PersonLastName: "Espinosa", PersonAge: 25, CURP: "EIOJ921027HMCSRN02", Email: "dasdas@hdada.com", Phone: 151988, address: { Address: "Calle 2", ExtNumber: "23", IntNumber: "", ZipCode: 14700 }, },
@@ -31,7 +31,7 @@ export class TeacherDetailsComponent implements OnInit {
   }
 
   save(): void {
-    this.teacherService.updateTeacher(this.person)
+    this.teacherService.updateTeacher(this.teacher)
       .subscribe(() => this.goBack());
   }
 
