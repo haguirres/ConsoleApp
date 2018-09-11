@@ -20,6 +20,18 @@ namespace School.NetFramework.Bussiness
             mapper = new AutoMapperConfig().CreateMapperConfiguration();
         }
 
+        public StudentDto GetStudent(int id)
+        {
+            StudentDto savedStudentDto = new StudentDto();
+            using (var dataAccess = new SQLDataAccessStudent())
+            {
+                var savedStudent = dataAccess.GetStudent(id);
+
+                savedStudentDto = this.mapper.Map<StudentDto>(savedStudent);
+            }
+            return savedStudentDto;
+        }
+
         public IEnumerable<StudentDto> GetStudents()
         {
             List<StudentDto> savedStudentsDto = new List<StudentDto>();
@@ -64,6 +76,15 @@ namespace School.NetFramework.Bussiness
             }
         }
 
+        public void DeleteStudent(StudentDto studentDto)
+        {
+            using (var dataAccess = new SQLDataAccessStudent())
+            {
+
+                Student newStudent = this.MapDtoToEntity(studentDto);
+                dataAccess.DeleteStudent(newStudent.StudentId);
+            }
+        }
 
         private Student MapDtoToEntity(StudentDto studentDto)
         {
@@ -87,5 +108,8 @@ namespace School.NetFramework.Bussiness
                 IsActive = student.IsActive
             };
         }
+
+        
+
     }
 }

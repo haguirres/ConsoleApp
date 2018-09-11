@@ -1,5 +1,14 @@
 <div>
   <h1>Roles</h1>
+
+  <div class="row">
+    <button (click)="GetRol()">Get Rol</button>
+    <button (click)="GetRoles()">Get Roles</button>
+    <button (click)="PostRol()">Post Rol</button>
+    <button (click)="UpdateRol()">Update Rol</button>
+    <button (click)="DeleteRol()">Delete Rol</button>
+  </div>
+  <br />
   <div class="row">
     <div class="col-sm-3">
       <label>Nombre del Rol: </label>
@@ -20,7 +29,7 @@
   </div>
   <div class="row">
     <div *ngFor="let rol of rolesArray">
-      {{rol.Name}}      
+      {{rol.Name}}
     </div>
   </div>
 </div>

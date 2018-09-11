@@ -27,7 +27,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, inscriptionList);
         }
 
-        [HttpGet, Route("inscription/{id}")]
+        [HttpGet, Route("inscription")]
         [ResponseType(typeof(InscriptionDto))]
         public HttpResponseMessage GetInscriptions(int StudentId, string SchoolId)
         {

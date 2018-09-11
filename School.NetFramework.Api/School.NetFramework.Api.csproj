@@ -204,6 +204,7 @@
     <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />

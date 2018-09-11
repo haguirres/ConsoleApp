@@ -6,10 +6,18 @@
       <label for="PersonName">Nombre: </label>
     </div>
     <div class="col">
-      <input class="form-group" type="text" id="Name" [(ngModel)]="person.PersonName" />
+      <input class="form-group" type="text" id="Name" [(ngModel)]="person.PersonFirstName" />
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-sm-3">
+      <label for="PersonName">Apellido: </label>
+    </div>
+    <div class="col">
+      <input class="form-group" type="text" id="Name" [(ngModel)]="person.PersonLastName" />
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-3">
