@@ -21,8 +21,8 @@ export class SchoolUserComponent implements OnInit {
   ngOnInit() {
   }
 
-  GetInscriptios() {
-    this.schoolUserHttpService.GetSchoolUser().subscribe(data => {
+  GetSchoolUsers() {
+    this.schoolUserHttpService.GetSchoolUsers().subscribe(data => {
       this.schoolUserArray = data;
       console.log(data);
     });
