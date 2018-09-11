@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace School.NetFramework.Api.Controllers
 {
-    [Route("api/schools")]
+    [RoutePrefix("api")]
+    [EnableCors("*", "*", "*")]
     public class SchoolsController : ApiController
     {
         ProcessSchools processSchools;
@@ -28,16 +30,27 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, schoolList);
         }
 
-        [HttpGet, Route("schools/{id}")]
+        [HttpGet, Route("school/{id}")]
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage GetSchools(string id)
         {
-            var school = processSchools.GetSchool(id);
-            return Request.CreateResponse(HttpStatusCode.OK, school);
-
+            try
+            {
+                var school = processSchools.GetSchool(id);
+                if (school == null)
+                {
+                    throw ExceptionsWebApi.SchoolNotFound;
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, school);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
-        [HttpPost, Route("schools")]
+        [HttpPost, Route("school")]
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage PostSchool(SchoolDto schoolDto)
         {
@@ -45,7 +58,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        [HttpPut, Route("schools")]
+        [HttpPut, Route("school")]
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage PutSchool(SchoolDto schoolDto)
         {
@@ -53,7 +66,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        [HttpDelete, Route("schools/{id}")]
+        [HttpDelete, Route("school/{id}")]
         [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage DeleteSchool(string id)
         {

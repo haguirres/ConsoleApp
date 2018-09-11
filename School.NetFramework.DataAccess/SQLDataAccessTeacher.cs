@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace School.NetFramework.DataAccess
 {
-    public class TeacherDataAccess:IDisposable
+    public class SQLDataAccessTeacher:IDisposable
     {
-        public TeacherDataAccess()
+        public SQLDataAccessTeacher()
         {
 
         }
@@ -50,7 +50,7 @@ namespace School.NetFramework.DataAccess
             List<Teacher> teacherList = new List<Teacher>();
             using (var context = new SchoolDatabaseEntities())
             {
-                var list = context.Teacher.ToList();
+                var list = context.Teacher.Where(s=>s.IsActive==true).ToList();
                 teacherList = list;
             }
             return teacherList;

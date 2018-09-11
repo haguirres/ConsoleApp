@@ -10,7 +10,11 @@ namespace School.NetFramework.Bussiness
         {
             var mapper = new AutoMapper.MapperConfiguration(config =>
             {
-                config.CreateMap<Roles, RolDto>();
+                //config.CreateMap<Roles, RolDto>();
+                config.CreateMap<RolDto, Roles>()
+                .ForMember(src=> src.RolId, opt => opt.MapFrom(dto=> dto.Id))
+                .ForMember(src => src.RolName, opt => opt.MapFrom(dto => dto.Name))
+                .ForMember(src => src.IsActive, opt => opt.MapFrom(dto => dto.IsActive));
                 config.CreateMap<Teacher, TeacherDto>();
 
                 config.CreateMap<Roles, RolDto>()

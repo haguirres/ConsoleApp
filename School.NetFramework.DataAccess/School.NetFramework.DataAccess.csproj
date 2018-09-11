@@ -54,8 +54,9 @@
     <Compile Include="SQLDataAccessInscription.cs" />
     <Compile Include="SQLDataAccessPerson.cs" />
     <Compile Include="SQLDataAccessSchool.cs" />
+    <Compile Include="SQLDataAccessSchoolUser.cs" />
     <Compile Include="SQLDataAccessStudent.cs" />
-    <Compile Include="TeacherDataAccess.cs" />
+    <Compile Include="SQLDataAccessTeacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\School.Entities.EF6\School.Entities.EF6.csproj">

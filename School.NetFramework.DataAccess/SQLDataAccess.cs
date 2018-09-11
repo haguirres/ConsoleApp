@@ -35,6 +35,19 @@ namespace School.NetFramework.DataAccess
             }
         }
 
+        public Roles GetRol(int rolId)
+        {
+            Roles rol = new Roles();
+
+            using (var context = new SchoolDatabaseEntities())
+            {
+                var savedRol = context.Roles.SingleOrDefault(s => s.RolId == rolId);
+                rol = savedRol;
+            }
+
+            return rol;
+        }
+
         public IEnumerable<Roles> GetRoles()
         {
             List<Roles> rolesList = new List<Roles>();

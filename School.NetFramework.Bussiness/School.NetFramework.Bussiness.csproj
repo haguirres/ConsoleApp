@@ -54,6 +54,7 @@
     <Compile Include="ProcessInscription.cs" />
     <Compile Include="ProcessPerson.cs" />
     <Compile Include="ProcessSchools.cs" />
+    <Compile Include="ProcessSchoolUser.cs" />
     <Compile Include="ProcessStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeacherABC.cs" />
