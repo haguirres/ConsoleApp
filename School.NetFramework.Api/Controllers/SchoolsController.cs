@@ -51,11 +51,11 @@ namespace School.NetFramework.Api.Controllers
         }
 
         [HttpPost, Route("school")]
-        [ResponseType(typeof(SchoolDto))]
+        [ResponseType(typeof(string))]
         public HttpResponseMessage PostSchool(SchoolDto schoolDto)
         {
-            string school = processSchools.InsertNewSchool(schoolDto);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            string schoolId = processSchools.InsertNewSchool(schoolDto);
+            return Request.CreateResponse(HttpStatusCode.OK, schoolId);
         }
 
         [HttpPut, Route("school")]
@@ -67,11 +67,10 @@ namespace School.NetFramework.Api.Controllers
         }
 
         [HttpDelete, Route("school/{id}")]
-        [ResponseType(typeof(SchoolDto))]
         public HttpResponseMessage DeleteSchool(string id)
         {
             processSchools.DeleteSchool(id);
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.NoContent);
         }
     }
 }
