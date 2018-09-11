@@ -20,6 +20,15 @@ namespace School.NetFramework.Api.Controllers
             processCatalogs = new ProcessCatalogs();
         }
 
+        [HttpGet, Route("rol/{rolId}")]
+        //[HttpGet, Route("rol")]
+        [ResponseType(typeof(RolDto))]
+        public HttpResponseMessage GetRoles([FromUri]int rolId)
+        {
+            var rol = processCatalogs.GetRol(rolId);
+            return Request.CreateResponse(HttpStatusCode.OK, rol);
+        }
+
         [HttpGet, Route("roles")]
         [ResponseType(typeof(List<RolDto>))]
         public HttpResponseMessage GetRoles()
@@ -37,7 +46,7 @@ namespace School.NetFramework.Api.Controllers
         }
 
         [HttpPut, Route("rol/{rolId}")]
-        public HttpResponseMessage PutRol([FromUri] int rolId, [FromUri] RolDto rolDto)
+        public HttpResponseMessage PutRol([FromUri] int rolId, [FromBody] RolDto rolDto)
         {
             processCatalogs.UpdateRol(rolId, rolDto);
             return Request.CreateResponse(HttpStatusCode.OK);
