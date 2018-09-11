@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IAddress, ISchool} from './model/index';
+import { IAddress, ISchool, IschoolType } from './model/index';
 import { SchoolsHttpService } from '../services/http-services/schools-http.service';
 
 @Component({
@@ -10,19 +10,29 @@ import { SchoolsHttpService } from '../services/http-services/schools-http.servi
 
 export class SchoolComponent implements OnInit{
 
+  //Propiedades
+  school: ISchool = {
+    SchoolId: '1',
+    AddressId: 4,
+    SchoolName: 'Ejemplo de escuela',
+    SchoolType: 1,
+    MinToPass: 7,
+    IsActive: true,
+  }
+
   constructor(private schoolsHttpService: SchoolsHttpService) { }
 
   //isVisible: boolean = false;
   //idRol: number = 1;//1 - Estudiante y 2 -Maestro
-  //direccion = <IAddress>{};
-  //mostrarBoton: boolean = false;
+  direccion = <IAddress>{};
+  mostrarBoton: boolean = false;
   //school: ISchool;
 
-  //schoolTypes: IschoolType[] = [
-  //  { SchoolTypeId: 1, Type: 'Matutino' },
-  //  { SchoolTypeId: 2, Type: 'Vespertino' },
-  //  { SchoolTypeId: 3, Type: 'Mixto' }];
-  //schoolTypeSelected = <IschoolType>{};
+  schoolTypes: IschoolType[] = [
+    { SchoolTypeId: 1, Type: 'Matutino' },
+    { SchoolTypeId: 2, Type: 'Vespertino' },
+    { SchoolTypeId: 3, Type: 'Mixto' }];
+  schoolTypeSelected = <IschoolType>{};
 
   //schools: ISchool[] = [
   //  { SchoolId: 1, SchoolName: 'Benito Juárez', IsActive: true, SchoolTypeName: 'Matutino', MinToPass: 8 },
@@ -78,8 +88,8 @@ export class SchoolComponent implements OnInit{
   }
 
   DeleteSchool() {
-    this.schoolsHttpService.DeleteSchool('1').subscribe(data => {
-      alert('Esceual eliminada');
+    this.schoolsHttpService.DeleteSchool('B3').subscribe(data => {
+      alert('Escuela eliminada');
     });
   }
 
@@ -90,12 +100,12 @@ export class SchoolComponent implements OnInit{
   ngAfterContentInit() {
   }
 
-  //GuardarDatos() {
-  //  //alert("Nombre de la escuela: " + this.school.SchoolName);
-  //  this.isVisible = !this.isVisible;
-  //  this.idRol = 2;
-  //  console.log(this.schoolTypeSelected);
-  //}
+  GuardarDatos() {
+    //alert("Nombre de la escuela: " + this.school.SchoolName);
+    this.mostrarBoton = true;
+    //this.idRol = 2;
+    //console.log(this.schoolTypeSelected);
+  }
 
   //FiltrarEscuelas() {
   //  let escuelas = this.schools;
