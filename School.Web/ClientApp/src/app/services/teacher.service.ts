@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Iperson } from '../person/model/iperson'
-import { PERSONS } from '../mock-persons'
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ITeacher } from '../teacher/model/iteacher'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,17 +17,28 @@ export class TeacherService {
 
   constructor(private http: HttpClient) { }
 
-  getPersons(): Observable<Iperson[]> {
-    return this.http.get<Iperson[]>(this.teachersUrl);
+  getTeachers(): Observable<ITeacher[]> {
+    return this.http.get<ITeacher[]>(this.teachersUrl);
   }
 
-  getPerson(PersonId: number): Observable<Iperson> {
-    const url = `${this.teachersUrl}/${PersonId}`;
-    return this.http.get<Iperson>(url)
+  getTeacher(TeacherId: number): Observable<ITeacher> {
+    const url = `${this.teachersUrl}/${TeacherId}`;
+    return this.http.get<ITeacher>(url)
   }
 
-  updateTeacher(person: Iperson): Observable<any> {
-    return this.http.put(this.teachersUrl, person, httpOptions)
+  updateTeacher(teacher: ITeacher): Observable<any> {
+    return this.http.put(this.teachersUrl, teacher, httpOptions)
   }
 
+  addTeacher(teacher: ITeacher): Observable<ITeacher> {
+    return this.http.post<ITeacher>(this.teachersUrl, teacher, httpOptions)
+  }
+
+  deleteTeacher(teacher: ITeacher | number): Observable<ITeacher> {
+    const TeacherId = typeof teacher === 'number' ? teacher : teacher.TeacherId;
+    const url = `${this.teachersUrl}/${TeacherId}`;
+
+    return this.http.delete<ITeacher>(url, httpOptions)
+
+  }
 }
