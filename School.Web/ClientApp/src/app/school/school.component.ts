@@ -3,7 +3,8 @@ import { ISchool } from './model/ISchool';
 import { IschoolType } from '../school-type/model/ischool-type';
 import { IAddress } from '../address/model/index';
 import { ApplicationDataServiceService } from '../services/application-data-service.service';
-
+import { RolesHttpService } from '../services/http-services/roles-http.service'
+import { Iroles } from '../roles/Models/Iroles';
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
@@ -32,7 +33,8 @@ export class SchoolComponent implements OnInit, AfterContentInit {
 
   @Output() eventoDireccion = new EventEmitter();
 
-  constructor(private applicationDataService: ApplicationDataServiceService) { }
+  constructor(private applicationDataService: ApplicationDataServiceService,
+    private rolesHttpService: RolesHttpService) { }
 
 
 
@@ -76,5 +78,48 @@ export class SchoolComponent implements OnInit, AfterContentInit {
 
     console.log(this.school);
     alert('Datos Guardados');
+  }
+
+  GetRol() {
+    let rolId = 2;
+
+    this.rolesHttpService.GetRol(rolId).subscribe(data => {
+      console.log(data);
+    });
+    
+  }
+  GetRoles() {
+    this.rolesHttpService.GetRoles().subscribe(data => {
+      console.log(data);
+    });
+
+  }
+  PostRol() {
+    let newRole = <Iroles>{      
+      IsActive: true,
+      Name: 'Semillero'
+    };
+
+    this.rolesHttpService.PostRol(newRole).subscribe(data => {
+      console.log(data);
+      alert('Rol guardado');
+    });
+
+  }
+  UpdateRol() {
+    let rolId = 4;
+    let updatedRol = <Iroles>{
+      IsActive: true,
+      Name: 'Administrador'
+    };
+
+    this.rolesHttpService.UpdateRoles(rolId, updatedRol).subscribe(data => {
+      console.log(data);
+    });
+  }
+  DeleteRol() {
+    this.rolesHttpService.DeleteRol(5).subscribe(data => {
+      alert('El rol fue eliminado');
+    });
   }
 }

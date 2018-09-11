@@ -1,5 +1,7 @@
-﻿CREATE TABLE [dbo].[WeekDay]
-(
-	[WdId] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Day] VARCHAR(10) NOT NULL
-)
+﻿CREATE TABLE [dbo].[WeekDay] (
+    [WdId] INT          IDENTITY (1, 1) NOT NULL,
+    [Day]  VARCHAR (10) NOT NULL,
+    CONSTRAINT [PK_WeekDay] PRIMARY KEY CLUSTERED ([WdId] ASC)
+);
+
+

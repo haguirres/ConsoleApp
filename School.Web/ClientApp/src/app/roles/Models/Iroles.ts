@@ -1,5 +1,5 @@
 export interface Iroles {
-  Id: number;
+  Id?: number;
   Name: String;
   IsActive: boolean;
 }

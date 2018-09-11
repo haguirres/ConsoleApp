@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PERSONS } from '../mock-persons'
+import { TeacherService } from '../services/teacher.service'
 import { Iperson } from '../person/model/iperson';
+import { ITeacher } from '../teacher/model/iteacher';
 
 @Component({
   selector: 'app-teacher-index',
@@ -9,11 +11,19 @@ import { Iperson } from '../person/model/iperson';
 })
 export class TeacherIndexComponent implements OnInit {
 
-  person: Iperson;
-  persons = PERSONS;
-  constructor() { }
+  teacher: ITeacher;
+  teachers: ITeacher[];
+  
+
+  constructor(private teacherService: TeacherService) { }
 
   ngOnInit() {
+    this.getTeachers();
+  }
+
+  getTeachers(): void {
+    this.teacherService.getTeachers()
+      .subscribe(teachers => this.teachers = this.teachers);
   }
 
 }

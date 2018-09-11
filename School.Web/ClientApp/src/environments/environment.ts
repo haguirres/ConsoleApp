@@ -4,5 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:38237/api/',
+  catalogsPath: 'catalogs/',
+  apiCatalogsUrl:{
+    rol: 'rol',
+    roles: 'roles'
+  }
 };

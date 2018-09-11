@@ -22,45 +22,47 @@
     </div>
   </div>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <label class="form-group" for="Teacher.Person.CURP">CURP: </label>
-      </div>
-      <div class="col">
-        <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
-      </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <label class="form-group" for="Teacher.Person.CURP">CURP: </label>
     </div>
+    <div class="col">
+      <input type="text" id="Teacher.Person.CURP" [(ngModel)]="Teacher.Person.CURP" />
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <label class="form-group" for="Teacher.RFC">RFC: </label>
-      </div>
-      <div class="col">
-        <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
-      </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <label class="form-group" for="Teacher.RFC">RFC: </label>
     </div>
+    <div class="col">
+      <input type="text" id="TeacherRFC" [(ngModel)]="Teacher.RFC" maxlength="13" />
+    </div>
+  </div>
 
-    <h4>Datos de Contacto</h4>
-    <div class="row">
-      <div class="col-sm-3">
-        <label class="form-group" for="Teacher.Person.Phone">Teléfono: </label>
-      </div>
-      <div class="col">
-        <input  type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
-      </div>
+  <h4>Datos de Contacto</h4>
+  <div class="row">
+    <div class="col-sm-3">
+      <label class="form-group" for="Teacher.Person.Phone">Teléfono: </label>
     </div>
+    <div class="col">
+      <input type="tel" id="Teacher.PersonPhone" [(ngModel)]="Teacher.Person.Phone" />
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <label class="form-group" for="Teacher.Person.Email">e-mail: </label>
-      </div>
-      <div class="col">
-        <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
-      </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <label class="form-group" for="Teacher.Person.Email">e-mail: </label>
     </div>
+    <div class="col">
+      <input type="email" id="PersonEmail" [(ngModel)]="Teacher.Person.Email" />
+    </div>
+  </div>
 
   <app-address [address]="Teacher.Person.address"></app-address>
 
   <!--<a routerLink="/teacher-edit" routerLinkActive="active">edit</a>-->
   <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
+
+ 
 </div>

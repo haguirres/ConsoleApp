@@ -4,531 +4,530 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SchoolDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Address">
-          <Key>
-            <PropertyRef Name="AddressId" />
-          </Key>
-          <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Address" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="Neighborhood" Type="int" Nullable="false" />
-          <Property Name="ExtNum" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="IntNum" Type="varchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="City">
-          <Key>
-            <PropertyRef Name="CityId" />
-          </Key>
-          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StateId" Type="int" Nullable="false" />
-          <Property Name="CityName" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Course">
-          <Key>
-            <PropertyRef Name="CourseId" />
-          </Key>
-          <Property Name="CourseId" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="SignaturesId" Type="int" Nullable="false" />
-          <Property Name="SchoolId" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TeacherId" Type="int" Nullable="false" />
-          <Property Name="MinToPass" Type="int" />
-          <Property Name="Year" Type="int" Nullable="false" />
-          <Property Name="Credits" Type="int" />
-          <Property Name="StartDate" Type="date" Nullable="false" />
-          <Property Name="EndDate" Type="date" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="ScheduleId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Grade">
-          <Key>
-            <PropertyRef Name="CourseId" />
-            <PropertyRef Name="StudentId" />
-          </Key>
-          <Property Name="CourseId" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="StudentId" Type="int" Nullable="false" />
-          <Property Name="Grade" Type="varchar" MaxLength="5" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Inscription">
-          <Key>
-            <PropertyRef Name="StudentId" />
-            <PropertyRef Name="SchoolId" />
-          </Key>
-          <Property Name="StudentId" Type="int" Nullable="false" />
-          <Property Name="SchoolId" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="InscriptionDate" Type="date" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Person">
-          <Key>
-            <PropertyRef Name="PersonId" />
-          </Key>
-          <Property Name="PersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PersonName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PersonAge" Type="int" Nullable="false" />
-          <Property Name="AddressId" Type="int" Nullable="false" />
-          <Property Name="CURP" Type="varbinary" MaxLength="18" Nullable="false" />
-          <Property Name="Phone" Type="varchar" MaxLength="12" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="RolId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Roles">
-          <Key>
-            <PropertyRef Name="RolId" />
-          </Key>
-          <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RolName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Schedule">
-          <Key>
-            <PropertyRef Name="ScheduleId" />
-          </Key>
-          <Property Name="ScheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="WdId" Type="int" Nullable="false" />
-          <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
-          <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
-        </EntityType>
-        <EntityType Name="School">
-          <Key>
-            <PropertyRef Name="SchoolId" />
-          </Key>
-          <Property Name="SchoolId" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="AddressId" Type="int" Nullable="false" />
-          <Property Name="SchoolName" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="SchoolType" Type="int" Nullable="false" />
-          <Property Name="MinToPass" Type="int" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="SchoolType">
-          <Key>
-            <PropertyRef Name="SchoolTypeId" />
-          </Key>
-          <Property Name="SchoolTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="varchar" MaxLength="20" Nullable="false" />
-        </EntityType>
-        <EntityType Name="SchoolUser">
-          <Key>
-            <PropertyRef Name="PersonId" />
-          </Key>
-          <Property Name="PersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RolId" Type="int" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Signatures">
-          <Key>
-            <PropertyRef Name="SignaturesId" />
-          </Key>
-          <Property Name="SignaturesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SignaturesName" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="State">
-          <Key>
-            <PropertyRef Name="StateId" />
-          </Key>
-          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StateName" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Student">
-          <Key>
-            <PropertyRef Name="StudentId" />
-          </Key>
-          <Property Name="PersonId" Type="int" Nullable="false" />
-          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Account" Type="varchar" MaxLength="15" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Teacher">
-          <Key>
-            <PropertyRef Name="TeacherId" />
-          </Key>
-          <Property Name="PersonId" Type="int" Nullable="false" />
-          <Property Name="TeacherId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RFC" Type="varchar" MaxLength="13" Nullable="false" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="WeekDay">
-          <Key>
-            <PropertyRef Name="WdId" />
-          </Key>
-          <Property Name="WdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Day" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Work">
-          <Key>
-            <PropertyRef Name="TeacherId" />
-            <PropertyRef Name="SchoolId" />
-          </Key>
-          <Property Name="TeacherId" Type="int" Nullable="false" />
-          <Property Name="SchoolId" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ZipCode">
-          <Key>
-            <PropertyRef Name="Neighborhood" />
-          </Key>
-          <Property Name="Neighborhood" Type="int" Nullable="false" />
-          <Property Name="CityId" Type="int" Nullable="false" />
-          <Property Name="ZCName" Type="varchar" MaxLength="59" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_ADDRESS_ZIPCODE">
-          <End Role="ZipCode" Type="Self.ZipCode" Multiplicity="1" />
-          <End Role="Address" Type="Self.Address" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ZipCode">
-              <PropertyRef Name="Neighborhood" />
-            </Principal>
-            <Dependent Role="Address">
-              <PropertyRef Name="Neighborhood" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CITY_STATE">
-          <End Role="State" Type="Self.State" Multiplicity="1" />
-          <End Role="City" Type="Self.City" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="State">
-              <PropertyRef Name="StateId" />
-            </Principal>
-            <Dependent Role="City">
-              <PropertyRef Name="StateId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Course_Schedule">
-          <End Role="Schedule" Type="Self.Schedule" Multiplicity="1" />
-          <End Role="Course" Type="Self.Course" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Schedule">
-              <PropertyRef Name="ScheduleId" />
-            </Principal>
-            <Dependent Role="Course">
-              <PropertyRef Name="ScheduleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_COURSE_SCHOOL">
-          <End Role="School" Type="Self.School" Multiplicity="1" />
-          <End Role="Course" Type="Self.Course" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="School">
-              <PropertyRef Name="SchoolId" />
-            </Principal>
-            <Dependent Role="Course">
-              <PropertyRef Name="SchoolId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_COURSE_SIGNATURES">
-          <End Role="Signatures" Type="Self.Signatures" Multiplicity="1" />
-          <End Role="Course" Type="Self.Course" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Signatures">
-              <PropertyRef Name="SignaturesId" />
-            </Principal>
-            <Dependent Role="Course">
-              <PropertyRef Name="SignaturesId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_COURSE_TEACHER">
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
-          <End Role="Course" Type="Self.Course" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teacher">
-              <PropertyRef Name="TeacherId" />
-            </Principal>
-            <Dependent Role="Course">
-              <PropertyRef Name="TeacherId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GRADE_STUDENT">
-          <End Role="Student" Type="Self.Student" Multiplicity="1" />
-          <End Role="Grade" Type="Self.Grade" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="StudentId" />
-            </Principal>
-            <Dependent Role="Grade">
-              <PropertyRef Name="StudentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GRADE_TEACHER">
-          <End Role="Course" Type="Self.Course" Multiplicity="1" />
-          <End Role="Grade" Type="Self.Grade" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Course">
-              <PropertyRef Name="CourseId" />
-            </Principal>
-            <Dependent Role="Grade">
-              <PropertyRef Name="CourseId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_INSCRIPTION_SCHOOL">
-          <End Role="School" Type="Self.School" Multiplicity="1" />
-          <End Role="Inscription" Type="Self.Inscription" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="School">
-              <PropertyRef Name="SchoolId" />
-            </Principal>
-            <Dependent Role="Inscription">
-              <PropertyRef Name="SchoolId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_INSCRIPTION_STUDENT">
-          <End Role="Student" Type="Self.Student" Multiplicity="1" />
-          <End Role="Inscription" Type="Self.Inscription" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="StudentId" />
-            </Principal>
-            <Dependent Role="Inscription">
-              <PropertyRef Name="StudentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PERSON_ADDRESS">
-          <End Role="Address" Type="Self.Address" Multiplicity="1" />
-          <End Role="Person" Type="Self.Person" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Address">
-              <PropertyRef Name="AddressId" />
-            </Principal>
-            <Dependent Role="Person">
-              <PropertyRef Name="AddressId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PERSON_ROL">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="Person" Type="Self.Person" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="RolId" />
-            </Principal>
-            <Dependent Role="Person">
-              <PropertyRef Name="RolId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PERSON_ROLES">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="SchoolUser" Type="Self.SchoolUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Roles">
-              <PropertyRef Name="RolId" />
-            </Principal>
-            <Dependent Role="SchoolUser">
-              <PropertyRef Name="RolId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Schedule_WeekDay">
-          <End Role="WeekDay" Type="Self.WeekDay" Multiplicity="1" />
-          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WeekDay">
-              <PropertyRef Name="WdId" />
-            </Principal>
-            <Dependent Role="Schedule">
-              <PropertyRef Name="WdId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SCHOOL_ADDRESS">
-          <End Role="Address" Type="Self.Address" Multiplicity="1" />
-          <End Role="School" Type="Self.School" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Address">
-              <PropertyRef Name="AddressId" />
-            </Principal>
-            <Dependent Role="School">
-              <PropertyRef Name="AddressId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SCHOOL_SCHOOLTYPE">
-          <End Role="SchoolType" Type="Self.SchoolType" Multiplicity="1" />
-          <End Role="School" Type="Self.School" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SchoolType">
-              <PropertyRef Name="SchoolTypeId" />
-            </Principal>
-            <Dependent Role="School">
-              <PropertyRef Name="SchoolType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_STUDENT_PERSON">
-          <End Role="Person" Type="Self.Person" Multiplicity="1" />
-          <End Role="Student" Type="Self.Student" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonId" />
-            </Principal>
-            <Dependent Role="Student">
-              <PropertyRef Name="PersonId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TEACHER_PERSON">
-          <End Role="Person" Type="Self.Person" Multiplicity="1" />
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="PersonId" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="PersonId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_WORK_SCHOOL">
-          <End Role="School" Type="Self.School" Multiplicity="1" />
-          <End Role="Work" Type="Self.Work" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="School">
-              <PropertyRef Name="SchoolId" />
-            </Principal>
-            <Dependent Role="Work">
-              <PropertyRef Name="SchoolId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_WORK_TEACHER">
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
-          <End Role="Work" Type="Self.Work" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Teacher">
-              <PropertyRef Name="TeacherId" />
-            </Principal>
-            <Dependent Role="Work">
-              <PropertyRef Name="TeacherId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ZIPCODE_CITY">
-          <End Role="City" Type="Self.City" Multiplicity="1" />
-          <End Role="ZipCode" Type="Self.ZipCode" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="City">
-              <PropertyRef Name="CityId" />
-            </Principal>
-            <Dependent Role="ZipCode">
-              <PropertyRef Name="CityId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="SchoolDatabaseModelStoreContainer">
-          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inscription" EntityType="Self.Inscription" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="School" EntityType="Self.School" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SchoolType" EntityType="Self.SchoolType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SchoolUser" EntityType="Self.SchoolUser" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Signatures" EntityType="Self.Signatures" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="WeekDay" EntityType="Self.WeekDay" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ZipCode" EntityType="Self.ZipCode" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ADDRESS_ZIPCODE" Association="Self.FK_ADDRESS_ZIPCODE">
-            <End Role="ZipCode" EntitySet="ZipCode" />
-            <End Role="Address" EntitySet="Address" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CITY_STATE" Association="Self.FK_CITY_STATE">
-            <End Role="State" EntitySet="State" />
-            <End Role="City" EntitySet="City" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Course_Schedule" Association="Self.FK_Course_Schedule">
-            <End Role="Schedule" EntitySet="Schedule" />
-            <End Role="Course" EntitySet="Course" />
-          </AssociationSet>
-          <AssociationSet Name="FK_COURSE_SCHOOL" Association="Self.FK_COURSE_SCHOOL">
-            <End Role="School" EntitySet="School" />
-            <End Role="Course" EntitySet="Course" />
-          </AssociationSet>
-          <AssociationSet Name="FK_COURSE_SIGNATURES" Association="Self.FK_COURSE_SIGNATURES">
-            <End Role="Signatures" EntitySet="Signatures" />
-            <End Role="Course" EntitySet="Course" />
-          </AssociationSet>
-          <AssociationSet Name="FK_COURSE_TEACHER" Association="Self.FK_COURSE_TEACHER">
-            <End Role="Teacher" EntitySet="Teacher" />
-            <End Role="Course" EntitySet="Course" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GRADE_STUDENT" Association="Self.FK_GRADE_STUDENT">
-            <End Role="Student" EntitySet="Student" />
-            <End Role="Grade" EntitySet="Grade" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GRADE_TEACHER" Association="Self.FK_GRADE_TEACHER">
-            <End Role="Course" EntitySet="Course" />
-            <End Role="Grade" EntitySet="Grade" />
-          </AssociationSet>
-          <AssociationSet Name="FK_INSCRIPTION_SCHOOL" Association="Self.FK_INSCRIPTION_SCHOOL">
-            <End Role="School" EntitySet="School" />
-            <End Role="Inscription" EntitySet="Inscription" />
-          </AssociationSet>
-          <AssociationSet Name="FK_INSCRIPTION_STUDENT" Association="Self.FK_INSCRIPTION_STUDENT">
-            <End Role="Student" EntitySet="Student" />
-            <End Role="Inscription" EntitySet="Inscription" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PERSON_ADDRESS" Association="Self.FK_PERSON_ADDRESS">
-            <End Role="Address" EntitySet="Address" />
-            <End Role="Person" EntitySet="Person" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PERSON_ROL" Association="Self.FK_PERSON_ROL">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Person" EntitySet="Person" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PERSON_ROLES" Association="Self.FK_PERSON_ROLES">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="SchoolUser" EntitySet="SchoolUser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Schedule_WeekDay" Association="Self.FK_Schedule_WeekDay">
-            <End Role="WeekDay" EntitySet="WeekDay" />
-            <End Role="Schedule" EntitySet="Schedule" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SCHOOL_ADDRESS" Association="Self.FK_SCHOOL_ADDRESS">
-            <End Role="Address" EntitySet="Address" />
-            <End Role="School" EntitySet="School" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SCHOOL_SCHOOLTYPE" Association="Self.FK_SCHOOL_SCHOOLTYPE">
-            <End Role="SchoolType" EntitySet="SchoolType" />
-            <End Role="School" EntitySet="School" />
-          </AssociationSet>
-          <AssociationSet Name="FK_STUDENT_PERSON" Association="Self.FK_STUDENT_PERSON">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="Student" EntitySet="Student" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TEACHER_PERSON" Association="Self.FK_TEACHER_PERSON">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="Teacher" EntitySet="Teacher" />
-          </AssociationSet>
-          <AssociationSet Name="FK_WORK_SCHOOL" Association="Self.FK_WORK_SCHOOL">
-            <End Role="School" EntitySet="School" />
-            <End Role="Work" EntitySet="Work" />
-          </AssociationSet>
-          <AssociationSet Name="FK_WORK_TEACHER" Association="Self.FK_WORK_TEACHER">
-            <End Role="Teacher" EntitySet="Teacher" />
-            <End Role="Work" EntitySet="Work" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ZIPCODE_CITY" Association="Self.FK_ZIPCODE_CITY">
-            <End Role="City" EntitySet="City" />
-            <End Role="ZipCode" EntitySet="ZipCode" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="SchoolDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SchoolDatabaseModelStoreContainer">
+    <EntitySet Name="Address" EntityType="SchoolDatabaseModel.Store.Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="City" EntityType="SchoolDatabaseModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Course" EntityType="SchoolDatabaseModel.Store.Course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Grade" EntityType="SchoolDatabaseModel.Store.Grade" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inscription" EntityType="SchoolDatabaseModel.Store.Inscription" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Person" EntityType="SchoolDatabaseModel.Store.Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="SchoolDatabaseModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Schedule" EntityType="SchoolDatabaseModel.Store.Schedule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="School" EntityType="SchoolDatabaseModel.Store.School" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SchoolType" EntityType="SchoolDatabaseModel.Store.SchoolType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SchoolUser" EntityType="SchoolDatabaseModel.Store.SchoolUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Signatures" EntityType="SchoolDatabaseModel.Store.Signatures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="SchoolDatabaseModel.Store.State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Student" EntityType="SchoolDatabaseModel.Store.Student" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Teacher" EntityType="SchoolDatabaseModel.Store.Teacher" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WeekDay" EntityType="SchoolDatabaseModel.Store.WeekDay" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZipCode" EntityType="SchoolDatabaseModel.Store.ZipCode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Work" EntityType="SchoolDatabaseModel.Store.Work" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ADDRESS_ZIPCODE" Association="SchoolDatabaseModel.Store.FK_ADDRESS_ZIPCODE">
+      <End Role="ZipCode" EntitySet="ZipCode" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_ADDRESS" Association="SchoolDatabaseModel.Store.FK_PERSON_ADDRESS">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SCHOOL_ADDRESS" Association="SchoolDatabaseModel.Store.FK_SCHOOL_ADDRESS">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="School" EntitySet="School" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITY_STATE" Association="SchoolDatabaseModel.Store.FK_CITY_STATE">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ZIPCODE_CITY" Association="SchoolDatabaseModel.Store.FK_ZIPCODE_CITY">
+      <End Role="City" EntitySet="City" />
+      <End Role="ZipCode" EntitySet="ZipCode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Course_Schedule" Association="SchoolDatabaseModel.Store.FK_Course_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COURSE_SCHOOL" Association="SchoolDatabaseModel.Store.FK_COURSE_SCHOOL">
+      <End Role="School" EntitySet="School" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COURSE_SIGNATURES" Association="SchoolDatabaseModel.Store.FK_COURSE_SIGNATURES">
+      <End Role="Signatures" EntitySet="Signatures" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COURSE_TEACHER" Association="SchoolDatabaseModel.Store.FK_COURSE_TEACHER">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRADE_TEACHER" Association="SchoolDatabaseModel.Store.FK_GRADE_TEACHER">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Grade" EntitySet="Grade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GRADE_STUDENT" Association="SchoolDatabaseModel.Store.FK_GRADE_STUDENT">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Grade" EntitySet="Grade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSCRIPTION_SCHOOL" Association="SchoolDatabaseModel.Store.FK_INSCRIPTION_SCHOOL">
+      <End Role="School" EntitySet="School" />
+      <End Role="Inscription" EntitySet="Inscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INSCRIPTION_STUDENT" Association="SchoolDatabaseModel.Store.FK_INSCRIPTION_STUDENT">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Inscription" EntitySet="Inscription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_ROL" Association="SchoolDatabaseModel.Store.FK_PERSON_ROL">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STUDENT_PERSON" Association="SchoolDatabaseModel.Store.FK_STUDENT_PERSON">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TEACHER_PERSON" Association="SchoolDatabaseModel.Store.FK_TEACHER_PERSON">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERSON_ROLES" Association="SchoolDatabaseModel.Store.FK_PERSON_ROLES">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="SchoolUser" EntitySet="SchoolUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schedule_WeekDay" Association="SchoolDatabaseModel.Store.FK_Schedule_WeekDay">
+      <End Role="WeekDay" EntitySet="WeekDay" />
+      <End Role="Schedule" EntitySet="Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SCHOOL_SCHOOLTYPE" Association="SchoolDatabaseModel.Store.FK_SCHOOL_SCHOOLTYPE">
+      <End Role="SchoolType" EntitySet="SchoolType" />
+      <End Role="School" EntitySet="School" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_School" Association="SchoolDatabaseModel.Store.FK_Work_School">
+      <End Role="School" EntitySet="School" />
+      <End Role="Work" EntitySet="Work" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_Teacher" Association="SchoolDatabaseModel.Store.FK_Work_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Work" EntitySet="Work" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Neighborhood" Type="int" Nullable="false" />
+    <Property Name="ExtNum" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="IntNum" Type="varchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="SignaturesId" Type="int" Nullable="false" />
+    <Property Name="SchoolId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TeacherId" Type="int" Nullable="false" />
+    <Property Name="MinToPass" Type="int" Nullable="true" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Credits" Type="int" Nullable="true" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ScheduleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="CourseId" />
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="CourseId" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="Grade1" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Inscription">
+    <Key>
+      <PropertyRef Name="StudentId" />
+      <PropertyRef Name="SchoolId" />
+    </Key>
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="SchoolId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="InscriptionDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PersonAge" Type="int" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="CURP" Type="varbinary" Nullable="false" MaxLength="18" />
+    <Property Name="Phone" Type="varchar" Nullable="true" MaxLength="12" />
+    <Property Name="Email" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="RolId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="ScheduleId" />
+    </Key>
+    <Property Name="ScheduleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WdId" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="time" Nullable="false" Precision="7" />
+    <Property Name="EndTime" Type="time" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="School">
+    <Key>
+      <PropertyRef Name="SchoolId" />
+    </Key>
+    <Property Name="SchoolId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+    <Property Name="SchoolName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="SchoolType" Type="int" Nullable="false" />
+    <Property Name="MinToPass" Type="int" Nullable="true" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SchoolType">
+    <Key>
+      <PropertyRef Name="SchoolTypeId" />
+    </Key>
+    <Property Name="SchoolTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SchoolUser">
+    <Key>
+      <PropertyRef Name="SchoolUserId" />
+    </Key>
+    <Property Name="SchoolUserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RolId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Signatures">
+    <Key>
+      <PropertyRef Name="SignaturesId" />
+    </Key>
+    <Property Name="SignaturesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SignaturesName" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="TeacherId" />
+    </Key>
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="TeacherId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RFC" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WeekDay">
+    <Key>
+      <PropertyRef Name="WdId" />
+    </Key>
+    <Property Name="WdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ZipCode">
+    <Key>
+      <PropertyRef Name="Neighborhood" />
+    </Key>
+    <Property Name="Neighborhood" Type="int" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="ZCName" Type="varchar" Nullable="false" MaxLength="59" />
+  </EntityType>
+  <EntityType Name="Work">
+    <Key>
+      <PropertyRef Name="School_SchoolId" />
+      <PropertyRef Name="Teacher_TeacherId" />
+    </Key>
+    <Property Name="School_SchoolId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Teacher_TeacherId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ADDRESS_ZIPCODE">
+    <End Role="ZipCode" Type="SchoolDatabaseModel.Store.ZipCode" Multiplicity="1" />
+    <End Role="Address" Type="SchoolDatabaseModel.Store.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZipCode">
+        <PropertyRef Name="Neighborhood" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Neighborhood" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_ADDRESS">
+    <End Role="Address" Type="SchoolDatabaseModel.Store.Address" Multiplicity="1" />
+    <End Role="Person" Type="SchoolDatabaseModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SCHOOL_ADDRESS">
+    <End Role="Address" Type="SchoolDatabaseModel.Store.Address" Multiplicity="1" />
+    <End Role="School" Type="SchoolDatabaseModel.Store.School" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="School">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITY_STATE">
+    <End Role="State" Type="SchoolDatabaseModel.Store.State" Multiplicity="1" />
+    <End Role="City" Type="SchoolDatabaseModel.Store.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ZIPCODE_CITY">
+    <End Role="City" Type="SchoolDatabaseModel.Store.City" Multiplicity="1" />
+    <End Role="ZipCode" Type="SchoolDatabaseModel.Store.ZipCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="ZipCode">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Course_Schedule">
+    <End Role="Schedule" Type="SchoolDatabaseModel.Store.Schedule" Multiplicity="1" />
+    <End Role="Course" Type="SchoolDatabaseModel.Store.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="ScheduleId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="ScheduleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COURSE_SCHOOL">
+    <End Role="School" Type="SchoolDatabaseModel.Store.School" Multiplicity="1" />
+    <End Role="Course" Type="SchoolDatabaseModel.Store.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="SchoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COURSE_SIGNATURES">
+    <End Role="Signatures" Type="SchoolDatabaseModel.Store.Signatures" Multiplicity="1" />
+    <End Role="Course" Type="SchoolDatabaseModel.Store.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Signatures">
+        <PropertyRef Name="SignaturesId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="SignaturesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COURSE_TEACHER">
+    <End Role="Teacher" Type="SchoolDatabaseModel.Store.Teacher" Multiplicity="1" />
+    <End Role="Course" Type="SchoolDatabaseModel.Store.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRADE_TEACHER">
+    <End Role="Course" Type="SchoolDatabaseModel.Store.Course" Multiplicity="1" />
+    <End Role="Grade" Type="SchoolDatabaseModel.Store.Grade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GRADE_STUDENT">
+    <End Role="Student" Type="SchoolDatabaseModel.Store.Student" Multiplicity="1" />
+    <End Role="Grade" Type="SchoolDatabaseModel.Store.Grade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSCRIPTION_SCHOOL">
+    <End Role="School" Type="SchoolDatabaseModel.Store.School" Multiplicity="1" />
+    <End Role="Inscription" Type="SchoolDatabaseModel.Store.Inscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="Inscription">
+        <PropertyRef Name="SchoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INSCRIPTION_STUDENT">
+    <End Role="Student" Type="SchoolDatabaseModel.Store.Student" Multiplicity="1" />
+    <End Role="Inscription" Type="SchoolDatabaseModel.Store.Inscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Inscription">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_ROL">
+    <End Role="Roles" Type="SchoolDatabaseModel.Store.Roles" Multiplicity="1" />
+    <End Role="Person" Type="SchoolDatabaseModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STUDENT_PERSON">
+    <End Role="Person" Type="SchoolDatabaseModel.Store.Person" Multiplicity="1" />
+    <End Role="Student" Type="SchoolDatabaseModel.Store.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonId" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TEACHER_PERSON">
+    <End Role="Person" Type="SchoolDatabaseModel.Store.Person" Multiplicity="1" />
+    <End Role="Teacher" Type="SchoolDatabaseModel.Store.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonId" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERSON_ROLES">
+    <End Role="Roles" Type="SchoolDatabaseModel.Store.Roles" Multiplicity="1" />
+    <End Role="SchoolUser" Type="SchoolDatabaseModel.Store.SchoolUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="SchoolUser">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schedule_WeekDay">
+    <End Role="WeekDay" Type="SchoolDatabaseModel.Store.WeekDay" Multiplicity="1" />
+    <End Role="Schedule" Type="SchoolDatabaseModel.Store.Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WeekDay">
+        <PropertyRef Name="WdId" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="WdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SCHOOL_SCHOOLTYPE">
+    <End Role="SchoolType" Type="SchoolDatabaseModel.Store.SchoolType" Multiplicity="1" />
+    <End Role="School" Type="SchoolDatabaseModel.Store.School" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SchoolType">
+        <PropertyRef Name="SchoolTypeId" />
+      </Principal>
+      <Dependent Role="School">
+        <PropertyRef Name="SchoolType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_School">
+    <End Role="School" Type="SchoolDatabaseModel.Store.School" Multiplicity="1" />
+    <End Role="Work" Type="SchoolDatabaseModel.Store.Work" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="School">
+        <PropertyRef Name="SchoolId" />
+      </Principal>
+      <Dependent Role="Work">
+        <PropertyRef Name="School_SchoolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_Teacher">
+    <End Role="Work" Type="SchoolDatabaseModel.Store.Work" Multiplicity="*" />
+    <End Role="Teacher" Type="SchoolDatabaseModel.Store.Teacher" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="TeacherId" />
+      </Principal>
+      <Dependent Role="Work">
+        <PropertyRef Name="Teacher_TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SchoolDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -662,9 +661,9 @@
         </EntityType>
         <EntityType Name="SchoolUser">
           <Key>
-            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="SchoolUserId" />
           </Key>
-          <Property Name="PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RolId" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1065,192 +1064,191 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SchoolDatabaseModelStoreContainer" CdmEntityContainer="SchoolDatabaseEntities">
-          <EntitySetMapping Name="Address">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Address">
-              <MappingFragment StoreEntitySet="Address">
-                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
-                <ScalarProperty Name="Address1" ColumnName="Address" />
-                <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
-                <ScalarProperty Name="ExtNum" ColumnName="ExtNum" />
-                <ScalarProperty Name="IntNum" ColumnName="IntNum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="City">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.City">
-              <MappingFragment StoreEntitySet="City">
-                <ScalarProperty Name="CityId" ColumnName="CityId" />
-                <ScalarProperty Name="StateId" ColumnName="StateId" />
-                <ScalarProperty Name="CityName" ColumnName="CityName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Course">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Course">
-              <MappingFragment StoreEntitySet="Course">
-                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-                <ScalarProperty Name="SignaturesId" ColumnName="SignaturesId" />
-                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
-                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
-                <ScalarProperty Name="MinToPass" ColumnName="MinToPass" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Credits" ColumnName="Credits" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Grade">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Grade">
-              <MappingFragment StoreEntitySet="Grade">
-                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-                <ScalarProperty Name="Grade1" ColumnName="Grade" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Inscription">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Inscription">
-              <MappingFragment StoreEntitySet="Inscription">
-                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
-                <ScalarProperty Name="InscriptionDate" ColumnName="InscriptionDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Person">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Person">
-              <MappingFragment StoreEntitySet="Person">
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
-                <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
-                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
-                <ScalarProperty Name="CURP" ColumnName="CURP" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="RolId" ColumnName="RolId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Roles">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="RolId" ColumnName="RolId" />
-                <ScalarProperty Name="RolName" ColumnName="RolName" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Schedule">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Schedule">
-              <MappingFragment StoreEntitySet="Schedule">
-                <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
-                <ScalarProperty Name="WdId" ColumnName="WdId" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="School">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.School">
-              <MappingFragment StoreEntitySet="School">
-                <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
-                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
-                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
-                <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
-                <ScalarProperty Name="MinToPass" ColumnName="MinToPass" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SchoolType">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.SchoolType">
-              <MappingFragment StoreEntitySet="SchoolType">
-                <ScalarProperty Name="SchoolTypeId" ColumnName="SchoolTypeId" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SchoolUser">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.SchoolUser">
-              <MappingFragment StoreEntitySet="SchoolUser">
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-                <ScalarProperty Name="RolId" ColumnName="RolId" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Signatures">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Signatures">
-              <MappingFragment StoreEntitySet="Signatures">
-                <ScalarProperty Name="SignaturesId" ColumnName="SignaturesId" />
-                <ScalarProperty Name="SignaturesName" ColumnName="SignaturesName" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="State">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.State">
-              <MappingFragment StoreEntitySet="State">
-                <ScalarProperty Name="StateId" ColumnName="StateId" />
-                <ScalarProperty Name="StateName" ColumnName="StateName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Student">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Student">
-              <MappingFragment StoreEntitySet="Student">
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Teacher">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.Teacher">
-              <MappingFragment StoreEntitySet="Teacher">
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-                <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
-                <ScalarProperty Name="RFC" ColumnName="RFC" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="WeekDay">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.WeekDay">
-              <MappingFragment StoreEntitySet="WeekDay">
-                <ScalarProperty Name="WdId" ColumnName="WdId" />
-                <ScalarProperty Name="Day" ColumnName="Day" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ZipCode">
-            <EntityTypeMapping TypeName="SchoolDatabaseModel.ZipCode">
-              <MappingFragment StoreEntitySet="ZipCode">
-                <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
-                <ScalarProperty Name="CityId" ColumnName="CityId" />
-                <ScalarProperty Name="ZCName" ColumnName="ZCName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="Work" TypeName="SchoolDatabaseModel.Work" StoreEntitySet="Work">
-            <EndProperty Name="School">
-              <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
-            </EndProperty>
-            <EndProperty Name="Teacher">
-              <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
-            </EndProperty>
-          </AssociationSetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SchoolDatabaseModelStoreContainer" CdmEntityContainer="SchoolDatabaseEntities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Address)">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
+          <ScalarProperty Name="ExtNum" ColumnName="ExtNum" />
+          <ScalarProperty Name="IntNum" ColumnName="IntNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.City)">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Course)">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="SignaturesId" ColumnName="SignaturesId" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="MinToPass" ColumnName="MinToPass" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grade">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Grade)">
+        <MappingFragment StoreEntitySet="Grade">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Grade1" ColumnName="Grade1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inscription">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Inscription)">
+        <MappingFragment StoreEntitySet="Inscription">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="InscriptionDate" ColumnName="InscriptionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Person)">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+          <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="CURP" ColumnName="CURP" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Roles)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="RolName" ColumnName="RolName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedule">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Schedule)">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="WdId" ColumnName="WdId" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="School">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.School)">
+        <MappingFragment StoreEntitySet="School">
+          <ScalarProperty Name="SchoolId" ColumnName="SchoolId" />
+          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+          <ScalarProperty Name="MinToPass" ColumnName="MinToPass" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolType">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.SchoolType)">
+        <MappingFragment StoreEntitySet="SchoolType">
+          <ScalarProperty Name="SchoolTypeId" ColumnName="SchoolTypeId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchoolUser">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.SchoolUser)">
+        <MappingFragment StoreEntitySet="SchoolUser">
+          <ScalarProperty Name="SchoolUserId" ColumnName="SchoolUserId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Signatures">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Signatures)">
+        <MappingFragment StoreEntitySet="Signatures">
+          <ScalarProperty Name="SignaturesId" ColumnName="SignaturesId" />
+          <ScalarProperty Name="SignaturesName" ColumnName="SignaturesName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.State)">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Student)">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Teacher)">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WeekDay">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.WeekDay)">
+        <MappingFragment StoreEntitySet="WeekDay">
+          <ScalarProperty Name="WdId" ColumnName="WdId" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZipCode">
+      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.ZipCode)">
+        <MappingFragment StoreEntitySet="ZipCode">
+          <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ZCName" ColumnName="ZCName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Work" TypeName="SchoolDatabaseModel.Work" StoreEntitySet="Work">
+      <EndProperty Name="School">
+        <ScalarProperty Name="SchoolId" ColumnName="School_SchoolId" />
+      </EndProperty>
+      <EndProperty Name="Teacher">
+        <ScalarProperty Name="TeacherId" ColumnName="Teacher_TeacherId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -1264,7 +1262,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
