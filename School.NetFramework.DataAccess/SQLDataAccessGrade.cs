@@ -29,7 +29,6 @@ namespace School.NetFramework.DataAccess
         public Grade GetGrade(string courseId, int studentId)
         {
             Grade grade = new Grade();
-
             using (var context = new SchoolDatabaseEntities())
             {
                 var selectedGrade = context.Grade.Where(s => s.CourseId == courseId && s.StudentId == studentId).FirstOrDefault();
@@ -64,11 +63,11 @@ namespace School.NetFramework.DataAccess
             }
         }
 
-        public void DeleteGrade(string courseId, int studentId)
+        public void DeleteGrade(Grade grade)
         {
             using (var context = new SchoolDatabaseEntities())
             {
-                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == studentId && s.CourseId == courseId);
+                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == grade.StudentId && s.CourseId == grade.CourseId);
                 if (savedGrade != null && savedGrade.IsActive)
                 {
                     savedGrade.IsActive = false;

@@ -55,9 +55,9 @@ namespace School.NetFramework.Bussiness
         }
 
         
-        public int InsertNewStudent(StudentDto studentDto)
+        public Student InsertNewStudent(StudentDto studentDto)
         {
-            int newStudentId = 0;
+            Student newStudentId = new Student();
             using (var dataAccess = new SQLDataAccessStudent())
             {
                 Student newStudent = this.mapper.Map<Student>(studentDto);

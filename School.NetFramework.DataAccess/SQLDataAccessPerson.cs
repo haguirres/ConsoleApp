@@ -36,13 +36,13 @@ namespace School.NetFramework.DataAccess
             return PersonList;
         }
 
-        public int InsertPerson(Person person)
+        public Person InsertPerson(Person person)
         {
             using (var context = new SchoolDatabaseEntities())
             {
                 context.Person.Add(person);
                 context.SaveChanges();
-                return person.PersonId;
+                return person;
             }
         }
 

@@ -54,9 +54,9 @@ namespace School.NetFramework.Bussiness
         }
 
 
-        public int InsertNewPerson(PersonDto personDto)
+        public Person InsertNewPerson(PersonDto personDto)
         {
-            int newPersonId = 0;
+            Person newPersonId = new Person() ;
             using (var dataAccess = new SQLDataAccessPerson())
             {
                 Person newPerson = this.mapper.Map<Person>(personDto);
