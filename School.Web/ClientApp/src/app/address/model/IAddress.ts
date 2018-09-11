@@ -1,6 +1,6 @@
 export interface IAddress {
   AddressId: number;
-  Address: string;
+  Street: string;
   ZipCode: number;
   ExtNumber: string;
   IntNumber: string;   
