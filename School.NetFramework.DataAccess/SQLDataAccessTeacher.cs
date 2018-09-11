@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace School.NetFramework.DataAccess
 {
-    public class TeacherDataAccess:IDisposable
+    public class SQLDataAccessTeacher:IDisposable
     {
-        public TeacherDataAccess()
+        public SQLDataAccessTeacher()
         {
 
         }

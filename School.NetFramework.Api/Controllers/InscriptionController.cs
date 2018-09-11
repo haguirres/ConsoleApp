@@ -31,7 +31,7 @@ namespace School.NetFramework.Api.Controllers
         [ResponseType(typeof(InscriptionDto))]
         public HttpResponseMessage GetInscriptions(int StudentId, string SchoolId)
         {
-            var inscription = ProcessInscription.GetInscription(StudentId,SchoolId);
+            var inscription = ProcessInscription.GetInscription(StudentId, SchoolId);
             return Request.CreateResponse(HttpStatusCode.OK, inscription);
         }
 

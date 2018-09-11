@@ -2,7 +2,6 @@
 using School.Entities.DTOs;
 using School.Entities.EF6;
 using School.NetFramework.DataAccess;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,6 +25,17 @@ namespace School.NetFramework.Bussiness
                 newRolId = dataAccess.InsertRol(newRol);
             }
             return newRolId;
+        }
+
+        public RolDto GetRol(int rolId)
+        {
+            RolDto rol = new RolDto();
+            using (var dataAccess = new SQLDataAccess())
+            {
+                var savedRol = dataAccess.GetRol(rolId);
+                rol = this.mapper.Map<RolDto>(savedRol);
+            }
+            return rol;
         }
 
         public void UpdateRol(int rolId, RolDto rolDto)
