@@ -51,6 +51,7 @@
     <Compile Include="ProcessAddress.cs" />
     <Compile Include="ProcessCatalogs.cs" />
     <Compile Include="ProcessCourse.cs" />
+    <Compile Include="ProcessGrade.cs" />
     <Compile Include="ProcessInscription.cs" />
     <Compile Include="ProcessSchools.cs" />
     <Compile Include="ProcessStudent.cs" />

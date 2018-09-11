@@ -24,5 +24,41 @@ namespace School.NetFramework.Api.Controllers
             var studentList = studentP.GetStudents();
             return Request.CreateResponse(HttpStatusCode.OK, studentList);
         }
+
+        [HttpGet, Route("student/{id}")]
+        [ResponseType(typeof(StudentDto))]
+        public HttpResponseMessage GetStudent(int id)
+        {
+            var student = studentP.GetStudent(id);
+            return Request.CreateResponse(HttpStatusCode.OK, student);
+
+        }
+
+        [HttpPost, Route("student/")]
+        [ResponseType(typeof(StudentDto))]
+        public HttpResponseMessage CreateStudent(StudentDto student)
+        {
+            var newStudent = studentP.InsertNewStudent(student);
+            return Request.CreateResponse(HttpStatusCode.OK, newStudent);
+        }
+
+        [HttpPut, Route("student/{id}")]
+        [ResponseType(typeof(StudentDto))]
+        public HttpResponseMessage UpdateStudent(StudentDto studentDto)
+        {
+            studentP.UpdateStudent(studentDto);
+            return Request.CreateResponse(HttpStatusCode.OK);
+
+        }
+
+        [HttpDelete, Route("student/{id}")]
+        public HttpResponseMessage DeleteStudent(int id)
+        {
+            var student = studentP.GetStudent(id);
+            studentP.DeleteStudent(student);
+            return Request.CreateResponse(HttpStatusCode.OK);
+
+        }
     }
 }
+
