@@ -94,8 +94,7 @@ import { SchoolsHttpService } from './services/http-services/schools-http.servic
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
 
-  providers: [ApplicationDataServiceService, SchoolHttpService, InscriptionHttpServiceService, TeacherIndexComponent, TeacherService, RolesHttpService, SchooluserHttpService],
-  providers: [ApplicationDataServiceService, SchoolHttpService, SchoolsHttpService, InscriptionHttpServiceService, TeacherIndexComponent, TeacherService, RolesHttpService],
+  providers: [ApplicationDataServiceService, SchoolHttpService, InscriptionHttpServiceService, TeacherIndexComponent, TeacherService, RolesHttpService, SchooluserHttpService, SchoolsHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
