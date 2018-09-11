@@ -42,6 +42,11 @@
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/roles"]' (click)='collapse()'>
+                Roles
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/sign-in"]' (click)='collapse()'>
                 Sign in
               </a>

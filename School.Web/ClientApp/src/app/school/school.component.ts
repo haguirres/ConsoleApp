@@ -34,7 +34,7 @@ export class SchoolComponent implements OnInit, AfterContentInit {
   @Output() eventoDireccion = new EventEmitter();
 
   constructor(private applicationDataService: ApplicationDataServiceService,
-              private rolesHttpService: RolesHttpService) { }
+    private rolesHttpService: RolesHttpService) { }
 
 
 
