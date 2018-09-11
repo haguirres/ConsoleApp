@@ -10,8 +10,13 @@ export class SchooluserHttpService {
 
   constructor(private http: HttpClient) { }
 
-  GetSchoolUser() {
+  GetSchoolUsers() {
     return this.http.get<IschoolUser[]>(this.schoolUserUrl);
+  }
+
+  GetSchoolUser(SchoolUserId: number) {
+    const url = `${this.schoolUserUrl}/${SchoolUserId}`;
+    return this.http.get<IschoolUser>(url)
   }
 
   PostSchoolUser(schoolUser: IschoolUser) {
