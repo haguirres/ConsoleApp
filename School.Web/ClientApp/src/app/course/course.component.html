@@ -1,14 +1,14 @@
 <div>
 
   <div>
-    <h1>Course</h1>
+    <h1>Curso</h1>
     <hr />
   </div>
 
   <div class="">
     <div class="row">
       <div class="col-sm-2">
-        <label>Course: </label>
+        <label>Nombre del curso: </label>
       </div>
       <div class="col">
         <input type="text" [(ngModel)]="course.CourseId" class="form-group" />
@@ -17,7 +17,7 @@
 
     <div class="row">
       <div class="col-sm-2">
-        <label>Signature</label>
+        <label>Materia</label>
       </div>
       <div class="col">
         <select class="form-group" [(ngModel)]="signatureSelected" (change)="SchoolSelect()">
@@ -29,7 +29,7 @@
     <div id="DivIf" *ngIf="IsVisibleSchool">
       <div class="row">
         <div class="col-sm-2">
-          <label>School</label>
+          <label>Escuela</label>
         </div>
         <div class="col">
           <select class="form-group" [(ngModel)]="schoolSelected" (change)="TeacherSelect()">
@@ -42,7 +42,7 @@
     <div id="DivIf" *ngIf="IsVisibleTeacher" (change)="FormSelect()">
       <div class="row">
         <div class="col-sm-2">
-          <label>Teacher</label>
+          <label>Profesor</label>
         </div>
         <div class="col">
           <select class="form-group" [(ngModel)]="teacherSelected">
@@ -55,16 +55,16 @@
     <div id="DivIf" *ngIf="IsVisibleForm">
       <div class="row">
         <div class="col-sm-2">
-          <label>Course Identifier</label>
+          <label>Identificador del curso</label>
         </div>
         <div class="col">
-          <input type="text" class="form-group" />
+          <input type="text" readonly="readonly" class="form-group" />
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-2">
-          <label>Year</label>
+          <label>Año</label>
         </div>
         <div class="col">
           <select class="form-group" [(ngModel)]="yearSelected">
@@ -75,7 +75,7 @@
 
       <div class="row">
         <div class="col-sm-2">
-          <label>Credits</label>
+          <label>Creditos</label>
         </div>
         <div class="col">
           <input type="text" class="form-group" />
@@ -84,7 +84,7 @@
 
       <div class="row">
         <div class="col-sm-2">
-          <label>Duration</label>
+          <label>Duración</label>
         </div>
         <div class="col">
           <input type="date" class="form-group" />
@@ -94,7 +94,7 @@
 
       <div>
         <div class="row">
-          <label>Schedule</label>
+          <label>Horario</label>
         </div>
         <div class="col">
           <app-schedule></app-schedule>
