@@ -29,6 +29,9 @@ import { TeacherIndexComponent } from './teacher-index/teacher-index.component';
 import { ApplicationDataServiceService } from './services/application-data-service.service';
 import { SchoolHttpService} from './services/school-http.service'
 import { SignInComponent } from './sign-in/sign-in.component';
+import { InscriptionHttpServiceService } from './services';
+import { SchoolUserComponent } from './school-user/school-user.component'
+import { TeacherService } from './services/teacher.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     TeacherEditComponent,
     TeacherDetailsComponent,
     TeacherIndexComponent,
-    SignInComponent
+    SignInComponent,
+    SchoolUserComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -80,13 +84,14 @@ import { SignInComponent } from './sign-in/sign-in.component';
       { path: 'teacher-edit', component: TeacherEditComponent },
       { path: 'teacher-details', component: TeacherDetailsComponent },
       { path: 'teacher-index', component: TeacherIndexComponent },
-      { path: 'sign-in', component: SignInComponent }
+      { path: 'sign-in', component: SignInComponent },
+      { path: 'school-user', component: SchoolUserComponent }
 
     ])
   ],
   //providers: [{ provide: LOCALE_ID, useValue: 'es-419' }],
 
-  providers: [ApplicationDataServiceService, SchoolHttpService],
+  providers: [ApplicationDataServiceService, SchoolHttpService, InscriptionHttpServiceService, TeacherIndexComponent, TeacherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

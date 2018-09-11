@@ -12,6 +12,7 @@ namespace School.NetFramework.DataAccess
 
         }
 
+        //Recupera de la base de datos una lista de escuelas
         public IEnumerable<Entities.EF6.School> GetSchools()
         {
             List<Entities.EF6.School> schoolList = new List<Entities.EF6.School>();
@@ -24,6 +25,7 @@ namespace School.NetFramework.DataAccess
 
         }
 
+        //Recupera de la base de datos una escuela mediante un id
         public Entities.EF6.School GetSchool(string id)
         {
             Entities.EF6.School school = new Entities.EF6.School();
@@ -37,6 +39,7 @@ namespace School.NetFramework.DataAccess
             return school;
         }
 
+        //Inserta una escuela nueva en la base de datos
         public string InsertSchool(Entities.EF6.School school)
         {
             using (var context = new SchoolDatabaseEntities())
@@ -47,6 +50,7 @@ namespace School.NetFramework.DataAccess
             }
         }
 
+        //Actualiza una escuela en la base de datos
         public void UpdateSchool(Entities.EF6.School updateSchool)
         {
             using (var context = new SchoolDatabaseEntities())
@@ -67,6 +71,7 @@ namespace School.NetFramework.DataAccess
 
         }
 
+        //Borra una escuela en la base de datos
         public void DeleteSchool(string id)
         {
             using ( var context = new SchoolDatabaseEntities())
