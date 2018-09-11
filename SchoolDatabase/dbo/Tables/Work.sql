@@ -1,8 +1,15 @@
 ﻿CREATE TABLE [dbo].[Work] (
-    [TeacherId]     INT NOT NULL,
-    [SchoolId] VARCHAR (50) NOT NULL,
-    CONSTRAINT [PK_WORK] PRIMARY KEY CLUSTERED ([TeacherId] ASC, [SchoolId] ASC),
-    CONSTRAINT [FK_WORK_SCHOOL] FOREIGN KEY ([SchoolId]) REFERENCES [dbo].[School] ([SchoolId]),
-    CONSTRAINT [FK_WORK_TEACHER] FOREIGN KEY ([TeacherId]) REFERENCES [dbo].[Teacher] ([TeacherId])
+    [School_SchoolId]   VARCHAR (50) NOT NULL,
+    [Teacher_TeacherId] INT          NOT NULL,
+    CONSTRAINT [PK_Work] PRIMARY KEY CLUSTERED ([School_SchoolId] ASC, [Teacher_TeacherId] ASC),
+    CONSTRAINT [FK_Work_School] FOREIGN KEY ([School_SchoolId]) REFERENCES [dbo].[School] ([SchoolId]),
+    CONSTRAINT [FK_Work_Teacher] FOREIGN KEY ([Teacher_TeacherId]) REFERENCES [dbo].[Teacher] ([TeacherId])
 );
+
+
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_FK_Work_Teacher]
+    ON [dbo].[Work]([Teacher_TeacherId] ASC);
 

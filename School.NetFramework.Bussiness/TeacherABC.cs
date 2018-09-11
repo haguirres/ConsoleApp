@@ -22,7 +22,7 @@ namespace School.NetFramework.Bussiness
         public int InsertNewTeacher(TeacherDto teacherDto)
         {
             int newTeacherId = 0;
-            using (var dataAccess = new TeacherDataAccess())
+            using (var dataAccess = new SQLDataAccessTeacher())
             {
                 Teacher newTeacher = this.MapDtoToEntity(teacherDto);
                 //Teacher newTeacher = this.mapper.Map<Teacher>(teacherDto);
@@ -33,7 +33,7 @@ namespace School.NetFramework.Bussiness
 
         public void UpdateTeacher(TeacherDto teacherDto)
         {
-            using (var dataAccess = new TeacherDataAccess())
+            using (var dataAccess = new SQLDataAccessTeacher())
             {
 
                 Teacher newTeacher = this.MapDtoToEntity(teacherDto);
@@ -45,7 +45,7 @@ namespace School.NetFramework.Bussiness
 
         public void DeleteTeacher(TeacherDto teacherDto)
         {
-            using (var dataAccess = new TeacherDataAccess())
+            using (var dataAccess = new SQLDataAccessTeacher())
             {
 
                 Teacher newTeacher = this.MapDtoToEntity(teacherDto);
@@ -59,7 +59,7 @@ namespace School.NetFramework.Bussiness
         public IEnumerable<TeacherDto> GetTeachers()
         {
             List<TeacherDto> savedTeachersDto = new List<TeacherDto>();
-            using (var dataAccess = new TeacherDataAccess())
+            using (var dataAccess = new SQLDataAccessTeacher())
             {
                 var savedTeachers = dataAccess.GetTeachers();
 
@@ -81,7 +81,7 @@ namespace School.NetFramework.Bussiness
         public TeacherDto GetTeacher(int id)
         {
             TeacherDto savedTeacherDto = new TeacherDto();
-            using (var dataAccess = new TeacherDataAccess())
+            using (var dataAccess = new SQLDataAccessTeacher())
             {
                 var savedTeacher = dataAccess.GetTeachers(id);
 

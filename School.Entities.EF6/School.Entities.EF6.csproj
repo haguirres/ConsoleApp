@@ -135,6 +135,7 @@
       <DependentUpon>SchoolDBModel.edmx</DependentUpon>
       <LastGenOutput>SchoolDBModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="SchoolDBModel.edmx.sql" />
     <Content Include="SchoolDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SchoolDBModel.edmx</DependentUpon>

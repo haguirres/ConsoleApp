@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolDto.cs" />
     <Compile Include="SchoolDto.cs" />
+    <Compile Include="SchoolUserDto.cs" />
     <Compile Include="TeacherDto.cs" />
     <Compile Include="StudentDto.cs" />
   </ItemGroup>
