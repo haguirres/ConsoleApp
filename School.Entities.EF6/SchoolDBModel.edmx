@@ -10,7 +10,7 @@
             <PropertyRef Name="AddressId" />
           </Key>
           <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Address1" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Street" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Neighborhood" Type="int" Nullable="false" />
           <Property Name="ExtNum" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="IntNum" Type="varchar" MaxLength="10" />
@@ -537,14 +537,14 @@
           <Key>
             <PropertyRef Name="AddressId" />
           </Key>
-          <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Neighborhood" Type="Int32" Nullable="false" />
-          <Property Name="ExtNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IntNum" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AddressId" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="Neighborhood" Nullable="false" Type="Int32" />
+          <Property Name="ExtNum" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="IntNum" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
           <NavigationProperty Name="ZipCode" Relationship="Self.FK_ADDRESS_ZIPCODE" FromRole="Address" ToRole="ZipCode" />
           <NavigationProperty Name="School" Relationship="Self.FK_SCHOOL_ADDRESS" FromRole="Address" ToRole="School" />
           <NavigationProperty Name="Person" Relationship="SchoolDatabaseModel.FK_PERSON_ADDRESS" FromRole="Address" ToRole="Person" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -704,8 +704,8 @@
           <NavigationProperty Name="City" Relationship="Self.FK_ZIPCODE_CITY" FromRole="ZipCode" ToRole="City" />
         </EntityType>
         <Association Name="FK_ADDRESS_ZIPCODE">
-          <End Role="ZipCode" Type="Self.ZipCode" Multiplicity="1" />
-          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <End Type="Self.ZipCode" Multiplicity="1" Role="ZipCode" />
+          <End Type="Self.Address" Multiplicity="*" Role="Address" />
           <ReferentialConstraint>
             <Principal Role="ZipCode">
               <PropertyRef Name="Neighborhood" />
@@ -716,8 +716,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SCHOOL_ADDRESS">
-          <End Role="Address" Type="Self.Address" Multiplicity="1" />
-          <End Role="School" Type="Self.School" Multiplicity="*" />
+          <End Type="Self.Address" Multiplicity="1" Role="Address" />
+          <End Type="Self.School" Multiplicity="*" Role="School" />
           <ReferentialConstraint>
             <Principal Role="Address">
               <PropertyRef Name="AddressId" />
@@ -880,12 +880,12 @@
           <EntitySet Name="WeekDay" EntityType="Self.WeekDay" />
           <EntitySet Name="ZipCode" EntityType="Self.ZipCode" />
           <AssociationSet Name="FK_ADDRESS_ZIPCODE" Association="Self.FK_ADDRESS_ZIPCODE">
-            <End Role="ZipCode" EntitySet="ZipCode" />
-            <End Role="Address" EntitySet="Address" />
+            <End EntitySet="ZipCode" Role="ZipCode" />
+            <End EntitySet="Address" Role="Address" />
           </AssociationSet>
           <AssociationSet Name="FK_SCHOOL_ADDRESS" Association="Self.FK_SCHOOL_ADDRESS">
-            <End Role="Address" EntitySet="Address" />
-            <End Role="School" EntitySet="School" />
+            <End EntitySet="Address" Role="Address" />
+            <End EntitySet="School" Role="School" />
           </AssociationSet>
           <AssociationSet Name="FK_CITY_STATE" Association="Self.FK_CITY_STATE">
             <End Role="State" EntitySet="State" />
@@ -937,8 +937,8 @@
           </AssociationSet>
           <EntitySet Name="Person" EntityType="SchoolDatabaseModel.Person" />
           <AssociationSet Name="FK_PERSON_ADDRESS" Association="SchoolDatabaseModel.FK_PERSON_ADDRESS">
-            <End Role="Address" EntitySet="Address" />
-            <End Role="Person" EntitySet="Person" />
+            <End EntitySet="Address" Role="Address" />
+            <End EntitySet="Person" Role="Person" />
           </AssociationSet>
           <AssociationSet Name="FK_PERSON_ROL" Association="SchoolDatabaseModel.FK_PERSON_ROL">
             <End Role="Roles" EntitySet="Roles" />
@@ -981,8 +981,8 @@
           <NavigationProperty Name="Teacher" Relationship="SchoolDatabaseModel.FK_TEACHER_PERSON" FromRole="Person" ToRole="Teacher" />
         </EntityType>
         <Association Name="FK_PERSON_ADDRESS">
-          <End Type="SchoolDatabaseModel.Address" Role="Address" Multiplicity="1" />
-          <End Type="SchoolDatabaseModel.Person" Role="Person" Multiplicity="*" />
+          <End Type="SchoolDatabaseModel.Address" Multiplicity="1" Role="Address" />
+          <End Type="SchoolDatabaseModel.Person" Multiplicity="*" Role="Person" />
           <ReferentialConstraint>
             <Principal Role="Address">
               <PropertyRef Name="AddressId" />
@@ -1073,8 +1073,8 @@
     <EntitySetMapping Name="Address">
       <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Address)">
         <MappingFragment StoreEntitySet="Address">
-          <ScalarProperty Name="AddressId" ColumnName="AddressId" />
-          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
           <ScalarProperty Name="Neighborhood" ColumnName="Neighborhood" />
           <ScalarProperty Name="ExtNum" ColumnName="ExtNum" />
           <ScalarProperty Name="IntNum" ColumnName="IntNum" />

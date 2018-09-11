@@ -20,7 +20,7 @@ namespace School.NetFramework.Bussiness
             return new Address
             {
                 AddressId = addressDto.AddressId,
-                Address1 = addressDto.Address1,
+               Street = addressDto.Street,
                 Neighborhood = addressDto.Neighborhood,
                 ExtNum = addressDto.ExtNum,
                 IntNum = addressDto.IntNum
@@ -33,7 +33,7 @@ namespace School.NetFramework.Bussiness
             return new AddressDto
             {
                 AddressId = address.AddressId,
-                Address1 = address.Address1,
+                Street = address.Street,
                 Neighborhood = address.Neighborhood,
                 ExtNum = address.ExtNum,
                 IntNum = address.IntNum

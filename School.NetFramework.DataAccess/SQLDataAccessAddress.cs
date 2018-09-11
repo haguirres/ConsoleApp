@@ -54,7 +54,7 @@ namespace School.NetFramework.DataAccess
                 if (savedAddress != null)
                 {
                     savedAddress.AddressId = updateAddress.AddressId;
-                    savedAddress.Address1 = updateAddress.Address1;
+                    savedAddress.Street = updateAddress.Street;
                     savedAddress.Neighborhood = updateAddress.Neighborhood;
                     savedAddress.ExtNum = updateAddress.ExtNum;
                     savedAddress.IntNum = updateAddress.IntNum;                   

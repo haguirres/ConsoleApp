@@ -7,10 +7,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace School.NetFramework.Api.Controllers
 {
+    [RoutePrefix("api")]
+    [EnableCors("*", "*", "*")]
     [Route("api/school-user")]
     public class SchoolUserController : ApiController
     {
@@ -22,7 +25,7 @@ namespace School.NetFramework.Api.Controllers
         }
 
 
-        [HttpGet, Route("school-users")]
+        [HttpGet, Route("school-user")]
         [ResponseType(typeof(List<SchoolUserDto>))]
         public HttpResponseMessage GetUsers()
         {

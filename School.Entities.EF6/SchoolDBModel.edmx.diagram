@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="16303c74e18c432e98f27ffeb6528b2b" Name="Diagram1" ZoomLevel="80">
-        <EntityTypeShape EntityType="SchoolDatabaseModel.Address" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Address" PointX="7.5" PointY="7.625" Width="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.City" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Course" Width="1.5" PointX="17.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Inscription" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
@@ -20,8 +20,8 @@
         <EntityTypeShape EntityType="SchoolDatabaseModel.Teacher" Width="1.5" PointX="14.875" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.WeekDay" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.ZipCode" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_ADDRESS_ZIPCODE" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_SCHOOL_ADDRESS" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="SchoolDatabaseModel.FK_ADDRESS_ZIPCODE" />
+        <AssociationConnector ManuallyRouted="false" Association="SchoolDatabaseModel.FK_SCHOOL_ADDRESS" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_CITY_STATE" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_ZIPCODE_CITY" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_Course_Schedule" ManuallyRouted="false" />
