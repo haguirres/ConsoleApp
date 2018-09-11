@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="SchoolDatabaseModel.Course" Width="1.5" PointX="17.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Grade" Width="1.5" PointX="14.25" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Inscription" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDatabaseModel.Person" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Roles" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Schedule" Width="1.5" PointX="15" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.School" Width="1.5" PointX="12.25" PointY="7.625" IsExpanded="true" />
@@ -23,7 +22,6 @@
         <EntityTypeShape EntityType="SchoolDatabaseModel.WeekDay" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.ZipCode" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_ADDRESS_ZIPCODE" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ADDRESS" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_SCHOOL_ADDRESS" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_CITY_STATE" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_ZIPCODE_CITY" ManuallyRouted="false" />
@@ -35,13 +33,15 @@
         <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_STUDENT" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_SCHOOL" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_STUDENT" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROL" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_STUDENT_PERSON" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_TEACHER_PERSON" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROLES" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_Schedule_WeekDay" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_SCHOOL_SCHOOLTYPE" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.Work" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Person" Width="1.5" PointX="9.75" PointY="7.25" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ADDRESS" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROL" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_STUDENT_PERSON" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_TEACHER_PERSON" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

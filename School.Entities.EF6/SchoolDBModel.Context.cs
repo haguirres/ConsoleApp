@@ -30,7 +30,6 @@ namespace School.Entities.EF6
         public virtual DbSet<Course> Course { get; set; }
         public virtual DbSet<Grade> Grade { get; set; }
         public virtual DbSet<Inscription> Inscription { get; set; }
-        public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
         public virtual DbSet<School> School { get; set; }
@@ -42,5 +41,6 @@ namespace School.Entities.EF6
         public virtual DbSet<Teacher> Teacher { get; set; }
         public virtual DbSet<WeekDay> WeekDay { get; set; }
         public virtual DbSet<ZipCode> ZipCode { get; set; }
+        public virtual DbSet<Person> Person { get; set; }
     }
 }

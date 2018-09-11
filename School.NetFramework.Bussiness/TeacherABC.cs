@@ -97,6 +97,7 @@ namespace School.NetFramework.Bussiness
             {
                 TeacherId = teacherDto.TeacherId,
                 PersonId = teacherDto.PersonId,
+                
                 RFC = teacherDto.RFC,
                 IsActive = teacherDto.IsActive
             };

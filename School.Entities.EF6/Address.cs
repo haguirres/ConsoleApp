@@ -17,8 +17,8 @@ namespace School.Entities.EF6
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Address()
         {
-            this.Person = new HashSet<Person>();
             this.School = new HashSet<School>();
+            this.Person = new HashSet<Person>();
         }
     
         public int AddressId { get; set; }
@@ -29,8 +29,8 @@ namespace School.Entities.EF6
     
         public virtual ZipCode ZipCode { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<School> School { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Person> Person { get; set; }
     }
 }

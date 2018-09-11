@@ -17,8 +17,8 @@ namespace School.Entities.EF6
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Roles()
         {
-            this.Person = new HashSet<Person>();
             this.SchoolUser = new HashSet<SchoolUser>();
+            this.Person = new HashSet<Person>();
         }
     
         public int RolId { get; set; }
@@ -26,8 +26,8 @@ namespace School.Entities.EF6
         public bool IsActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SchoolUser> SchoolUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Person> Person { get; set; }
     }
 }
