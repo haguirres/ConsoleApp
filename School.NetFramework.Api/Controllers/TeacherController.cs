@@ -42,6 +42,7 @@ namespace School.NetFramework.Api.Controllers
         [ResponseType(typeof(TeacherDto))]
         public HttpResponseMessage CreateTeacher(TeacherDto teacher)
         {
+            //Inserta presona
             var newTeacher = teacherABC.InsertNewTeacher(teacher);
             return Request.CreateResponse(HttpStatusCode.OK, newTeacher);
         }

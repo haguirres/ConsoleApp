@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="SchoolDatabaseModel.Address" PointX="7.5" PointY="7.625" Width="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.City" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Course" Width="1.5" PointX="17.25" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDatabaseModel.Grade" Width="1.5" PointX="14.25" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Inscription" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Roles" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDatabaseModel.Schedule" Width="1.5" PointX="15" PointY="1.125" IsExpanded="true" />
@@ -29,8 +28,6 @@
         <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_SCHOOL" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_SIGNATURES" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_COURSE_TEACHER" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_TEACHER" ManuallyRouted="false" />
-        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_STUDENT" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_SCHOOL" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_INSCRIPTION_STUDENT" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROLES" ManuallyRouted="false" />
@@ -42,6 +39,9 @@
         <AssociationConnector Association="SchoolDatabaseModel.FK_PERSON_ROL" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_STUDENT_PERSON" />
         <AssociationConnector Association="SchoolDatabaseModel.FK_TEACHER_PERSON" />
+        <EntityTypeShape EntityType="SchoolDatabaseModel.Grade" Width="1.5" PointX="19.125" PointY="10.125" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_TEACHER" />
+        <AssociationConnector Association="SchoolDatabaseModel.FK_GRADE_STUDENT" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

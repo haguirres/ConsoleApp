@@ -207,6 +207,7 @@
     <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InscriptionController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\SchoolUserController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -309,6 +310,10 @@
     <ProjectReference Include="..\School.Entities.DTOs\School.Entities.DTOs.csproj">
       <Project>{a092cf0b-b9e7-4a98-9779-ae387fdebd1f}</Project>
       <Name>School.Entities.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\School.Entities.EF6\School.Entities.EF6.csproj">
+      <Project>{A68C4617-30F1-4FE3-A91A-E89924069FF9}</Project>
+      <Name>School.Entities.EF6</Name>
     </ProjectReference>
     <ProjectReference Include="..\School.NetFramework.Bussiness\School.NetFramework.Bussiness.csproj">
       <Project>{d1f50e88-6fac-4316-b171-fc677d330d9e}</Project>
