@@ -91,7 +91,8 @@ namespace School.NetFramework.Bussiness
             {
                 
                 PersonId = personDto.PersonId,
-                PersonName = personDto.PersonFirstName,
+                PersonFirstName = personDto.PersonFirstName,
+                PersonLastName = personDto.PersonLastName,
                 PersonAge = personDto.PersonAge,
                 AddressId = personDto.AddressId,
                 CURP = personDto.CURP,
@@ -108,7 +109,8 @@ namespace School.NetFramework.Bussiness
             return new PersonDto
             {
                 PersonId = person.PersonId,
-                PersonFirstName = person.PersonName,
+                PersonFirstName = person.PersonFirstName,
+                PersonLastName = person.PersonLastName,
                 PersonAge = person.PersonAge,
                 AddressId = person.AddressId,
                 CURP = person.CURP,

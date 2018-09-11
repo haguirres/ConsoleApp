@@ -54,7 +54,8 @@ namespace School.NetFramework.DataAccess
                 if (savedPerson != null)
                 {
                     savedPerson.PersonId = updatedPerson.PersonId;
-                    savedPerson.PersonName = updatedPerson.PersonName;
+                    savedPerson.PersonFirstName = updatedPerson.PersonFirstName;
+                    savedPerson.PersonLastName = updatedPerson.PersonLastName;
                     savedPerson.PersonAge = updatedPerson.PersonAge;
                     savedPerson.AddressId = updatedPerson.AddressId;
                     savedPerson.CURP = updatedPerson.CURP;
