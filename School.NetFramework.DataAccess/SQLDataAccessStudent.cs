@@ -35,13 +35,13 @@ namespace School.NetFramework.DataAccess
             return student;
         }
 
-        public int InsertStudent(Student student)
+        public Student InsertStudent(Student student)
         {
             using (var context = new SchoolDatabaseEntities())
             {
                 context.Student.Add(student);
                 context.SaveChanges();
-                return student.StudentId;
+                return student;
             }
         }
 

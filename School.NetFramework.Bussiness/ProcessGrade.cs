@@ -79,7 +79,7 @@ namespace School.NetFramework.Bussiness
             using (var dataAcces = new SQLDataAccessGrade())
             {
                 Grade newGrade = this.MapDtoToEntity(gradeDto);
-                dataAcces.DeleteGrade(newGrade.CourseId , newGrade.StudentId);
+                dataAcces.DeleteGrade(newGrade);
             }
         }
 
