@@ -52,6 +52,7 @@
     <Compile Include="ProcessCatalogs.cs" />
     <Compile Include="ProcessCourse.cs" />
     <Compile Include="ProcessInscription.cs" />
+    <Compile Include="ProcessPerson.cs" />
     <Compile Include="ProcessSchools.cs" />
     <Compile Include="ProcessStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

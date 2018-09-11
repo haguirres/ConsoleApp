@@ -23,7 +23,7 @@ namespace School.NetFramework.DataAccess
             return StudentList;
         }
 
-        public Student GetStudent (string id)
+        public Student GetStudent (int id)
         {
             Student student = new Student();
 

@@ -52,6 +52,7 @@
     <Compile Include="SQLDataAccessAddress.cs" />
     <Compile Include="SQLDataAccessCourse.cs" />
     <Compile Include="SQLDataAccessInscription.cs" />
+    <Compile Include="SQLDataAccessPerson.cs" />
     <Compile Include="SQLDataAccessSchool.cs" />
     <Compile Include="SQLDataAccessStudent.cs" />
     <Compile Include="TeacherDataAccess.cs" />

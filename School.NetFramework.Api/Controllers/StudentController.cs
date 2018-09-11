@@ -24,5 +24,6 @@ namespace School.NetFramework.Api.Controllers
             var studentList = studentP.GetStudents();
             return Request.CreateResponse(HttpStatusCode.OK, studentList);
         }
+
     }
 }
