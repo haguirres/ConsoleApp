@@ -14,7 +14,7 @@ namespace School.NetFramework.Api.Controllers
     [Route("api/Grade")]
     public class GradeController : ApiController
     {
-            ProcessGrade gradeP;
+            ProcessGrade gradeP = new ProcessGrade();
             public GradeController() => gradeP = new ProcessGrade();
 
             [HttpGet, Route("grades")]
@@ -27,9 +27,9 @@ namespace School.NetFramework.Api.Controllers
 
             [HttpGet, Route("grade/{id}")]
             [ResponseType(typeof(GradeDto))]
-            public HttpResponseMessage GetGrade(int id)
+            public HttpResponseMessage GetGrade(string courseId, int studentId)
             {
-                var grade = gradeP.GetGrade(id);
+                var grade = gradeP.GetGrade(courseId,studentId);
                 return Request.CreateResponse(HttpStatusCode.OK, grade);
 
             }
@@ -52,9 +52,9 @@ namespace School.NetFramework.Api.Controllers
             }
 
             [HttpDelete, Route("grade/{id}")]
-            public HttpResponseMessage DeleteGrade(int id)
+            public HttpResponseMessage DeleteGrade(string courseId, int studentId)
             {
-                var grade = gradeP.GetGrade(id);
+                var grade = gradeP.GetGrade( courseId, studentId);
                 gradeP.DeleteGrade(grade);
                 return Request.CreateResponse(HttpStatusCode.OK);
 

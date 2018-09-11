@@ -47,6 +47,7 @@
           <Property Name="CourseId" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="StudentId" Type="int" Nullable="false" />
           <Property Name="Grade1" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Inscription">
           <Key>
@@ -574,18 +575,7 @@
           <NavigationProperty Name="School" Relationship="Self.FK_COURSE_SCHOOL" FromRole="Course" ToRole="School" />
           <NavigationProperty Name="Signatures" Relationship="Self.FK_COURSE_SIGNATURES" FromRole="Course" ToRole="Signatures" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK_COURSE_TEACHER" FromRole="Course" ToRole="Teacher" />
-          <NavigationProperty Name="Grade" Relationship="Self.FK_GRADE_TEACHER" FromRole="Course" ToRole="Grade" />
-        </EntityType>
-        <EntityType Name="Grade">
-          <Key>
-            <PropertyRef Name="CourseId" />
-            <PropertyRef Name="StudentId" />
-          </Key>
-          <Property Name="CourseId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="StudentId" Type="Int32" Nullable="false" />
-          <Property Name="Grade1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Course" Relationship="Self.FK_GRADE_TEACHER" FromRole="Grade" ToRole="Course" />
-          <NavigationProperty Name="Student" Relationship="Self.FK_GRADE_STUDENT" FromRole="Grade" ToRole="Student" />
+          <NavigationProperty Name="Grade" Relationship="SchoolDatabaseModel.FK_GRADE_TEACHER" FromRole="Course" ToRole="Grade" />
         </EntityType>
         <EntityType Name="Inscription">
           <Key>
@@ -679,9 +669,9 @@
           <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Account" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Grade" Relationship="Self.FK_GRADE_STUDENT" FromRole="Student" ToRole="Grade" />
           <NavigationProperty Name="Inscription" Relationship="Self.FK_INSCRIPTION_STUDENT" FromRole="Student" ToRole="Inscription" />
           <NavigationProperty Name="Person" Relationship="SchoolDatabaseModel.FK_STUDENT_PERSON" FromRole="Student" ToRole="Person" />
+          <NavigationProperty Name="Grade" Relationship="SchoolDatabaseModel.FK_GRADE_STUDENT" FromRole="Student" ToRole="Grade" />
         </EntityType>
         <EntityType Name="Teacher">
           <Key>
@@ -809,30 +799,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GRADE_TEACHER">
-          <End Role="Course" Type="Self.Course" Multiplicity="1" />
-          <End Role="Grade" Type="Self.Grade" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Course">
-              <PropertyRef Name="CourseId" />
-            </Principal>
-            <Dependent Role="Grade">
-              <PropertyRef Name="CourseId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GRADE_STUDENT">
-          <End Role="Student" Type="Self.Student" Multiplicity="1" />
-          <End Role="Grade" Type="Self.Grade" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="StudentId" />
-            </Principal>
-            <Dependent Role="Grade">
-              <PropertyRef Name="StudentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_INSCRIPTION_SCHOOL">
           <End Role="School" Type="Self.School" Multiplicity="1" />
           <End Role="Inscription" Type="Self.Inscription" Multiplicity="*" />
@@ -901,7 +867,6 @@
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="City" EntityType="Self.City" />
           <EntitySet Name="Course" EntityType="Self.Course" />
-          <EntitySet Name="Grade" EntityType="Self.Grade" />
           <EntitySet Name="Inscription" EntityType="Self.Inscription" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" />
@@ -946,14 +911,6 @@
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Course" EntitySet="Course" />
           </AssociationSet>
-          <AssociationSet Name="FK_GRADE_TEACHER" Association="Self.FK_GRADE_TEACHER">
-            <End Role="Course" EntitySet="Course" />
-            <End Role="Grade" EntitySet="Grade" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GRADE_STUDENT" Association="Self.FK_GRADE_STUDENT">
-            <End Role="Student" EntitySet="Student" />
-            <End Role="Grade" EntitySet="Grade" />
-          </AssociationSet>
           <AssociationSet Name="FK_INSCRIPTION_SCHOOL" Association="Self.FK_INSCRIPTION_SCHOOL">
             <End Role="School" EntitySet="School" />
             <End Role="Inscription" EntitySet="Inscription" />
@@ -994,6 +951,15 @@
           <AssociationSet Name="FK_TEACHER_PERSON" Association="SchoolDatabaseModel.FK_TEACHER_PERSON">
             <End Role="Person" EntitySet="Person" />
             <End Role="Teacher" EntitySet="Teacher" />
+          </AssociationSet>
+          <EntitySet Name="Grade" EntityType="SchoolDatabaseModel.Grade" />
+          <AssociationSet Name="FK_GRADE_TEACHER" Association="SchoolDatabaseModel.FK_GRADE_TEACHER">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Grade" EntitySet="Grade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRADE_STUDENT" Association="SchoolDatabaseModel.FK_GRADE_STUDENT">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Grade" EntitySet="Grade" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Person">
@@ -1062,6 +1028,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="CourseId" />
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="CourseId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StudentId" Type="Int32" Nullable="false" />
+          <Property Name="Grade1" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="SchoolDatabaseModel.FK_GRADE_TEACHER" FromRole="Grade" ToRole="Course" />
+          <NavigationProperty Name="Student" Relationship="SchoolDatabaseModel.FK_GRADE_STUDENT" FromRole="Grade" ToRole="Student" />
+        </EntityType>
+        <Association Name="FK_GRADE_TEACHER">
+          <End Type="SchoolDatabaseModel.Course" Role="Course" Multiplicity="1" />
+          <End Type="SchoolDatabaseModel.Grade" Role="Grade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="CourseId" />
+            </Principal>
+            <Dependent Role="Grade">
+              <PropertyRef Name="CourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRADE_STUDENT">
+          <End Type="SchoolDatabaseModel.Student" Role="Student" Multiplicity="1" />
+          <End Type="SchoolDatabaseModel.Grade" Role="Grade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="Grade">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1102,15 +1104,6 @@
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Grade">
-      <EntityTypeMapping TypeName="IsTypeOf(SchoolDatabaseModel.Grade)">
-        <MappingFragment StoreEntitySet="Grade">
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
-          <ScalarProperty Name="Grade1" ColumnName="Grade1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1247,6 +1240,16 @@
                 <ScalarProperty Name="AddressId" ColumnName="AddressId" />
                 <ScalarProperty Name="PersonAge" ColumnName="PersonAge" />
                 <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grade">
+            <EntityTypeMapping TypeName="SchoolDatabaseModel.Grade">
+              <MappingFragment StoreEntitySet="Grade">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Grade1" ColumnName="Grade1" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
