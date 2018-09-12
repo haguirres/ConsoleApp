@@ -22,13 +22,13 @@ export class CourseComponent implements OnInit {
     { SignaturesId: 4, SignaturesName: "Quimica", IsActive: false }
   ];
   schoolSelected = <ISchool>{};
-  schools: ISchool[] =
-    [
-      { SchoolId: "1", SchoolName: "Escuela 1", SchoolType: 1, MinToPass: 8.0, IsActive: true },
-      { SchoolId: '2', SchoolName: "Escuela 2", SchoolType: 1, MinToPass: 8.0, IsActive: true },
-      { SchoolId: '3', SchoolName: "Escuela 3", SchoolType: 1, MinToPass: 8.0, IsActive: true },
-      { SchoolId: '4', SchoolName: "Escuela 4", SchoolType: 2, MinToPass: 8.0, IsActive: true }
-    ];
+  //schools: ISchool[] =
+  //  [
+  //    { SchoolId: "1", SchoolName: "Escuela 1", SchoolType: 1, MinToPass: 8.0, IsActive: true },
+  //    { SchoolId: '2', SchoolName: "Escuela 2", SchoolType: 1, MinToPass: 8.0, IsActive: true },
+  //    { SchoolId: '3', SchoolName: "Escuela 3", SchoolType: 1, MinToPass: 8.0, IsActive: true },
+  //    { SchoolId: '4', SchoolName: "Escuela 4", SchoolType: 2, MinToPass: 8.0, IsActive: true }
+  //  ];
 
   teacherSelected = <ITeacher>{};
   teachers: ITeacher[] =

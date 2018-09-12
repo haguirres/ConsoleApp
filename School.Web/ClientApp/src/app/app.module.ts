@@ -98,8 +98,8 @@ import { SchoolIndexComponent } from './school-index/school-index.component';
       { path: 'sign-in', component: SignInComponent },
       { path: 'zipcode', component: ZipcodeComponent },
       { path: 'city', component: CityComponent },
-      { path: 'state', component: StateComponent}
-      { path: 'school-user', component: SchoolUserComponent }
+      { path: 'state', component: StateComponent},
+      { path: 'school-user', component: SchoolUserComponent },
       { path: 'school-index', component: SchoolIndexComponent }
 
     ])
