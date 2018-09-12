@@ -35,6 +35,9 @@ import { TeacherService } from './services/teacher.service';
 import { RolesHttpService } from './services/http-services/roles-http.service';
 import { SchooluserHttpService } from './services/schooluser-http.service';
 import { SchoolsHttpService } from './services/http-services/schools-http.service';
+import { ZipcodeComponent } from './zipcode/zipcode.component';
+import { CityComponent } from './city/city.component';
+import { StateComponent } from './state/state.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,10 @@ import { SchoolsHttpService } from './services/http-services/schools-http.servic
     TeacherDetailsComponent,
     TeacherIndexComponent,
     SignInComponent,
-    SchoolUserComponent
+    SchoolUserComponent,
+    ZipcodeComponent,
+    CityComponent,
+    StateComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -88,7 +94,9 @@ import { SchoolsHttpService } from './services/http-services/schools-http.servic
       { path: 'teacher-details', component: TeacherDetailsComponent },
       { path: 'teacher-index', component: TeacherIndexComponent },
       { path: 'sign-in', component: SignInComponent },
-      { path: 'school-user', component: SchoolUserComponent }
+      { path: 'zipcode', component: ZipcodeComponent },
+      { path: 'city', component: CityComponent },
+      { path: 'state', component: StateComponent}
 
     ])
   ],
