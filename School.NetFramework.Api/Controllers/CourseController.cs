@@ -22,15 +22,15 @@ namespace School.NetFramework.Api.Controllers
         [ResponseType(typeof(List<CourseDto>))]
         public HttpResponseMessage GetCourses()
         {
-            var CourseList = ProcessCourse.GetCourse();
+            var CourseList = ProcessCourse.GetCourses();
             return Request.CreateResponse(HttpStatusCode.OK, CourseList);
         }
 
         [HttpGet, Route("Course/{id}")]
         [ResponseType(typeof(CourseDto))]
-        public HttpResponseMessage Course(int StudentId, string SchoolId)
+        public HttpResponseMessage Course(string CourseId)
         {
-            var Course = ProcessCourse.GetCourse();
+            var Course = ProcessCourse.GetCourse(CourseId);
             return Request.CreateResponse(HttpStatusCode.OK, Course);
         }
 
@@ -42,7 +42,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, InsertInsc);
         }
 
-        [HttpPost, Route("Course")]
+        [HttpPut, Route("Course")]
         [ResponseType(typeof(CourseDto))]
         public HttpResponseMessage UpdateCourse(CourseDto Course)
         {
@@ -50,7 +50,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         } 
 
-        [HttpPost, Route("Course")]
+        [HttpDelete, Route("Course")]
         [ResponseType(typeof(CourseDto))]
         public HttpResponseMessage DeleteCourse(CourseDto Course)
         {

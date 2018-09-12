@@ -11,13 +11,13 @@ namespace School.NetFramework.Bussiness
 {
     public class ProcessCourse
     {
-        public IEnumerable<CourseDto> GetCourse()
+        public IEnumerable<CourseDto> GetCourses()
         {
             List<CourseDto> list = new List<CourseDto>();
             using (var access = new SQLDataAccessCourse())
             {
                 var saverCourse = access.GetCourses();
-                saverCourse.ToList().ForEach(item =>
+                saverCourse.Where(item => item.IsActive==true).ToList().ForEach(item =>
                 {
                     list.Add(MapEntityToDto(item));
                 });
@@ -35,13 +35,14 @@ namespace School.NetFramework.Bussiness
             return Course;
         }
 
-        public CourseDto InsertCourse(CourseDto Course)
+        public string InsertCourse(CourseDto Course)
         {
+            string CourseId;
             using (var access = new SQLDataAccessCourse())
             {
-                access.InsertCourse(MapDtoToEntity(Course));
+                CourseId = access.InsertCourse(MapDtoToEntity(Course));
             }
-            return Course;
+            return CourseId;
         }
 
         public void UpdateCourse(CourseDto Course)
@@ -52,19 +53,29 @@ namespace School.NetFramework.Bussiness
             }
         }
 
-        //public void DeleteCourse(CourseDto course)
-        //{
-        //    using (var access = new SQLDataAccessCourse())
-        //    {
-        //        access.DeleteCourse(MapDtoToEntity(course));
-        //    }
-        //}
+        public void DeleteCourse(string courseId)
+        {
+            using (var access = new SQLDataAccessCourse())
+            {
+                access.DeleteCourse(courseId);
+            }
+        }
 
         private Course MapDtoToEntity(CourseDto CourseDto)
         {
             return new Course
             {
-                
+            CourseId    = CourseDto.CourseId,
+            SignaturesId= CourseDto.SignaturesId,
+            SchoolId    = CourseDto.SchoolId,
+            TeacherId   = CourseDto.TeacherId,
+            MinToPass   = CourseDto.MinToPass,
+            Year        = CourseDto.Year,
+            Credits     = CourseDto.Credits,
+            StartDate   = CourseDto.StartDate,
+            EndDate     = CourseDto.EndDate,
+            IsActive    = CourseDto.IsActive,
+            ScheduleId  = CourseDto.ScheduleId
             };
         }
 
@@ -72,7 +83,17 @@ namespace School.NetFramework.Bussiness
         {
             return new CourseDto
             {
-               
+                CourseId=       Course.CourseId,
+                SignaturesId =  Course.SignaturesId,
+                SchoolId =      Course.SchoolId,
+                TeacherId =     Course.TeacherId,
+                MinToPass =     Course.MinToPass,
+                Year =          Course.Year,
+                Credits =       Course.Credits,
+                StartDate =     Course.StartDate,
+                EndDate =       Course.EndDate,
+                IsActive =      Course.IsActive,
+                ScheduleId =    Course.ScheduleId
             };
         }
     }
