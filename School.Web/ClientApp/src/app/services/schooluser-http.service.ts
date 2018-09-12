@@ -27,7 +27,8 @@ export class SchooluserHttpService {
     return this.http.put(this.schoolUserUrl, schoolUser);
   }
 
-  DeleteSchoolUser(schoolUser: IschoolUser) {
-    return this.http.delete(this.schoolUserUrl);
+  DeleteSchoolUser(SchoolUserId: number) {
+    const url = `${this.schoolUserUrl}/${SchoolUserId}`;
+    return this.http.delete(url);
   }
 }

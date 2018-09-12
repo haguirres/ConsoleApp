@@ -1,6 +1,6 @@
-<h1>Registrar Nuevo Profesor</h1>
+<h1 class="animated fadeIn fast">Registrar Nuevo Profesor</h1>
 <hr />
-<div>
+<div class="animated fadeIn fast">
 
   <h4>Datos Generales</h4>
   <hr />
@@ -60,9 +60,10 @@
   </div>
 
   <app-address [address]="Teacher.Person.address"></app-address>
-
-  <!--<a routerLink="/teacher-edit" routerLinkActive="active">edit</a>-->
-  <button id="btnGuardar" (click)="SaveTeacher()">Guardar</button>
-
+  <br />
+  <button type="button" class="btn btn-success" id="btnGuardar" (click)="SaveTeacher()">Registrar</button>
+  
  
+
+
 </div>

@@ -22,7 +22,7 @@ export class StudentComponent implements OnInit {
   }
 
   SaveStudentData() {
-    alert(this.student.Account + " " + this.student.StudentPerson.PersonAge + " " + this.student.StudentAddress.Address);
+    alert(this.student.Account + " " + this.student.StudentPerson.PersonAge + " " + this.student.StudentAddress.Street);
   }
 
 }

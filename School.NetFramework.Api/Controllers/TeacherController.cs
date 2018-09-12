@@ -8,10 +8,13 @@ using System.Net.Http;
 using System.Web.Http;
 using School.Entities.DTOs;
 using System.Web.Http.Description;
+using System.Web.Http.Cors;
 
 namespace School.NetFramework.Api.Controllers
 {
-    [Route("api/teachers")]
+    [RoutePrefix("api")]
+    [EnableCors("*", "*", "*")]
+    [Route("api/")]
     public class TeacherController : ApiController
     {
 
@@ -21,7 +24,7 @@ namespace School.NetFramework.Api.Controllers
             teacherABC = new TeacherABC();
         }
 
-        [HttpGet, Route("tachers")]
+        [HttpGet, Route("teacher")]
         [ResponseType(typeof(List<TeacherDto>))]
         public HttpResponseMessage GetTeachers()
         {
@@ -57,7 +60,7 @@ namespace School.NetFramework.Api.Controllers
         }
 
         [HttpDelete, Route("teacher/{id}")]
-        public HttpResponseMessage DeleteTeacher(int id)
+        public HttpResponseMessage DeleteTeacher([FromUri]int id)
         {
             var teacher = teacherABC.GetTeacher(id);
             teacherABC.DeleteTeacher(teacher);
