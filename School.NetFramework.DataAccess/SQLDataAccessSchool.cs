@@ -76,9 +76,12 @@ namespace School.NetFramework.DataAccess
         {
             using ( var context = new SchoolDatabaseEntities())
             {
-                var selectedSchool = context.School.Find(id);
-                context.Entry(selectedSchool).State = System.Data.Entity.EntityState.Deleted;
-                context.SaveChanges();
+                var selectedSchool = context.School.FirstOrDefault(s => s.SchoolId == id);
+                if (selectedSchool != null)
+                {
+                    selectedSchool.IsActive = false;
+                    context.SaveChanges();
+                }
             }
         }
 

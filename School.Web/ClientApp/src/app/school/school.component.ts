@@ -34,12 +34,6 @@ export class SchoolComponent implements OnInit{
     { SchoolTypeId: 3, Type: 'Mixto' }];
   schoolTypeSelected = <IschoolType>{};
 
-  //schools: ISchool[] = [
-  //  { SchoolId: 1, SchoolName: 'Benito Juárez', IsActive: true, SchoolTypeName: 'Matutino', MinToPass: 8 },
-  //  { SchoolId: 2, SchoolName: 'Porfirio Díaz', IsActive: true, SchoolTypeName: 'Matutino', MinToPass: 7 },
-  //  { SchoolId: 3, SchoolName: 'Miguel Hidalgo', IsActive: false, SchoolTypeName: 'Vespertina', MinToPass: 5 }
-  //];
-
   //@Output() eventoDireccion = new EventEmitter();
 
   GetSchool() {
@@ -84,12 +78,6 @@ export class SchoolComponent implements OnInit{
 
     this.schoolsHttpService.UpdateSchool(updatedSchool).subscribe(data => {
       console.log(data);
-    });
-  }
-
-  DeleteSchool() {
-    this.schoolsHttpService.DeleteSchool('B3').subscribe(data => {
-      alert('Escuela eliminada');
     });
   }
 

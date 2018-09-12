@@ -35,6 +35,7 @@ import { TeacherService } from './services/teacher.service';
 import { RolesHttpService } from './services/http-services/roles-http.service';
 import { SchooluserHttpService } from './services/schooluser-http.service';
 import { SchoolsHttpService } from './services/http-services/schools-http.service';
+import { SchoolIndexComponent } from './school-index/school-index.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SchoolsHttpService } from './services/http-services/schools-http.servic
     TeacherDetailsComponent,
     TeacherIndexComponent,
     SignInComponent,
-    SchoolUserComponent
+    SchoolUserComponent,
+    SchoolIndexComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -89,6 +91,7 @@ import { SchoolsHttpService } from './services/http-services/schools-http.servic
       { path: 'teacher-index', component: TeacherIndexComponent },
       { path: 'sign-in', component: SignInComponent },
       { path: 'school-user', component: SchoolUserComponent }
+      { path: 'school-index', component: SchoolIndexComponent }
 
     ])
   ],
