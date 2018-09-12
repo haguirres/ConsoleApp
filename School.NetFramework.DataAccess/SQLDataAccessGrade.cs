@@ -26,25 +26,24 @@ namespace School.NetFramework.DataAccess
             return GradeList;
         }
 
-        public Grade GetGrade(int id)
+        public Grade GetGrade(string courseId, int studentId)
         {
             Grade grade = new Grade();
-
             using (var context = new SchoolDatabaseEntities())
             {
-                var selectedGrade = context.Grade.Find(id);
+                var selectedGrade = context.Grade.Where(s => s.CourseId == courseId && s.StudentId == studentId).FirstOrDefault();
                 grade = selectedGrade;
             }
             return grade;
         }
 
-        public int InsertGrade(Grade grade)
+        public Grade InsertGrade(Grade grade)
         {
             using (var context = new SchoolDatabaseEntities())
             {
                 context.Grade.Add(grade);
                 context.SaveChanges();
-                return grade.StudentId;
+                return grade;
             }
         }
 
@@ -52,24 +51,26 @@ namespace School.NetFramework.DataAccess
         {
             using (var context = new SchoolDatabaseEntities())
             {
-                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == updatedGrade.StudentId);
+                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == updatedGrade.StudentId && s.CourseId == updatedGrade.CourseId);
                 if (savedGrade != null)
                 {
                     savedGrade.CourseId = updatedGrade.CourseId;
                     savedGrade.StudentId = updatedGrade.StudentId;
+                    savedGrade.IsActive = updatedGrade.IsActive;
                     savedGrade.Grade1 = updatedGrade.Grade1;
                     context.SaveChanges();
                 }
             }
         }
 
-        public void DeleteGrade(int idGrade)
+        public void DeleteGrade(Grade grade)
         {
             using (var context = new SchoolDatabaseEntities())
             {
-                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == idGrade);
-                if (savedGrade != null)
+                var savedGrade = context.Grade.FirstOrDefault(s => s.StudentId == grade.StudentId && s.CourseId == grade.CourseId);
+                if (savedGrade != null && savedGrade.IsActive)
                 {
+                    savedGrade.IsActive = false;
                     context.SaveChanges();
                 }
             }

@@ -7,6 +7,7 @@ using System.Web.Http;
 
 using System.Web.Http.Description;
 using School.Entities.DTOs;
+using School.Entities.EF6;
 using School.NetFramework.Bussiness;
 
 namespace School.NetFramework.Api.Controllers
@@ -14,7 +15,7 @@ namespace School.NetFramework.Api.Controllers
     [Route("api/Grade")]
     public class GradeController : ApiController
     {
-            ProcessGrade gradeP;
+            ProcessGrade gradeP = new ProcessGrade();
             public GradeController() => gradeP = new ProcessGrade();
 
             [HttpGet, Route("grades")]
@@ -25,16 +26,16 @@ namespace School.NetFramework.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, gradeList);
             }
 
-            [HttpGet, Route("grade/{id}")]
+            [HttpGet, Route("grade")]
             [ResponseType(typeof(GradeDto))]
-            public HttpResponseMessage GetGrade(int id)
+            public HttpResponseMessage GetGrade(string courseId, int studentId)
             {
-                var grade = gradeP.GetGrade(id);
-                return Request.CreateResponse(HttpStatusCode.OK, grade);
+                var vargrade = gradeP.GetGrade( courseId, studentId);
+                return Request.CreateResponse(HttpStatusCode.OK, vargrade);
 
             }
 
-            [HttpPost, Route("grade/")]
+            [HttpPost, Route("grade")]
             [ResponseType(typeof(GradeDto))]
             public HttpResponseMessage CreateGrade(GradeDto grade)
             {
@@ -42,7 +43,7 @@ namespace School.NetFramework.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, newGrade);
             }
 
-            [HttpPut, Route("grade/{id}")]
+            [HttpPut, Route("grade")]
             [ResponseType(typeof(GradeDto))]
             public HttpResponseMessage UpdateGrade(GradeDto gradeDto)
             {
@@ -51,13 +52,13 @@ namespace School.NetFramework.Api.Controllers
 
             }
 
-            [HttpDelete, Route("grade/{id}")]
-            public HttpResponseMessage DeleteGrade(int id)
+            [HttpDelete, Route("grade")]
+            [ResponseType(typeof(GradeDto))]
+            public HttpResponseMessage DeleteGrade(string courseId, int studentId)
             {
-                var grade = gradeP.GetGrade(id);
+                var grade = gradeP.GetGrade(courseId, studentId);
                 gradeP.DeleteGrade(grade);
                 return Request.CreateResponse(HttpStatusCode.OK);
-
             }
     }
 }

@@ -20,12 +20,12 @@ namespace School.NetFramework.Bussiness
             mapper = new AutoMapperConfig().CreateMapperConfiguration();
         }
 
-        public GradeDto GetGrade(int id)
+        public GradeDto GetGrade(string courseId, int studentId)
         {
             GradeDto savedGradeDto = new GradeDto();
             using (var dataAcces = new SQLDataAccessGrade())
             {
-                var savedGrade = dataAcces.GetGrade(id);
+                var savedGrade = dataAcces.GetGrade(courseId, studentId);
                 savedGradeDto = this.mapper.Map<GradeDto>(savedGrade);
             }
             return savedGradeDto;
@@ -53,15 +53,15 @@ namespace School.NetFramework.Bussiness
             return savedGradesDto;
         }
 
-        public int InsertNewGrade(GradeDto gradeDto)
+        public Grade InsertNewGrade(GradeDto gradeDto)
         {
-            int newStudentId = 0;
+            Grade newStudent = new Grade();
             using (var dataAccess = new SQLDataAccessGrade())
             {
                 Grade newGrade = this.mapper.Map<Grade>(gradeDto);
-                newStudentId = dataAccess.InsertGrade(newGrade);
+                newStudent = dataAccess.InsertGrade(newGrade);
             }
-            return newStudentId;
+            return newStudent;
         }
 
         public void UpdateGrade(GradeDto gradeDto)
@@ -79,7 +79,7 @@ namespace School.NetFramework.Bussiness
             using (var dataAcces = new SQLDataAccessGrade())
             {
                 Grade newGrade = this.MapDtoToEntity(gradeDto);
-                dataAcces.DeleteGrade(newGrade.StudentId);
+                dataAcces.DeleteGrade(newGrade);
             }
         }
 
@@ -90,18 +90,20 @@ namespace School.NetFramework.Bussiness
             {
                 CourseId = gradeDto.CourseId,
                 StudentId = gradeDto.StudentId,
+                IsActive = gradeDto.IsActive,
                 Grade1 = gradeDto.Grade1
             };
         }
 
 
-        private GradeDto MapEntityToDto(Grade student)
+        private GradeDto MapEntityToDto(Grade grade)
         {
             return new GradeDto
             {
-                CourseId = student.CourseId,
-                StudentId = student.StudentId,
-                Grade1 = student.Grade1
+                CourseId = grade.CourseId,
+                StudentId = grade.StudentId,
+                IsActive = grade.IsActive,
+                Grade1 = grade.Grade1
             };
         }
     }
