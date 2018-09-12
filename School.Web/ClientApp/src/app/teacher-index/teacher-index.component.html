@@ -1,17 +1,17 @@
-<h1>Profesores</h1>
+<h1 class="animated fadeIn fast">Profesores</h1>
 
 <label>Escuela:
   <select></select>
 </label>
 
-<div>
+<div class="animated fadeIn">
   <a routerLink="/teacher">Agregar Profesor</a>
 </div>
 
 
 
 
-  <ul>
+  <ul class="animated fadeIn">
     <li *ngFor="let person of persons">
       <a routerLink="/teacher-details">
         <span class="badge">{{person.PersonId}}</span>{{person.PersonName}}
