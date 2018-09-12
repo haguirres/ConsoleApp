@@ -28,5 +28,26 @@ export class SchoolUserComponent implements OnInit {
     });
   }
 
+  
 
+  DeleteSchoolUser() {
+
+    this.schoolUserHttpService.DeleteSchoolUser(this.Id).subscribe(data => {
+      alert('school user eliminado');
+    });
+  }
+
+  Id: number;
+
+  PostSchoolUser() {
+
+    this.schoolUserHttpService.PostSchoolUser(this.name as IschoolUser).subscribe(data => {
+      console.log(data);
+      alert('school user creado');
+
+    });
+
+  }
+
+  name: IschoolUser;
 }
