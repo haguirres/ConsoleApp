@@ -35,7 +35,7 @@ export class AddressComponent implements OnInit {
   }
 
 
-  IsVisibleSchool: boolean = false;
+  IsVisibleNeighborhood: boolean = false;
   IsVisibleTeacher: boolean = false;
   IsVisibleForm: boolean = false;
 
@@ -58,7 +58,7 @@ export class AddressComponent implements OnInit {
   }
 
   SchoolSelect() {
-    this.IsVisibleSchool = true;
+    this.IsVisibleNeighborhood = true;
   }
   TeacherSelect() {
     this.IsVisibleTeacher = true;

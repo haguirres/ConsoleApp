@@ -79,8 +79,8 @@ namespace School.NetFramework.Bussiness
             using (var dataAccess = new SQLDataAccessPerson())
             {
 
-                Person newPerson = this.MapDtoToEntity(personDto);
-                dataAccess.DeletePerson(newPerson.PersonId);
+                //Person newPerson = this.MapDtoToEntity(personDto);
+                //dataAccess.DeletePerson(newPerson.PersonId);
             }
         }
 

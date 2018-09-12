@@ -42,14 +42,13 @@
     </div>
   </div>
 
-  <div class="row"   *ngIf="IsVisibleSchool">
+  <div class="row"   *ngIf="IsVisibleNeighborhood">
     <div class="col-sm-3">
-      <label for="intNum">Numero Interior:</label>
+      <label for="intNum">Colonia:</label>
     </div>
     <div class="col">
       <input id="intNum" type="text" [(ngModel)]="address.IntNumber" />
-      <label for="intNum" class="alert-danger"> *Opcional</label>
-    </div>
+      </div>
   </div>
 
 

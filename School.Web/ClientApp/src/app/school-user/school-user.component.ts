@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IschoolUser } from './model/ischool-user'
 import { ApplicationDataServiceService, InscriptionHttpServiceService } from '../services/index';
 import { SchooluserHttpService } from '../services/schooluser-http.service';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-school-user',
@@ -28,8 +29,6 @@ export class SchoolUserComponent implements OnInit {
     });
   }
 
-  
-
   DeleteSchoolUser() {
 
     this.schoolUserHttpService.DeleteSchoolUser(this.Id).subscribe(data => {
@@ -41,7 +40,9 @@ export class SchoolUserComponent implements OnInit {
 
   PostSchoolUser() {
 
-    this.schoolUserHttpService.PostSchoolUser(this.name as IschoolUser).subscribe(data => {
+    
+
+    this.schoolUserHttpService.PostSchoolUser(this.schoolUser).subscribe(data => {
       console.log(data);
       alert('school user creado');
 
@@ -49,5 +50,20 @@ export class SchoolUserComponent implements OnInit {
 
   }
 
-  name: IschoolUser;
+  
+
+  
+  
+
+  //add(name: string): void {
+  //  name = name.trim();
+  //  if (!name) { return; }
+  //  this.schoolUserHttpService.addschoolUser({ name } as IschoolUser)
+  //    .subscribe(data => {
+  //      this.schoolUserArray.push(data);
+  //    });
+  //}
+
+
+
 }

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IschoolUser } from '../school-user/model/ischool-user';
+import { Observable } from 'rxjs';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class SchooluserHttpService {
@@ -19,10 +23,6 @@ export class SchooluserHttpService {
     return this.http.get<IschoolUser>(url)
   }
 
-  PostSchoolUser(schoolUser: IschoolUser) {
-    return this.http.post(this.schoolUserUrl, schoolUser);
-  }
-
   UpdateSchoolUser(schoolUser: IschoolUser) {
     return this.http.put(this.schoolUserUrl, schoolUser);
   }
@@ -30,5 +30,13 @@ export class SchooluserHttpService {
   DeleteSchoolUser(SchoolUserId: number) {
     const url = `${this.schoolUserUrl}/${SchoolUserId}`;
     return this.http.delete(url);
+  }
+
+  addschoolUser(schoolUser: IschoolUser): Observable<IschoolUser> {
+    return this.http.post<IschoolUser>(this.schoolUserUrl, schoolUser, httpOptions);
+    
+  }
+  PostSchoolUser(schoolUser: IschoolUser) {
+    return this.http.post(this.schoolUserUrl, schoolUser);
   }
 }
