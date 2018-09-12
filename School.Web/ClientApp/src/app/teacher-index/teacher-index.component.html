@@ -1,6 +1,8 @@
 <h1>Profesores</h1>
 <hr />
 <!--
+<h1 class="animated fadeIn fast">Profesores</h1>
+
 <label>Escuela:
   <select></select>
 </label>
@@ -38,6 +40,16 @@
 
           <button (click)="Delete(teacher.TeacherId)" type="button" class="btn btn-danger"  >Eliminar</button>
 
+  <ul class="animated fadeIn">
+    <li *ngFor="let person of persons">
+      <a routerLink="/teacher-details">
+        <span class="badge">{{person.PersonId}}</span>{{person.PersonName}}
+      </a>
+      <a routerLink="/teacher-edit">edit</a>
+      <button class="delete" title="delete teacher"
+              (click)="delete(teacher)">x</button>
+    </li>
+  </ul>
         </td>
       </tr>
 

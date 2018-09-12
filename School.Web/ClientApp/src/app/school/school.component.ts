@@ -1,125 +1,136 @@
-import { Component, OnInit, AfterContentInit, Output, EventEmitter } from '@angular/core';
-import { ISchool } from './model/ISchool';
-import { IschoolType } from '../school-type/model/ischool-type';
-import { IAddress } from '../address/model/index';
-import { ApplicationDataServiceService } from '../services/application-data-service.service';
-import { RolesHttpService } from '../services/http-services/roles-http.service'
-import { Iroles } from '../roles/Models/Iroles';
+import { Component, OnInit } from '@angular/core';
+import { IAddress, ISchool, IschoolType } from './model/index';
+import { SchoolsHttpService } from '../services/http-services/schools-http.service';
+
 @Component({
   selector: 'app-school',
   templateUrl: './school.component.html',
   styleUrls: ['./school.component.css']
 })
-export class SchoolComponent implements OnInit, AfterContentInit {
-  date: Date = new Date();
-  school = <ISchool>{};
+
+export class SchoolComponent implements OnInit{
+
+  //Propiedades
+  school: ISchool = {
+    SchoolId: '1',
+    AddressId: 4,
+    SchoolName: 'Ejemplo de escuela',
+    SchoolType: 1,
+    MinToPass: 7,
+    IsActive: true,
+  }
+
+  constructor(private schoolsHttpService: SchoolsHttpService) { }
+
+  //isVisible: boolean = false;
+  //idRol: number = 1;//1 - Estudiante y 2 -Maestro
+  direccion = <IAddress>{};
+  mostrarBoton: boolean = false;
+  //school: ISchool;
+
   schoolTypes: IschoolType[] = [
     { SchoolTypeId: 1, Type: 'Matutino' },
     { SchoolTypeId: 2, Type: 'Vespertino' },
     { SchoolTypeId: 3, Type: 'Mixto' }];
   schoolTypeSelected = <IschoolType>{};
 
-  isVisible: boolean = false;
-  idRol: number = 1;//1 - Estudiante y 2 -Maestro
+  //schools: ISchool[] = [
+  //  { SchoolId: 1, SchoolName: 'Benito Juárez', IsActive: true, SchoolTypeName: 'Matutino', MinToPass: 8 },
+  //  { SchoolId: 2, SchoolName: 'Porfirio Díaz', IsActive: true, SchoolTypeName: 'Matutino', MinToPass: 7 },
+  //  { SchoolId: 3, SchoolName: 'Miguel Hidalgo', IsActive: false, SchoolTypeName: 'Vespertina', MinToPass: 5 }
+  //];
 
-  schools: ISchool[] = [
-    { SchoolId: 1, SchoolName: 'Benito Juárez', SchoolIsActive: true, SchoolTypeName: 'Matutino', MinToPass: 8 },
-    { SchoolId: 2, SchoolName: 'Porfirio Díaz', SchoolIsActive: true, SchoolTypeName: 'Matutino', MinToPass: 7 },
-    { SchoolId: 3, SchoolName: 'Miguel Hidalgo', SchoolIsActive: false, SchoolTypeName: 'Vespertina', MinToPass: 5 }
-  ];
+  //@Output() eventoDireccion = new EventEmitter();
 
-  direccion = <IAddress>{};
-  mostrarBoton: boolean = false;
+  GetSchool() {
+    let schoolId = "1";
+    this.schoolsHttpService.GetSchool(schoolId).subscribe(data => {
+      console.log(data);
+    });
+  }
 
-  @Output() eventoDireccion = new EventEmitter();
+  GetSchools(){
+    this.schoolsHttpService.GetSchools().subscribe(data => {
+      console.log(data);
+    });
+  }
 
-  constructor(private applicationDataService: ApplicationDataServiceService,
-    private rolesHttpService: RolesHttpService) { }
+  PostSchool() {
+    let newSchool = <ISchool>{
+      SchoolId: 'B3',
+      AddressId: 4,
+      SchoolName: 'Sol',
+      SchoolType: 1,
+      MinToPass: 7,
+      IsActive: true
+    };
 
+    this.schoolsHttpService.PostSchool(newSchool).subscribe(data => {
+      console.log(data);
+      alert('Escuela guardada');
+    });
+  }
 
+  UpdateSchool() {
+    let schoolId = '1';
+    let updatedSchool = <ISchool>{
+      SchoolId: '1',
+      AddressId: 4,
+      SchoolName: 'Escuela Actualizada',
+      SchoolType: 1,
+      MinToPass: 7,
+      IsActive: true
+    };
+
+    this.schoolsHttpService.UpdateSchool(updatedSchool).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  DeleteSchool() {
+    this.schoolsHttpService.DeleteSchool('B3').subscribe(data => {
+      alert('Escuela eliminada');
+    });
+  }
 
   ngOnInit() {
-    this.school.SchoolAddress = <IAddress>{};
+    //this.school.SchoolAddress = <IAddress>{};
   }
 
   ngAfterContentInit() {
-    console.log(this.date);
   }
 
   GuardarDatos() {
     //alert("Nombre de la escuela: " + this.school.SchoolName);
-    this.isVisible = !this.isVisible;
-    this.idRol = 2;
-    console.log(this.schoolTypeSelected);
+    this.mostrarBoton = true;
+    //this.idRol = 2;
+    //console.log(this.schoolTypeSelected);
   }
 
-  FiltrarEscuelas() {
-    let escuelas = this.schools;
-    this.schools = [];
-    for (let escuela of escuelas) {
-      if (escuela.SchoolIsActive) {
-        this.schools.push(escuela);
-      }
-    }
-  }
+  //FiltrarEscuelas() {
+  //  let escuelas = this.schools;
+  //  this.schools = [];
+  //  for (let escuela of escuelas) {
+  //    if (escuela.IsActive) {
+  //      this.schools.push(escuela);
+  //    }
+  //  }
+  //}
 
-  ImprimirDireccion()
-  {
-    this.school.SchoolTypeId = this.schoolTypeSelected.SchoolTypeId;
-    console.log(this.school);
-  }
+  //ImprimirDireccion()
+  //{
+  //  this.school.SchoolType = this.schoolTypeSelected.SchoolTypeId;
+  //  console.log(this.school);
+  //}
 
-  AlertaPadre(propiedad:boolean)
-  {
-    //this.mostrarBoton = propiedad;
-    //console.log(propiedad);
-    //alert('Alerta del componente padre');
-    //this.eventoDireccion.emit();
+  //AlertaPadre(propiedad:boolean)
+  //{
+  //  //this.mostrarBoton = propiedad;
+  //  //console.log(propiedad);
+  //  //alert('Alerta del componente padre');
+  //  //this.eventoDireccion.emit();
 
-    console.log(this.school);
-    alert('Datos Guardados');
-  }
-
-  GetRol() {
-    let rolId = 2;
-
-    this.rolesHttpService.GetRol(rolId).subscribe(data => {
-      console.log(data);
-    });
-    
-  }
-  GetRoles() {
-    this.rolesHttpService.GetRoles().subscribe(data => {
-      console.log(data);
-    });
-
-  }
-  PostRol() {
-    let newRole = <Iroles>{      
-      IsActive: true,
-      Name: 'Semillero'
-    };
-
-    this.rolesHttpService.PostRol(newRole).subscribe(data => {
-      console.log(data);
-      alert('Rol guardado');
-    });
-
-  }
-  UpdateRol() {
-    let rolId = 4;
-    let updatedRol = <Iroles>{
-      IsActive: true,
-      Name: 'Administrador'
-    };
-
-    this.rolesHttpService.UpdateRoles(rolId, updatedRol).subscribe(data => {
-      console.log(data);
-    });
-  }
-  DeleteRol() {
-    this.rolesHttpService.DeleteRol(5).subscribe(data => {
-      alert('El rol fue eliminado');
-    });
-  }
+  //  console.log(this.school);
+  //  alert('Datos Guardados');
+  //}
 }

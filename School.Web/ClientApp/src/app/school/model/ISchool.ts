@@ -2,12 +2,11 @@ import { IAddress } from '../../address/model/index';
 
 export interface ISchool
 {
-  SchoolId: number;
-  SchoolAddressId?: number;
+  SchoolId: string;
+  AddressId?: number;
   SchoolName: string;
-  SchoolTypeName: string;
-  SchoolTypeId?: number;
+  SchoolType: number;
   MinToPass: number;
-  SchoolIsActive: boolean;
+  IsActive: boolean;
   SchoolAddress?: IAddress;
 }

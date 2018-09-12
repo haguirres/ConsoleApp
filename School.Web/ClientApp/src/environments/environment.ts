@@ -10,5 +10,9 @@ export const environment = {
   apiCatalogsUrl:{
     rol: 'rol',
     roles: 'roles'
-  }
+  },
+  apiSchoolsUrl: {
+    schools: 'schools',
+    school: 'school'
+  },
 };
