@@ -65,11 +65,11 @@ import { SchoolIndexComponent } from './school-index/school-index.component';
     TeacherDetailsComponent,
     TeacherIndexComponent,
     SignInComponent,
-    SchoolIndexComponent
     SchoolUserComponent,
     ZipcodeComponent,
     CityComponent,
-    StateComponent
+    StateComponent,
+    SchoolIndexComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
