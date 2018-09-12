@@ -32,7 +32,7 @@ export class TeacherIndexComponent implements OnInit {
   Delete(teacherId: number) {
     this.teacherService.DeleteTeacher(teacherId).subscribe(data => {
       console.log(data);
-      alert("Profesor eliminado");
+      alert("Profesor eliminado correctamente");
       this.ngOnInit();
     });
   }
