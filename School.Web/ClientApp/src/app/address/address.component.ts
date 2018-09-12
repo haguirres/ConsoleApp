@@ -35,18 +35,18 @@ export class AddressComponent implements OnInit {
   }
 
 
-  IsVisibleSchool: boolean = false;
+  IsVisibleNeighborhood: boolean = false;
   IsVisibleTeacher: boolean = false;
   IsVisibleForm: boolean = false;
 
   schoolSelected = <ISchool>{};
-  schools: ISchool[] =
-    [
-      { SchoolId: 1, SchoolName: "Escuela 1", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
-      { SchoolId: 2, SchoolName: "Escuela 2", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
-      { SchoolId: 3, SchoolName: "Escuela 3", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
-      { SchoolId: 4, SchoolName: "Escuela 4", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true }
-    ];
+  //schools: ISchool[] =
+  //  [
+  //    { SchoolId: 1, SchoolName: "Escuela 1", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
+  //    { SchoolId: 2, SchoolName: "Escuela 2", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
+  //    { SchoolId: 3, SchoolName: "Escuela 3", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true },
+  //    { SchoolId: 4, SchoolName: "Escuela 4", SchoolTypeName: "Matutino", MinToPass: 8.0, SchoolIsActive: true }
+  //  ];
 
   year: number[] = [1, 2, 3, 4, 5, 6];
   yearSelected: number;
@@ -58,7 +58,7 @@ export class AddressComponent implements OnInit {
   }
 
   SchoolSelect() {
-    this.IsVisibleSchool = true;
+    this.IsVisibleNeighborhood = true;
   }
   TeacherSelect() {
     this.IsVisibleTeacher = true;

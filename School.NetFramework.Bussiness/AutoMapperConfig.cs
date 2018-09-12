@@ -28,7 +28,14 @@ namespace School.NetFramework.Bussiness
                 config.CreateMap<Address, AddressDto>();
                 config.CreateMap<AddressDto, Address>();
 
+                config.CreateMap<Person, PersonDto>();
+                config.CreateMap<PersonDto, Person>();
 
+                config.CreateMap<Grade, GradeDto>();
+                config.CreateMap<GradeDto, Grade>();
+
+                config.CreateMap<Student, StudentDto>();
+                config.CreateMap<StudentDto, Student>();
             });
 
 

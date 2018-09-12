@@ -42,7 +42,7 @@ namespace School.NetFramework.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, newStudent);
         }
 
-        [HttpPut, Route("student/{id}")]
+        [HttpPut, Route("student")]
         [ResponseType(typeof(StudentDto))]
         public HttpResponseMessage UpdateStudent(StudentDto studentDto)
         {
