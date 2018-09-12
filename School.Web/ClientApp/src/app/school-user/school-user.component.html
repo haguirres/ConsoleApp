@@ -10,3 +10,33 @@
 
 
 <button class="animated fadeIn fast" (click)="GetSchoolUsers()">Get School Users</button>
+
+
+<div>
+  <label>
+    User Name:
+    <input [(ngModel)]="schoolUser.UserName" />
+  </label>
+  <label>
+    Password:
+    <input [(ngModel)]="schoolUser.Password" />
+  </label>
+
+  <label>
+    RolId:
+    <input [(ngModel)]="schoolUser.RolId" />
+  </label>
+
+  <!--<select [(ngModel)]="schoolUser.RolId">
+
+    <option *ngFor='let roles of rolesArray' [value]="roles.RolId">
+      {{roles.Value}}
+    </option>
+
+  </select>-->
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="PostSchoolUser()">
+    add
+  </button>
+</div>
