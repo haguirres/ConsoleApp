@@ -96,7 +96,8 @@ import { StateComponent } from './state/state.component';
       { path: 'sign-in', component: SignInComponent },
       { path: 'zipcode', component: ZipcodeComponent },
       { path: 'city', component: CityComponent },
-      { path: 'state', component: StateComponent}
+      { path: 'state', component: StateComponent },
+      { path: 'school-user', component: SchoolUserComponent },
 
     ])
   ],
