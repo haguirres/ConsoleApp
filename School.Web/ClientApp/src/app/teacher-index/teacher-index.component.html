@@ -1,25 +1,51 @@
 <h1>Profesores</h1>
-
+<hr />
+<!--
 <label>Escuela:
   <select></select>
 </label>
+-->
 
+<div class="row"></div>
 <div>
-  <a routerLink="/teacher">Agregar Profesor</a>
+  <button type="button" class="btn btn-success" routerLink="/teacher">Registrar Nuevo</button>
+</div>
+<br />
+
+
+<div class="container-fluid">
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">TeacherId</th>
+        <th scope="col">IsActive</th>
+        <th scope="col">Person.Id</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teacherArray">
+
+        <td>{{teacher.TeacherId}}</td>
+        <td>{{teacher.IsActive}}</td>
+        <td>{{teacher.PersonId}}</td>
+        <td>
+
+          <button type="button" class="btn btn-primary" routerLink="/teacher-details">Detalles</button>
+
+          <button type="button" class="btn btn-warning" routerLink="/teacher-edit">Editar</button>
+
+          <button (click)="Delete(teacher.TeacherId)" type="button" class="btn btn-danger"  >Eliminar</button>
+
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
 </div>
 
 
-
-
-  <ul>
-    <li *ngFor="let person of persons">
-      <a routerLink="/teacher-details">
-        <span class="badge">{{person.PersonId}}</span>{{person.PersonName}}
-      </a>
-      <a routerLink="/teacher-edit">edit</a>
-      <button class="delete" title="delete teacher"
-              (click)="delete(teacher)">x</button>
-    </li>
-  </ul>
 
 

@@ -3,6 +3,7 @@ import { PERSONS } from '../mock-persons'
 import { TeacherService } from '../services/teacher.service'
 import { Iperson } from '../person/model/iperson';
 import { ITeacher } from '../teacher/model/iteacher';
+import { ApplicationDataServiceService } from '../services/index';
 
 @Component({
   selector: 'app-teacher-index',
@@ -12,18 +13,28 @@ import { ITeacher } from '../teacher/model/iteacher';
 export class TeacherIndexComponent implements OnInit {
 
   teacher: ITeacher;
-  teachers: ITeacher[];
+  teacherArray: ITeacher[] = [];
   
 
-  constructor(private teacherService: TeacherService) { }
-
-  ngOnInit() {
-    this.getTeachers();
+  constructor(private applicationDataService: ApplicationDataServiceService,
+    private teacherService: TeacherService) {
+    console.log(applicationDataService);
   }
 
-  getTeachers(): void {
-    this.teacherService.getTeachers()
-      .subscribe(teachers => this.teachers = this.teachers);
+  ngOnInit() {
+    this.teacherService.getTeachers().subscribe(data => {
+      this.teacherArray = data;
+      console.log(data);
+      
+    });
+  }
+
+  Delete(teacherId: number) {
+    this.teacherService.DeleteTeacher(teacherId).subscribe(data => {
+      console.log(data);
+      alert("Profesor eliminado");
+      this.ngOnInit();
+    });
   }
 
 }

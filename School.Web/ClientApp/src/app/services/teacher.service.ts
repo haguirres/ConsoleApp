@@ -8,16 +8,15 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 @Injectable()
-
-
 export class TeacherService {
 
   private teachersUrl = 'http://localhost:38237/api/teacher';  // URL to web api
 
   constructor(private http: HttpClient) { }
 
-  getTeachers(): Observable<ITeacher[]> {
+  getTeachers(){
     return this.http.get<ITeacher[]>(this.teachersUrl);
   }
 
@@ -34,11 +33,15 @@ export class TeacherService {
     return this.http.post<ITeacher>(this.teachersUrl, teacher, httpOptions)
   }
 
-  deleteTeacher(teacher: ITeacher | number): Observable<ITeacher> {
-    const TeacherId = typeof teacher === 'number' ? teacher : teacher.TeacherId;
-    const url = `${this.teachersUrl}/${TeacherId}`;
-
-    return this.http.delete<ITeacher>(url, httpOptions)
-
+  DeleteTeacher(teacherId: number) {
+    return this.http.delete(this.teachersUrl + '/' + teacherId);
   }
+
+  //deleteTeacher(teacher: ITeacher | number): Observable<ITeacher> {
+  //  const TeacherId = typeof teacher === 'number' ? teacher : teacher.TeacherId;
+  //  const url = `${this.teachersUrl}/${TeacherId}`;
+
+  //  return this.http.delete<ITeacher>(url, httpOptions)
+
+  //}
 }
