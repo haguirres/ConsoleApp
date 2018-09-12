@@ -34,7 +34,7 @@ namespace School.NetFramework.Api.Controllers
 
             }
 
-            [HttpPost, Route("person/")]
+            [HttpPost, Route("person")]
             [ResponseType(typeof(PersonDto))]
             public HttpResponseMessage CreatePerson(PersonDto person)
             {
@@ -42,7 +42,7 @@ namespace School.NetFramework.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, newPerson);
             }
 
-            [HttpPut, Route("person/{id}")]
+            [HttpPut, Route("person")]
             [ResponseType(typeof(PersonDto))]
             public HttpResponseMessage UpdatePerson(PersonDto personDto)
             {
