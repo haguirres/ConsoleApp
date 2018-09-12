@@ -73,7 +73,7 @@ namespace School.NetFramework.DataAccess
             using (var context = new SchoolDatabaseEntities())
             {
                 var saverCourse = context.Course.SingleOrDefault(
-                    s => s.CourseId == CourseId);
+                    s => s.CourseId == CourseId && s.IsActive == true);
                 if (saverCourse != null)
                 {
                     saverCourse.IsActive = false;
