@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeacher } from './model/iteacher';
 import { Iperson } from '../person/model/iperson';
-import { IAddress} from '../address/model/IAddress';
+import { IAddress } from '../address/model/IAddress';
+import { ApplicationDataServiceService } from '../services/index';
+
+import { TeacherService } from '../services/teacher.service';
 
 @Component({
   selector: 'app-teacher',
@@ -15,12 +18,19 @@ export class TeacherComponent implements OnInit {
     //Address: { Address: "Calle 2", ExtNumber: "23", IntNumber: "", ZipCode: 14700 },
    // RFC: "EIOJ921027RRR"
   };
+  teacherArray: ITeacher[] = [];
 
-
-  constructor() { }
+  constructor(private applicationDataService: ApplicationDataServiceService,
+    private teacherService: TeacherService) {
+    console.log(applicationDataService);
+  }
 
   ngOnInit() {
-    
+    this.teacherService.getTeachers().subscribe(data => {
+      this.teacherArray = data;
+      console.log(data);
+    });
+
     this.Teacher.Person = <Iperson>{};
     this.Teacher.Person.address = <IAddress>{};
 
