@@ -4,7 +4,7 @@
     [SchoolName] VARCHAR (100) NOT NULL,
     [SchoolType] INT           NOT NULL,
     [MinToPass]  INT           NULL,
-    [IsActive]   BIT           NOT NULL,
+    [IsActive]   BIT           DEFAULT ('true')NOT NULL,
     CONSTRAINT [PK_School] PRIMARY KEY CLUSTERED ([SchoolId] ASC),
     CONSTRAINT [FK_SCHOOL_ADDRESS] FOREIGN KEY ([AddressId]) REFERENCES [dbo].[Address] ([AddressId]),
     CONSTRAINT [FK_SCHOOL_SCHOOLTYPE] FOREIGN KEY ([SchoolType]) REFERENCES [dbo].[SchoolType] ([SchoolTypeId])
